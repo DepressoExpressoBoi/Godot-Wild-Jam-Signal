@@ -4,7 +4,7 @@ class_name GameController extends Node
 # They are defined as 'var', i.e var main_menu.
 # Exporting the scene variable that will be shown when the game opens.
 # I've currently made an empty main menu scene and exported that.
-# I'm assuming we want the game to start at the main menu 
+# I'm assuming we want the game to start at the main menu.
 @export var main_menu : Control
 # var game_scene_example
 
