@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cbdw44aifl3mp"]
+
+[ext_resource type="Script" uid="uid://d0dh58jpncel1" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://bgfarc1ngqshe" path="res://assets/icon.svg" id="2_ekxnf"]
+
+[node name="MainMenu" type="Control" unique_id=207003901]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Title" type="Label" parent="." unique_id=1945699890]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 129.0
+offset_right = 674.0
+offset_bottom = 209.0
+text = "Hellooooo Young Pups	"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1088712655]
+position = Vector2(547, 260)
+texture = ExtResource("2_ekxnf")

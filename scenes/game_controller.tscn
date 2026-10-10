@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://npr7cm6cmer8"]
+
+[ext_resource type="Script" uid="uid://bdy2imv8yivtd" path="res://scripts/game_controller.gd" id="1_vq0e2"]
+[ext_resource type="PackedScene" uid="uid://cbdw44aifl3mp" path="res://scenes/main_menu.tscn" id="2_vc4nx"]
+
+[node name="GameController" type="Node" unique_id=151457299 node_paths=PackedStringArray("main_menu")]
+script = ExtResource("1_vq0e2")
+main_menu = NodePath("MainMenu")
+
+[node name="MainMenu" parent="." unique_id=207003901 instance=ExtResource("2_vc4nx")]
