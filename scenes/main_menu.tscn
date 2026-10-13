@@ -22,6 +22,12 @@ text = "Hellooooo Young Pups	"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1088712655]
-position = Vector2(547, 260)
-texture = ExtResource("2_ekxnf")
+[node name="Button" type="Button" parent="." unique_id=1091325008]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 187.0
+offset_right = 617.0
+offset_bottom = 323.0
+icon = ExtResource("2_ekxnf")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

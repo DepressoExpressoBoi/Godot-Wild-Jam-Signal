@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cecyb2swr8ihe"]
+
+[ext_resource type="Texture2D" uid="uid://bgfarc1ngqshe" path="res://assets/icon.svg" id="1_4kkau"]
+[ext_resource type="PackedScene" uid="uid://ctlippocb5mar" path="res://scenes/puzzle_a.tscn" id="2_vpdcx"]
+
+[node name="Bomb" type="Sprite2D" unique_id=258079969]
+scale = Vector2(2, 2)
+texture = ExtResource("1_4kkau")
+
+[node name="PuzzleA" parent="." unique_id=222436367 instance=ExtResource("2_vpdcx")]
+position = Vector2(-30.5, -27.999989)
+scale = Vector2(0.3230725, 0.349532)

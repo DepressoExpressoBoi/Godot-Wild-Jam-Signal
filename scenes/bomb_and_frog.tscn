@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cp5q1kunhyohj"]
+
+[ext_resource type="PackedScene" uid="uid://cecyb2swr8ihe" path="res://scenes/bomb.tscn" id="1_1vjqw"]
+[ext_resource type="Texture2D" uid="uid://bgfarc1ngqshe" path="res://assets/icon.svg" id="2_xegqa"]
+
+[node name="BombAndFrog" type="Node2D" unique_id=1950971119]
+
+[node name="Bomb" parent="." unique_id=258079969 instance=ExtResource("1_1vjqw")]
+position = Vector2(542, 425)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1190051613]
+position = Vector2(921.00006, 266)
+scale = Vector2(2.7734373, 0.4609375)
+texture = ExtResource("2_xegqa")

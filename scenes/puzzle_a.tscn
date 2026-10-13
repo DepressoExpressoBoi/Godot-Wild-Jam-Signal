@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ctlippocb5mar"]
+
+[ext_resource type="Texture2D" uid="uid://bgfarc1ngqshe" path="res://assets/icon.svg" id="1_cus7r"]
+[ext_resource type="Script" uid="uid://baylfye3ho4a6" path="res://scenes/puzzle_a.gd" id="2_kuwed"]
+
+[node name="PuzzleA" type="Sprite2D" unique_id=222436367]
+rotation = 3.1415927
+texture = ExtResource("1_cus7r")
+script = ExtResource("2_kuwed")
+
+[node name="Button" type="Button" parent="." unique_id=1736106652]
+offset_left = -60.039516
+offset_top = -61.6195
+offset_right = 59.536465
+offset_bottom = 58.91555
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

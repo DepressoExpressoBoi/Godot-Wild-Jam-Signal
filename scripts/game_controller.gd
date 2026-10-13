@@ -11,6 +11,11 @@ class_name GameController extends Node
 func _ready() -> void:
 	Global.game_controller = self
 	
+func change_to_bomb_and_frog_scene():
+	Global.game_controller.remove_child(main_menu)
+	var bomb_and_frog = preload("res://scenes/bomb_and_frog.tscn").instantiate()
+	Global.game_controller.add_child(bomb_and_frog)
+	
 # Here we would add the functions that we call from the game to change to different scenes.
 # I can't start writing one ssince we don't have the scenes and each one has different
 # requirements. Such as if the scene needs to still exist in the background for things 
