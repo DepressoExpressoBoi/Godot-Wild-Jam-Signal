@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://c0qs03ki7ooxu"]
+
+[ext_resource type="Texture2D" uid="uid://cb6vu75yduqq0" path="res://assets/base_jimmy.png" id="1_htl5q"]
+[ext_resource type="Texture2D" uid="uid://boxy74jrs0ndc" path="res://assets/jimmy_open.png" id="2_oke34"]
+[ext_resource type="Texture2D" uid="uid://c6pdglafqcfdf" path="res://assets/jimmy_tongue_1.png" id="3_3qlgw"]
+[ext_resource type="Texture2D" uid="uid://c8giomg1b5877" path="res://assets/jimmy_tongue_2.png" id="4_ngpqu"]
+[ext_resource type="Texture2D" uid="uid://bp528vn2nyk18" path="res://assets/jimmy_tongue_3.png" id="5_yd47l"]
+[ext_resource type="Texture2D" uid="uid://dco7tstefeky4" path="res://assets/jimmy_tongue_4.png" id="6_3fccu"]
+[ext_resource type="Texture2D" uid="uid://ceu1ie8fjikbk" path="res://assets/jimmy_purple_circle.png" id="7_18ehb"]
+[ext_resource type="Texture2D" uid="uid://cwknmt7kgc0qv" path="res://assets/jimmy_purple_fork4.png" id="8_tbu2f"]
+[ext_resource type="Texture2D" uid="uid://bnwrg02rf3ysm" path="res://assets/jimmy_purple_moon.png" id="9_tqglu"]
+[ext_resource type="Texture2D" uid="uid://b4fnfvmlxq7j2" path="res://assets/jimmy_purple_star.png" id="11_mrxmm"]
+[ext_resource type="Texture2D" uid="uid://pnn0q6thsnno" path="res://assets/jimmy_purple_triangle.png" id="12_vr3va"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3fccu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_htl5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_htl5q")
+}, {
+"duration": 0.1,
+"texture": ExtResource("2_oke34")
+}, {
+"duration": 0.1,
+"texture": ExtResource("3_3qlgw")
+}, {
+"duration": 0.1,
+"texture": ExtResource("4_ngpqu")
+}, {
+"duration": 0.1,
+"texture": ExtResource("5_yd47l")
+}, {
+"duration": 0.1,
+"texture": ExtResource("6_3fccu")
+}, {
+"duration": 5.0,
+"texture": ExtResource("7_18ehb")
+}],
+"loop": true,
+"name": &"purple_circle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_htl5q")
+}, {
+"duration": 0.1,
+"texture": ExtResource("2_oke34")
+}, {
+"duration": 0.1,
+"texture": ExtResource("3_3qlgw")
+}, {
+"duration": 0.1,
+"texture": ExtResource("4_ngpqu")
+}, {
+"duration": 0.1,
+"texture": ExtResource("5_yd47l")
+}, {
+"duration": 0.1,
+"texture": ExtResource("6_3fccu")
+}, {
+"duration": 5.0,
+"texture": ExtResource("8_tbu2f")
+}],
+"loop": true,
+"name": &"purple_fork4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_htl5q")
+}, {
+"duration": 0.1,
+"texture": ExtResource("2_oke34")
+}, {
+"duration": 0.1,
+"texture": ExtResource("3_3qlgw")
+}, {
+"duration": 0.1,
+"texture": ExtResource("4_ngpqu")
+}, {
+"duration": 0.1,
+"texture": ExtResource("5_yd47l")
+}, {
+"duration": 0.1,
+"texture": ExtResource("6_3fccu")
+}, {
+"duration": 5.0,
+"texture": ExtResource("9_tqglu")
+}],
+"loop": true,
+"name": &"purple_moon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_htl5q")
+}, {
+"duration": 0.1,
+"texture": ExtResource("2_oke34")
+}, {
+"duration": 0.1,
+"texture": ExtResource("3_3qlgw")
+}, {
+"duration": 0.1,
+"texture": ExtResource("4_ngpqu")
+}, {
+"duration": 0.1,
+"texture": ExtResource("5_yd47l")
+}, {
+"duration": 0.1,
+"texture": ExtResource("6_3fccu")
+}, {
+"duration": 5.0,
+"texture": ExtResource("11_mrxmm")
+}],
+"loop": true,
+"name": &"purple_star",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_htl5q")
+}, {
+"duration": 0.1,
+"texture": ExtResource("2_oke34")
+}, {
+"duration": 0.1,
+"texture": ExtResource("3_3qlgw")
+}, {
+"duration": 0.1,
+"texture": ExtResource("4_ngpqu")
+}, {
+"duration": 0.1,
+"texture": ExtResource("5_yd47l")
+}, {
+"duration": 0.1,
+"texture": ExtResource("6_3fccu")
+}, {
+"duration": 5.0,
+"texture": ExtResource("12_vr3va")
+}],
+"loop": true,
+"name": &"purple_triangle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k82eu"]
+radius = 53.15073
+
+[node name="Jimmy" type="Area2D" unique_id=1644154459]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1719427387]
+sprite_frames = SubResource("SpriteFrames_3fccu")
+animation = &"purple_triangle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1537868090]
+position = Vector2(16, 23)
+shape = SubResource("CircleShape2D_k82eu")
