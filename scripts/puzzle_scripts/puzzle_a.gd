@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@export var shape_solution = []
+@export var shape_solution = ['fake-shape']
 @export var color_designation = 'fake-puzzle'
 
 func _on_button_pressed() -> void:
