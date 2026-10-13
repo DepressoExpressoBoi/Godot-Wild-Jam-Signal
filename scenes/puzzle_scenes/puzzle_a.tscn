@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ctlippocb5mar"]
 
 [ext_resource type="Texture2D" uid="uid://bgfarc1ngqshe" path="res://assets/icon.svg" id="1_cus7r"]
-[ext_resource type="Script" uid="uid://baylfye3ho4a6" path="res://scenes/puzzle_a.gd" id="2_kuwed"]
+[ext_resource type="Script" uid="uid://baylfye3ho4a6" path="res://scripts/puzzle_scripts/puzzle_a.gd" id="2_kuwed"]
 
 [node name="PuzzleA" type="Sprite2D" unique_id=222436367]
 rotation = 3.1415927
