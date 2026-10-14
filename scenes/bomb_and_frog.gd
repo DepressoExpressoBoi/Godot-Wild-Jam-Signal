@@ -3,23 +3,10 @@ extends Node2D
 @onready var Bomb = $Bomb
 @onready var Jimmy = $Jimmy
 
-#adding timer functionality
-@export var stopwatch_label : Label
+# adding timer funcionality, t.c.
+@onready var label = $timerLabel
+@onready var timer = $Timer
 
-var stopWatch : stopwatch
-
-func timer_ready():
-	#adding timer in the ready function
-	stopWatch = get_tree().get_first_node_in_group("stopWatch")
-	
-func _process(delta):
-	update_stopwatch_label()
-	
-func update_stopwatch_label():
-	stopwatch_label.text = ""
-	
-func update_energy_cell_label(number : int):
-	energy_cell_label.text = "x " + str(number)
 
 @onready var puzzles = Bomb.get_children()
 var puzzle_solutions = {}
@@ -28,7 +15,18 @@ var puzzle_solutions = {}
 # Jimmy.play("purple_circle")
 
 func _ready() -> void:
-	timer_ready()
+	
+	# adding timer to the ready func, t.c.
+	timer.start()
+	
+func time_left_to_live():
+	var time_left = timer.time_left
+	var minute = floor(time_left / 60)
+	var second = int(time_left) % 60
+	return [minute, second]
+	
+func _process(delta):
+	label.text = "%02d : %02d" % time_left_to_live()
 	
 	for puzzle in puzzles:
 		#print(puzzle)
