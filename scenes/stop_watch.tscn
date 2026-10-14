@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://4cyjkedy37qk"]
-
-[ext_resource type="Script" uid="uid://dox1epqihjdjv" path="res://scripts/stop_watch.gd" id="1_taluw"]
-
-[node name="stopWatch" type="Node" unique_id=1865756963]
-script = ExtResource("1_taluw")
