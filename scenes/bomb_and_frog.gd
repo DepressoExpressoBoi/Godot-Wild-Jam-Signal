@@ -15,7 +15,6 @@ var puzzle_solutions = {}
 # Jimmy.play("purple_circle")
 
 func _ready() -> void:
-	
 	# adding timer to the ready func, t.c.
 	timer.start()
 	
