@@ -8,7 +8,8 @@ extends Node2D
 
 var stopWatch : stopwatch
 
-func _ready():
+func timer_ready():
+	#adding timer in the ready function
 	stopWatch = get_tree().get_first_node_in_group("stopWatch")
 	
 func _process(delta):
@@ -27,6 +28,8 @@ var puzzle_solutions = {}
 # Jimmy.play("purple_circle")
 
 func _ready() -> void:
+	timer_ready()
+	
 	for puzzle in puzzles:
 		#print(puzzle)
 		puzzle_solutions.set(puzzle.color_designation, puzzle.shape_solution)
