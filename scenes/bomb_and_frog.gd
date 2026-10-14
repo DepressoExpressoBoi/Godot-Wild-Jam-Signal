@@ -3,6 +3,23 @@ extends Node2D
 @onready var Bomb = $Bomb
 @onready var Jimmy = $Jimmy
 
+#adding timer functionality
+@export var stopwatch_label : Label
+
+var stopWatch : stopwatch
+
+func _ready():
+	stopWatch = get_tree().get_first_node_in_group("stopWatch")
+	
+func _process(delta):
+	update_stopwatch_label()
+	
+func update_stopwatch_label():
+	stopwatch_label.text = ""
+	
+func update_energy_cell_label(number : int):
+	energy_cell_label.text = "x " + str(number)
+
 @onready var puzzles = Bomb.get_children()
 var puzzle_solutions = {}
 
