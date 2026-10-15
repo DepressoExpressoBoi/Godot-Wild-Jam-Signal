@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bgijkv17ndprg"]
+
+[ext_resource type="Script" uid="uid://r48cnxe01108" path="res://scripts/puzzle_scripts/puzzle_slot_game.gd" id="1_mw0ea"]
+
+[node name="PuzzleSlotGame" type="Control" unique_id=1791977484]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1000.0
+offset_bottom = 1000.0
+script = ExtResource("1_mw0ea")
+
+[node name="upButton" type="Button" parent="." unique_id=1962104374]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 150.0
+
+[node name="downButton" type="Button" parent="." unique_id=2120196875]
+layout_mode = 0
+offset_top = 305.0
+offset_right = 150.0
+offset_bottom = 455.0
