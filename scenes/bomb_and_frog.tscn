@@ -15,4 +15,15 @@ scale = Vector2(1, 1)
 position = Vector2(980, 209)
 scale = Vector2(2.328125, 2.1640625)
 
+[node name="timerLabel" type="Label" parent="." unique_id=1744390657]
+offset_left = 442.0
+offset_right = 596.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 50
+text = "00 : 00"
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=640028173]
+wait_time = 150.0
+
 [connection signal="input_event" from="Jimmy" to="." method="_on_jimmy_input_event"]

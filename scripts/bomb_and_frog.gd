@@ -3,6 +3,10 @@ extends Node2D
 @onready var Bomb = $Bomb
 @onready var Jimmy = $Jimmy
 
+# adding timer funcionality, t.c.
+@onready var label = $timerLabel
+@onready var timer = $Timer
+
 @onready var puzzles = Bomb.get_children()
 var puzzle_solutions = {}
 var jimmy_clues
@@ -11,7 +15,20 @@ var jimmy_clues
 # Jimmy.play("purple_circle")
 
 func _ready() -> void:
-	pass
+	# adding timer to the ready func, t.c.
+	timer.start()
+	
+func time_left_to_live():
+	var time_left = timer.time_left
+	var minute = floor(time_left / 60)
+	var second = int(time_left) % 60
+	return [minute, second]
+	
+func _process(delta):
+	label.text = "%02d : %02d" % time_left_to_live()
+	
+	
+	#pass
 	#for puzzle in puzzles:
 		#puzzle_solutions.set(puzzle.color_designation, puzzle.shape_solution)
 #
