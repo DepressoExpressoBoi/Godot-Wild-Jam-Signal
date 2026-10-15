@@ -27,7 +27,7 @@ func _ready() -> void:
 	print(shape_solution)
 
 func create_shape_solution() -> void:
-	var shapes_to_pick = 2 #randi_range(1,5)
+	var shapes_to_pick = randi_range(1,5)
 	var shape_options_copy = shape_options.duplicate()
 	
 	shape_options_copy.shuffle()

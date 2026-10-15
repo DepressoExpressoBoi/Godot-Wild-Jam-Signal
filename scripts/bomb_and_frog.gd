@@ -26,13 +26,6 @@ func time_left_to_live():
 	
 func _process(delta):
 	label.text = "%02d : %02d" % time_left_to_live()
-	
-	
-	#pass
-	#for puzzle in puzzles:
-		#puzzle_solutions.set(puzzle.color_designation, puzzle.shape_solution)
-#
-	#print(puzzle_solutions)
 
 # This function will play the animation for one the random clues for all the puzzles. Currently it only does the purple
 # puzzle clues. It checks the puzzles individual copy of their shape_solution array for the clue to give. The PowerSLide
