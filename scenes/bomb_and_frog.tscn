@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://cp5q1kunhyohj"]
 
 [ext_resource type="PackedScene" uid="uid://cecyb2swr8ihe" path="res://scenes/bomb.tscn" id="1_1vjqw"]
-[ext_resource type="Script" uid="uid://bkolraw76h5ge" path="res://scenes/bomb_and_frog.gd" id="1_q7c2y"]
+[ext_resource type="Script" uid="uid://bkolraw76h5ge" path="res://scripts/bomb_and_frog.gd" id="1_q7c2y"]
 [ext_resource type="PackedScene" uid="uid://c0qs03ki7ooxu" path="res://scenes/jimmy.tscn" id="2_xegqa"]
 
 [node name="BombAndFrog" type="Node2D" unique_id=1950971119]
 script = ExtResource("1_q7c2y")
 
 [node name="Bomb" parent="." unique_id=258079969 instance=ExtResource("1_1vjqw")]
-position = Vector2(542, 425)
+position = Vector2(535, 402)
+scale = Vector2(1, 1)
 
 [node name="Jimmy" parent="." unique_id=599400028 instance=ExtResource("2_xegqa")]
 position = Vector2(980, 209)

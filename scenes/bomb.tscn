@@ -1,19 +1,23 @@
 [gd_scene format=3 uid="uid://cecyb2swr8ihe"]
 
-[ext_resource type="Texture2D" uid="uid://bgfarc1ngqshe" path="res://assets/icon.svg" id="1_4kkau"]
+[ext_resource type="Texture2D" uid="uid://d00iwtmqsre37" path="res://assets/la_bomba.png" id="1_j15uc"]
+[ext_resource type="PackedScene" uid="uid://bkyl2ft0vr0v6" path="res://scenes/puzzle_scenes/wire_match.tscn" id="2_84slv"]
 [ext_resource type="PackedScene" uid="uid://c8llpsare1wuv" path="res://scenes/puzzle_scenes/power_sliders.tscn" id="2_j15uc"]
-[ext_resource type="PackedScene" uid="uid://ctlippocb5mar" path="res://scenes/puzzle_scenes/puzzle_a.tscn" id="2_vpdcx"]
 
 [node name="Bomb" type="Sprite2D" unique_id=258079969]
 scale = Vector2(2, 2)
-texture = ExtResource("1_4kkau")
+texture = ExtResource("1_j15uc")
+
+[node name="WireMatch" parent="." unique_id=1920518845 instance=ExtResource("2_84slv")]
+offset_left = -175.0
+offset_top = 19.0
+offset_right = -303.0
+offset_bottom = 371.0
+scale = Vector2(0.075, 0.075)
 
 [node name="PowerSliders" parent="." unique_id=124821330 instance=ExtResource("2_j15uc")]
-offset_left = 5.0
-offset_top = 4.5
-offset_right = -73.5
-offset_bottom = -71.0
-
-[node name="PuzzleA" parent="." unique_id=222436367 instance=ExtResource("2_vpdcx")]
-position = Vector2(-30.5, -27.999989)
-scale = Vector2(0.3230725, 0.349532)
+offset_left = 107.0
+offset_top = 23.0
+offset_right = -21.0
+offset_bottom = 375.0
+scale = Vector2(0.075, 0.075)
