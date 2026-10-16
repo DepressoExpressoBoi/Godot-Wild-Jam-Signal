@@ -51,7 +51,6 @@ func _ready() -> void:
 	create_shape_solution()
 	static_shape_solution = shape_solution.duplicate()
 	assign_shape_to_buttons()
-	print(shape_solution)
 	
 	Wire1.default_color = Color(randf(), randf(), randf())
 	Wire2.default_color = Color(randf(), randf(), randf())
