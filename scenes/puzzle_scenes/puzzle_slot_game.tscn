@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://r48cnxe01108" path="res://scripts/puzzle_scripts/puzzle_slot_game.gd" id="1_mw0ea"]
 [ext_resource type="Texture2D" uid="uid://cb6vu75yduqq0" path="res://assets/base_jimmy.png" id="2_83wsu"]
-[ext_resource type="Texture2D" uid="uid://bnwrg02rf3ysm" path="res://assets/jimmy_purple_moon.png" id="3_evd4e"]
+[ext_resource type="Texture2D" uid="uid://blw2bwepgm4f1" path="res://assets/circle_puzzle.png" id="3_g8ove"]
+[ext_resource type="Texture2D" uid="uid://b3okb2kou3jl4" path="res://assets/fork_puzzle.png" id="4_sm3ui"]
+[ext_resource type="Texture2D" uid="uid://ckoqa8mi2wskn" path="res://assets/moon_puzzle.png" id="5_cvwat"]
+[ext_resource type="Texture2D" uid="uid://e07y6rtoep31" path="res://assets/star_puzzle.png" id="6_ywkwj"]
+[ext_resource type="Texture2D" uid="uid://dqm8c6noy3qax" path="res://assets/triangle_puzzle.png" id="7_0ssu1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_33pvg"]
 animations = [{
@@ -16,11 +20,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_evd4e")
+"texture": ExtResource("3_g8ove")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sm3ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cvwat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ywkwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0ssu1")
 }],
 "loop": true,
-"name": &"new_animation",
-"speed": 5.0
+"name": &"shape_lock",
+"speed": 1.0
 }]
 
 [node name="PuzzleSlotGame" type="Control" unique_id=1791977484]
@@ -38,10 +54,12 @@ offset_right = 256.0
 offset_bottom = 185.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=94136638]
-position = Vector2(223, 300)
+position = Vector2(216.00002, 300)
 scale = Vector2(0.65625, 0.6875)
 sprite_frames = SubResource("SpriteFrames_33pvg")
-animation = &"new_animation"
+animation = &"shape_lock"
+frame = 2
+frame_progress = 0.25082636
 
 [node name="downButton1" type="Button" parent="." unique_id=2120196875]
 layout_mode = 0

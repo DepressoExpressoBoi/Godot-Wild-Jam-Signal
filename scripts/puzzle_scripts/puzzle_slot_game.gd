@@ -1,8 +1,5 @@
 extends Control
 
-# using this to get the button as global
-@onready var up_button_1 =$upButton1
-
 func _ready():
 	# making the up button 1, t.c
 	var upButton1 = $upButton1
@@ -14,11 +11,17 @@ func _ready():
 	
 	# animation spot
 	
-	# 1. make the images that are going to be iterated through
+	# 1. make the images that are going to be iterated through [done, have tester images in animated sprite 2d]
+	
 		# 1b. add the "	Jimmy.animation.play(random_puzzle + '_' + random_puzzle_clue)"
 		# from the bomb_and_frog file and the .play() stuff is not needed
 		
-		#2c. make sure the signals work with the buttons when they are pressed
+		# 2c. make sure the signals work with the buttons when they are pressed
+		
+		
+		# making the animated sprite 2d move when the button is pressed needs
+		# the button to signal to be connected in script and then to call the 
+		# .play() method in the animated sprite 2d part of the code
 		
 		
 	
