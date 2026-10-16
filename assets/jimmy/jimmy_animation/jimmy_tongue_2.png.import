@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp528vn2nyk18"
-path="res://.godot/imported/jimmy_tongue_3.png-3906f5fc40d5ae7e3a2e69eb9daa16b5.ctex"
+uid="uid://c8giomg1b5877"
+path="res://.godot/imported/jimmy_tongue_2.png-909c6b72973ce9a82f3bc02949a78136.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jimmy_tongue_3.png"
-dest_files=["res://.godot/imported/jimmy_tongue_3.png-3906f5fc40d5ae7e3a2e69eb9daa16b5.ctex"]
+source_file="res://assets/jimmy/jimmy_animation/jimmy_tongue_2.png"
+dest_files=["res://.godot/imported/jimmy_tongue_2.png-909c6b72973ce9a82f3bc02949a78136.ctex"]
 
 [params]
 

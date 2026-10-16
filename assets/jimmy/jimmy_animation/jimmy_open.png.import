@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3ipyjanw5bjq"
-path="res://.godot/imported/jimmy_purple_sign.png-f5bf95b481e82d4b0b63597121750988.ctex"
+uid="uid://boxy74jrs0ndc"
+path="res://.godot/imported/jimmy_open.png-de78a519fefa50e3e50240840b136ec5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jimmy_purple_sign.png"
-dest_files=["res://.godot/imported/jimmy_purple_sign.png-f5bf95b481e82d4b0b63597121750988.ctex"]
+source_file="res://assets/jimmy/jimmy_animation/jimmy_open.png"
+dest_files=["res://.godot/imported/jimmy_open.png-de78a519fefa50e3e50240840b136ec5.ctex"]
 
 [params]
 

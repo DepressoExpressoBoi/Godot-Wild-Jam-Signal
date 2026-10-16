@@ -7,11 +7,21 @@ var left_button1_selected = false
 var left_button2_selected = false
 var left_button3_selected = false
 var left_button4_selected = false
-var left_button_selected = false
+
 var wire1connected = false
 var wire2connected = false
 var wire3connected = false
 var wire4connected = false
+
+var right_area1_entered = false
+var right_area2_entered = false
+var right_area3_entered = false
+var right_area4_entered = false
+
+var wire1_shape_connection = []
+var wire2_shape_connection = []
+var wire3_shape_connection = []
+var wire4_shape_connection = []
 
 @export var solved = false
 @export var shape_solution = []
@@ -21,29 +31,34 @@ var wire4connected = false
 @onready var ShapeButtonLeft2 = $ShapeButtonLeft2
 @onready var ShapeButtonLeft3 = $ShapeButtonLeft3
 @onready var ShapeButtonLeft4 = $ShapeButtonLeft4
-@onready var ShapeButtonRight1 = $ShapeButtonRight1
-@onready var ShapeButtonRight2 = $ShapeButtonRight2
-@onready var ShapeButtonRight3 = $ShapeButtonRight3
-@onready var ShapeButtonRight4 = $ShapeButtonRight4
-
+@onready var ShapeConnectorRight1 = $ShapeConnectorRight1
+@onready var ShapeConnectorRight2 = $ShapeConnectorRight2
+@onready var ShapeConnectorRight3 = $ShapeConnectorRight3
+@onready var ShapeConnectorRight4 = $ShapeConnectorRight4
 @onready var Wire1 = $Wire1
 @onready var Wire2 = $Wire2
 @onready var Wire3 = $Wire3
 @onready var Wire4 = $Wire4
 
-#@onready var shape_buttons = [ShapeButtonLeft1, ShapeButtonLeft2, ShapeButtonLeft3, ShapeButtonLeft4, ShapeButtonRight1, ShapeButtonRight2, ShapeButtonRight3, ShapeButtonRight4]
-# Note for tomorrow Said, I figured out the issue it has to do with global and local positioning of node elemets. That means you can make it draggable.
-# My current idea is to remove the rightshapebuttons and make them area2ds. Then when leftbutton is up, check if they've entered the area
-# and if so then leave button connected, otherwise return to original position. This will also help with disconnecting and reconnecting wires.
-# Mifht have to consider edge case of trying to connect to an end that already has a wire. 
+@onready var ShapeButtonLeft1DefaultPos = ShapeButtonLeft1.global_position
+@onready var ShapeButtonLeft2DefaultPos = ShapeButtonLeft2.global_position
+@onready var ShapeButtonLeft3DefaultPos = ShapeButtonLeft3.global_position
+@onready var ShapeButtonLeft4DefaultPos = ShapeButtonLeft4.global_position
+
 
 func _ready() -> void:
 	create_shape_solution()
 	static_shape_solution = shape_solution.duplicate()
 	assign_shape_to_buttons()
 	print(shape_solution)
-	#for shape_button in shape_buttons:
-		#print(shape_button.shape)
+	
+	Wire1.default_color = Color(randf(), randf(), randf())
+	Wire2.default_color = Color(randf(), randf(), randf())
+	Wire3.default_color = Color(randf(), randf(), randf())
+	Wire4.default_color = Color(randf(), randf(), randf())
+		
+func _process(delta):
+	follow_mouse()
 		
 func create_shape_solution() -> void:
 	var shape_options_copy = shape_options.duplicate()
@@ -62,7 +77,8 @@ func create_shape_solution() -> void:
 	
 func assign_shape_to_buttons() -> void:
 	var left_shape_buttons = [ShapeButtonLeft1, ShapeButtonLeft2, ShapeButtonLeft3, ShapeButtonLeft4]
-	var right_shape_buttons = [ShapeButtonRight1, ShapeButtonRight2, ShapeButtonRight3, ShapeButtonRight4]
+	#var right_shape_buttons = [ShapeButtonRight1, ShapeButtonRight2, ShapeButtonRight3, ShapeButtonRight4]
+	var right_shape_connectors = [ShapeConnectorRight1, ShapeConnectorRight2, ShapeConnectorRight3, ShapeConnectorRight4]
 	var left_shapes = []
 	var right_shapes = []
 	var left_shape
@@ -79,142 +95,292 @@ func assign_shape_to_buttons() -> void:
 		right_shapes.erase(right_shape)
 		
 		left_shape_buttons[i].shape = left_shape
-		right_shape_buttons[i].shape = right_shape
+		right_shape_connectors[i].shape = right_shape
+		
+func check_solution() -> void:
+	print('Wire1 Connections: ', wire1_shape_connection)
+	print('Wire2 Connections: ', wire2_shape_connection)
+	print('Wire3 Connections: ', wire3_shape_connection)
+	print('Wire4 Connections: ', wire4_shape_connection)
+	
+	#shape_solution.append(wire1_shape_connection)
+	#shape_solution.append(wire2_shape_connection)
+	#shape_solution.append(wire3_shape_connection)
+	#shape_solution.append(wire4_shape_connection)
+	print('Dynamic Shape Solution in Yellow: ', shape_solution)
 
-func _on_shape_button_left_1_pressed() -> void:
-	if not left_button_selected and not wire1connected:
-		left_button_selected = true
-		left_button1_selected = true
-		print(ShapeButtonLeft1.shape)
-	elif left_button_selected and not wire1connected:
-		left_button_selected = false
-		left_button1_selected = false
-		print('deselected wire 1')
-
-func _on_shape_button_left_2_pressed() -> void:
-	if not left_button_selected and not wire2connected:
-		left_button_selected = true
-		left_button2_selected = true
-		print(ShapeButtonLeft2.shape)
-	elif left_button_selected and not wire2connected:
-		left_button_selected = false
-		left_button2_selected = false
-		print('deselected wire 2')
-
-func _on_shape_button_left_3_pressed() -> void:
-	if not left_button_selected and not wire3connected:
-		left_button_selected = true
-		left_button3_selected = true
-		print(ShapeButtonLeft3.shape)
-	elif left_button_selected and not wire3connected:
-		left_button_selected = false
-		left_button3_selected = false
-		print('deselected wire 3')
-
-func _on_shape_button_left_4_pressed() -> void:
-	if not left_button_selected and not wire4connected:
-		left_button_selected = true
-		left_button4_selected = true
-		print(ShapeButtonLeft4.shape)
-	elif left_button_selected and not wire4connected:
-		left_button_selected = false
-		left_button4_selected = false
-		print('deselected wire 4')
-
-func _on_shape_button_right_1_pressed() -> void:
-	if left_button_selected and not wire1connected and not wire2connected and not wire3connected and not wire4connected:
-		if left_button1_selected:
+func solved_puzzle_conditions() -> void:
+	pass
+		
+func follow_mouse() -> void:
+	if left_button1_selected:
+		var offset = (ShapeButtonLeft1.size * 0.5 * ShapeButtonLeft1.get_global_transform().get_scale())
+		ShapeButtonLeft1.global_position = get_global_mouse_position()
+		Wire1.clear_points()
+		Wire1.add_point(Wire1.to_local(ShapeButtonLeft1DefaultPos + offset - Vector2(offset.x, 0)))
+		Wire1.add_point(Wire1.to_local(get_global_mouse_position()))
+	elif left_button2_selected:
+		var offset = (ShapeButtonLeft2.size * 0.5 * ShapeButtonLeft1.get_global_transform().get_scale())
+		ShapeButtonLeft2.global_position = get_global_mouse_position()
+		Wire2.clear_points()
+		Wire2.add_point(Wire2.to_local(ShapeButtonLeft2DefaultPos + offset - Vector2(offset.x, 0)))
+		Wire2.add_point(Wire2.to_local(get_global_mouse_position()))
+	elif left_button3_selected:
+		var offset = (ShapeButtonLeft3.size * 0.5 * ShapeButtonLeft1.get_global_transform().get_scale())
+		ShapeButtonLeft3.global_position = get_global_mouse_position()
+		Wire3.clear_points()
+		Wire3.add_point(Wire3.to_local(ShapeButtonLeft3DefaultPos + offset - Vector2(offset.x, 0)))
+		Wire3.add_point(Wire3.to_local(get_global_mouse_position()))
+	elif left_button4_selected:
+		var offset = (ShapeButtonLeft4.size * 0.5 * ShapeButtonLeft1.get_global_transform().get_scale())
+		ShapeButtonLeft4.global_position = get_global_mouse_position()
+		Wire4.clear_points()
+		Wire4.add_point(Wire4.to_local(ShapeButtonLeft4DefaultPos + offset - Vector2(offset.x, 0)))
+		Wire4.add_point(Wire4.to_local(get_global_mouse_position()))
+		
+func check_wire_connection(shape_connector) -> void:
+	if left_button1_selected:
+		if wire1connected:
+			wire1connected = false
+			ShapeButtonLeft1.global_position = ShapeButtonLeft1DefaultPos
+			Wire1.clear_points()
+			
+			print('In wire connection (on): ', wire1_shape_connection)
+			
+			if wire1_shape_connection not in shape_solution:
+				print('static_shape_solution: ', static_shape_solution)
+				if wire1_shape_connection in static_shape_solution:
+					print(shape_solution)
+					shape_solution.append(wire1_shape_connection)
+					print(shape_solution)
+			
+			wire1_shape_connection.clear()
+		else:
+			var offset = (ShapeButtonLeft1.size * 0.5 * ShapeButtonLeft1.get_global_transform().get_scale())
+			var connector_collision_shape = shape_connector.get_node('CollisionShape2D')
 			wire1connected = true
+			ShapeButtonLeft1.global_position = shape_connector.global_position - (connector_collision_shape.shape.size * 0.5 * connector_collision_shape.global_scale)
 			Wire1.clear_points()
-			# Fixed code to draw line from the center of the buttons
-			# (ShapeButtonLeft1.size * 0.5 * ShapeButtonLeft1.global_scale)
-			Wire1.add_point(Wire1.to_local(ShapeButtonLeft1.global_position))
-			Wire1.add_point(Wire1.to_local(ShapeButtonRight1.global_position))
-			print(ShapeButtonLeft1.global_position)
-			print(Wire1.to_local(ShapeButtonLeft1.global_position))
-			print(ShapeButtonRight1.global_position)
-			print(Wire1.to_local(ShapeButtonRight1.global_position))
-		elif left_button2_selected:
+			Wire1.add_point(Wire1.to_local(ShapeButtonLeft1DefaultPos + offset - Vector2(offset.x, 0)))
+			Wire1.add_point(Wire1.to_local(shape_connector.global_position))
+			
+			wire1_shape_connection.append(ShapeButtonLeft1.shape)
+			wire1_shape_connection.append(shape_connector.shape)
+			
+			print('In wire connection (off): ', wire1_shape_connection)
+			
+			if wire1_shape_connection in shape_solution:
+				print('static_shape_solution: ', static_shape_solution)
+				if wire1_shape_connection in static_shape_solution:
+					print(shape_solution)
+					shape_solution.erase(wire1_shape_connection)
+					print(shape_solution)
+			
+			check_solution()
+			solved_puzzle_conditions()
+	elif left_button2_selected:
+		if wire2connected:
+			wire2connected = false
+			ShapeButtonLeft2.global_position = ShapeButtonLeft2DefaultPos
+			Wire2.clear_points()
+			
+			wire2_shape_connection.erase(ShapeButtonLeft2.shape)
+			wire2_shape_connection.erase(shape_connector.shape)
+		else:
+			var offset = (ShapeButtonLeft2.size * 0.5 * ShapeButtonLeft2.get_global_transform().get_scale())
+			var connector_collision_shape = shape_connector.get_node('CollisionShape2D')
 			wire2connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft2.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight1.global_position * 0.075)
-		elif left_button3_selected:
+			ShapeButtonLeft2.global_position = shape_connector.global_position - (connector_collision_shape.shape.size * 0.5 * connector_collision_shape.global_scale)
+			Wire2.clear_points()
+			Wire2.add_point(Wire2.to_local(ShapeButtonLeft2DefaultPos + offset - Vector2(offset.x, 0)))
+			Wire2.add_point(Wire2.to_local(shape_connector.global_position))
+			
+			wire2_shape_connection.append(ShapeButtonLeft2.shape)
+			wire2_shape_connection.append(shape_connector.shape)
+			
+			check_solution()
+			solved_puzzle_conditions()
+	elif left_button3_selected:
+		if wire3connected:
+			wire3connected = false
+			ShapeButtonLeft3.global_position = ShapeButtonLeft3DefaultPos
+			Wire3.clear_points()
+			
+			wire3_shape_connection.erase(ShapeButtonLeft3.shape)
+			wire3_shape_connection.erase(shape_connector.shape)
+		else:
+			var offset = (ShapeButtonLeft3.size * 0.5 * ShapeButtonLeft3.get_global_transform().get_scale())
+			var connector_collision_shape = shape_connector.get_node('CollisionShape2D')
 			wire3connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft3.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight1.global_position * 0.075)
-		elif left_button4_selected:
+			ShapeButtonLeft3.global_position = shape_connector.global_position - (connector_collision_shape.shape.size * 0.5 * connector_collision_shape.global_scale)
+			Wire3.clear_points()
+			Wire3.add_point(Wire3.to_local(ShapeButtonLeft3DefaultPos + offset - Vector2(offset.x, 0)))
+			Wire3.add_point(Wire3.to_local(shape_connector.global_position))
+			
+			wire3_shape_connection.append(ShapeButtonLeft3.shape)
+			wire3_shape_connection.append(shape_connector.shape)
+			
+			check_solution()
+			solved_puzzle_conditions()
+	elif left_button4_selected:
+		if wire4connected:
+			wire4connected = false
+			ShapeButtonLeft4.global_position = ShapeButtonLeft4DefaultPos
+			Wire4.clear_points()
+			
+			wire4_shape_connection.erase(ShapeButtonLeft4.shape)
+			wire4_shape_connection.erase(shape_connector.shape)
+		else:
+			var offset = (ShapeButtonLeft4.size * 0.5 * ShapeButtonLeft4.get_global_transform().get_scale())
+			var connector_collision_shape = shape_connector.get_node('CollisionShape2D')
 			wire4connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft4.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight1.global_position * 0.075)
+			ShapeButtonLeft4.global_position = shape_connector.global_position - (connector_collision_shape.shape.size * 0.5 * connector_collision_shape.global_scale)
+			Wire4.clear_points()
+			Wire4.add_point(Wire4.to_local(ShapeButtonLeft4DefaultPos + offset - Vector2(offset.x, 0)))
+			Wire4.add_point(Wire4.to_local(shape_connector.global_position))
+			
+			wire4_shape_connection.append(ShapeButtonLeft4.shape)
+			wire4_shape_connection.append(shape_connector.shape)
+			
+			check_solution()
+			solved_puzzle_conditions()
 
-func _on_shape_button_right_2_pressed() -> void:
-	if left_button_selected and not wire1connected and not wire2connected and not wire3connected and not wire4connected:
-		if left_button1_selected:
-			wire1connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft1.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight2.global_position * 0.075)
-		elif left_button2_selected:
-			wire2connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft2.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight2.global_position * 0.075)
-		elif left_button3_selected:
-			wire3connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft3.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight2.global_position * 0.075)
-		elif left_button4_selected:
-			wire4connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft4.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight2.global_position * 0.075)
+func _on_shape_button_left_1_button_down() -> void:
+	left_button1_selected = true
 
-func _on_shape_button_right_3_pressed() -> void:
-	if left_button_selected and not wire1connected and not wire2connected and not wire3connected and not wire4connected:
-		if left_button1_selected:
-			wire1connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft1.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight3.global_position * 0.075)
-		elif left_button2_selected:
-			wire2connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft2.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight3.global_position * 0.075)
-		elif left_button3_selected:
-			wire3connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft3.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight3.global_position * 0.075)
-		elif left_button4_selected:
-			wire4connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft4.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight3.global_position * 0.075)
+func _on_shape_button_left_1_button_up() -> void:
+	print('button_up flags: ', right_area1_entered, right_area2_entered, right_area3_entered, right_area4_entered)
+	print('In button up: ', wire1_shape_connection)
+	if right_area1_entered:
+		wire1_shape_connection.clear()
+		check_wire_connection(ShapeConnectorRight1)
+	elif right_area2_entered:
+		wire1_shape_connection.clear()
+		check_wire_connection(ShapeConnectorRight2)
+	elif right_area3_entered:
+		wire1_shape_connection.clear()
+		check_wire_connection(ShapeConnectorRight3)
+	elif right_area4_entered:
+		wire1_shape_connection.clear()
+		check_wire_connection(ShapeConnectorRight4)
+	elif not right_area1_entered:
+		check_wire_connection(ShapeConnectorRight1)
+		ShapeButtonLeft1.global_position = ShapeButtonLeft1DefaultPos
+		Wire1.clear_points()
+	elif not right_area2_entered:
+		check_wire_connection(ShapeConnectorRight1)
+		ShapeButtonLeft1.global_position = ShapeButtonLeft1DefaultPos
+		Wire1.clear_points()
+	elif not right_area3_entered:
+		check_wire_connection(ShapeConnectorRight1)
+		ShapeButtonLeft1.global_position = ShapeButtonLeft1DefaultPos
+		Wire1.clear_points()
+	elif not right_area4_entered:
+		check_wire_connection(ShapeConnectorRight1)
+		ShapeButtonLeft1.global_position = ShapeButtonLeft1DefaultPos
+		Wire1.clear_points()
+		
+	if not wire1connected:
+		ShapeButtonLeft1.global_position = ShapeButtonLeft1DefaultPos
+		Wire1.clear_points()
+		
+	left_button1_selected = false
+	#right_area1_entered = false
+	#right_area2_entered = false
+	#right_area3_entered = false
+	#right_area4_entered = false
 
-func _on_shape_button_right_4_pressed() -> void:
-	if left_button_selected and not wire1connected and not wire2connected and not wire3connected and not wire4connected:
-		if left_button1_selected:
-			wire1connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft1.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight4.global_position * 0.075)
-		elif left_button2_selected:
-			wire2connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft2.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight4.global_position * 0.075)
-		elif left_button3_selected:
-			wire3connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft3.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight4.global_position * 0.075)
-		elif left_button4_selected:
-			wire4connected = true
-			Wire1.clear_points()
-			Wire1.add_point(ShapeButtonLeft4.global_position * 0.075)
-			Wire1.add_point(ShapeButtonRight4.global_position * 0.075)
+func _on_shape_button_left_2_button_down() -> void:
+	left_button2_selected = true
+
+func _on_shape_button_left_2_button_up() -> void:
+	if right_area1_entered:
+		check_wire_connection(ShapeConnectorRight1)
+		right_area1_entered = false
+	elif right_area2_entered:
+		check_wire_connection(ShapeConnectorRight2)
+		right_area2_entered = false
+	elif right_area3_entered:
+		check_wire_connection(ShapeConnectorRight3)
+		right_area3_entered = false
+	elif right_area4_entered:
+		check_wire_connection(ShapeConnectorRight4)
+		right_area4_entered = false
+	
+	if not wire2connected:
+		ShapeButtonLeft2.global_position = ShapeButtonLeft2DefaultPos
+		Wire2.clear_points()
+		
+	left_button2_selected = false
+
+func _on_shape_button_left_3_button_down() -> void:
+	left_button3_selected = true
+
+func _on_shape_button_left_3_button_up() -> void:
+	if right_area1_entered:
+		check_wire_connection(ShapeConnectorRight1)
+		right_area1_entered = false
+	elif right_area2_entered:
+		check_wire_connection(ShapeConnectorRight2)
+		right_area2_entered = false
+	elif right_area3_entered:
+		check_wire_connection(ShapeConnectorRight3)
+		right_area3_entered = false
+	elif right_area4_entered:
+		check_wire_connection(ShapeConnectorRight4)
+		right_area4_entered = false
+	
+	if not wire3connected:
+		ShapeButtonLeft3.global_position = ShapeButtonLeft3DefaultPos
+		Wire3.clear_points()
+		
+	left_button3_selected = false
+
+func _on_shape_button_left_4_button_down() -> void:
+	left_button4_selected = true
+
+func _on_shape_button_left_4_button_up() -> void:
+	if right_area1_entered:
+		check_wire_connection(ShapeConnectorRight1)
+		right_area1_entered = false
+	elif right_area2_entered:
+		check_wire_connection(ShapeConnectorRight2)
+		right_area2_entered = false
+	elif right_area3_entered:
+		check_wire_connection(ShapeConnectorRight3)
+		right_area3_entered = false
+	elif right_area4_entered:
+		check_wire_connection(ShapeConnectorRight4)
+		right_area4_entered = false
+	
+	if not wire4connected:
+		ShapeButtonLeft4.global_position = ShapeButtonLeft4DefaultPos
+		Wire4.clear_points()
+		
+	left_button4_selected = false
+
+func _on_shape_connector_right_1_mouse_entered() -> void:
+	right_area1_entered = true
+	print('entered')
+
+func _on_shape_connector_right_2_mouse_entered() -> void:
+	right_area2_entered = true
+
+func _on_shape_connector_right_3_mouse_entered() -> void:
+	right_area3_entered = true
+
+func _on_shape_connector_right_4_mouse_entered() -> void:
+	right_area4_entered = true
+
+func _on_shape_connector_right_1_mouse_exited() -> void:
+	right_area1_entered = false
+	print('exited')
+
+func _on_shape_connector_right_2_mouse_exited() -> void:
+	right_area2_entered = false
+
+func _on_shape_connector_right_3_mouse_exited() -> void:
+	right_area3_entered = false
+
+func _on_shape_connector_right_4_mouse_exited() -> void:
+	right_area4_entered = false

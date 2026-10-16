@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnwrg02rf3ysm"
-path="res://.godot/imported/jimmy_purple_moon.png-370fe9f766b54059852e7ddba5463370.ctex"
+uid="uid://b4fnfvmlxq7j2"
+path="res://.godot/imported/jimmy_purple_star.png-6a317924cc9c9fa0c3449c651e2cc82e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jimmy_purple_moon.png"
-dest_files=["res://.godot/imported/jimmy_purple_moon.png-370fe9f766b54059852e7ddba5463370.ctex"]
+source_file="res://assets/jimmy/jimmy_clues/jimmy_purple_star.png"
+dest_files=["res://.godot/imported/jimmy_purple_star.png-6a317924cc9c9fa0c3449c651e2cc82e.ctex"]
 
 [params]
 

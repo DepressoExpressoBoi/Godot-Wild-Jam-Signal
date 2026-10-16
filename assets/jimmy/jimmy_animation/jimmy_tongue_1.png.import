@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwknmt7kgc0qv"
-path="res://.godot/imported/jimmy_purple_fork4.png-c38f1fc85d6df30901a70595f24c52fd.ctex"
+uid="uid://c6pdglafqcfdf"
+path="res://.godot/imported/jimmy_tongue_1.png-88c7b54b853ce174619c21f1cb27ab25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jimmy_purple_fork4.png"
-dest_files=["res://.godot/imported/jimmy_purple_fork4.png-c38f1fc85d6df30901a70595f24c52fd.ctex"]
+source_file="res://assets/jimmy/jimmy_animation/jimmy_tongue_1.png"
+dest_files=["res://.godot/imported/jimmy_tongue_1.png-88c7b54b853ce174619c21f1cb27ab25.ctex"]
 
 [params]
 
