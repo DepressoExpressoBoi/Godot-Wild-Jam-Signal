@@ -1,5 +1,6 @@
 extends Sprite2D
-@onready var all_puzzles = [$WireMatch, $PowerSliders, $PowerSliders2, $WireMatch2, $WireMatch3, $PowerSliders3]
+#@onready var all_puzzles = [$WireMatch, $PowerSliders, $PowerSliders2, $WireMatch2, $WireMatch3, $PowerSliders3]
+@onready var all_puzzles = get_children()
 var bomb_puzzles = []
 var colors = ['red', 'yellow', 'green', 'blue']
 

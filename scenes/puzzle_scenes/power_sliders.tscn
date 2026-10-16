@@ -1,6 +1,21 @@
 [gd_scene format=3 uid="uid://c8llpsare1wuv"]
 
 [ext_resource type="Script" uid="uid://dmbr8lgepgxln" path="res://scripts/puzzle_scripts/power_sliders.gd" id="1_5ra1q"]
+[ext_resource type="Texture2D" uid="uid://cd5r2ibcvp6pg" path="res://assets/shape_icons/moon/moon_icon_grabber.png" id="2_oywjm"]
+[ext_resource type="Texture2D" uid="uid://dnjfp6httqfq8" path="res://assets/shape_icons/moon/moon_icon_grabber_highlight.png" id="3_q5otn"]
+[ext_resource type="Texture2D" uid="uid://dvvldh7e2hl8" path="res://assets/shape_icons/moon/moon_icon_grabber_disbaled.png" id="4_7iq0n"]
+[ext_resource type="Texture2D" uid="uid://k0b4528komes" path="res://assets/shape_icons/circle/circle_icon_grabber.png" id="5_81wx4"]
+[ext_resource type="Texture2D" uid="uid://cwf6kburc2qie" path="res://assets/shape_icons/circle/circle_icon_grabber_highlight.png" id="6_3bsub"]
+[ext_resource type="Texture2D" uid="uid://wx3gasitwedh" path="res://assets/shape_icons/circle/circle_icon_grabber_disabled.png" id="7_tbp3k"]
+[ext_resource type="Texture2D" uid="uid://cwdd13k6r45t6" path="res://assets/shape_icons/triangle/triangle_icon_grabber.png" id="8_gxvee"]
+[ext_resource type="Texture2D" uid="uid://strtd7ifv0vq" path="res://assets/shape_icons/triangle/triangle_icon_grabber_highlight.png" id="9_w7yhs"]
+[ext_resource type="Texture2D" uid="uid://bk0klkqtovov7" path="res://assets/shape_icons/triangle/triangle_icon_grabber_disabled.png" id="10_mhygn"]
+[ext_resource type="Texture2D" uid="uid://5g11dfdeetd5" path="res://assets/shape_icons/fork4/fork4_icon_grabber.png" id="11_6fg5l"]
+[ext_resource type="Texture2D" uid="uid://cp4dpr5vc20p4" path="res://assets/shape_icons/fork4/fork4_icon_grabber_highlight.png" id="12_crmsf"]
+[ext_resource type="Texture2D" uid="uid://caorryymn8yhh" path="res://assets/shape_icons/fork4/fork4_icon_grabber_disabled.png" id="13_6fpf3"]
+[ext_resource type="Texture2D" uid="uid://c2rwenfyg6frg" path="res://assets/shape_icons/star/star_icon_grabber.png" id="14_p6idw"]
+[ext_resource type="Texture2D" uid="uid://d3ks6rinpom2i" path="res://assets/shape_icons/star/star_icon_grabber_highlight.png" id="15_bb2ht"]
+[ext_resource type="Texture2D" uid="uid://dvcmmonut6oiw" path="res://assets/shape_icons/star/star_icon_grabber_disabled.png" id="16_e8sc6"]
 
 [node name="PowerSliders" type="Control" unique_id=124821330]
 layout_mode = 3
@@ -29,6 +44,9 @@ offset_top = 256.0
 offset_right = 43.199997
 offset_bottom = 396.8
 scale = Vector2(5, 5)
+theme_override_icons/grabber = ExtResource("2_oywjm")
+theme_override_icons/grabber_highlight = ExtResource("3_q5otn")
+theme_override_icons/grabber_disabled = ExtResource("4_7iq0n")
 max_value = 1.0
 scrollable = false
 
@@ -40,6 +58,9 @@ offset_top = 256.0
 offset_right = 235.2
 offset_bottom = 396.8
 scale = Vector2(5, 5)
+theme_override_icons/grabber = ExtResource("5_81wx4")
+theme_override_icons/grabber_highlight = ExtResource("6_3bsub")
+theme_override_icons/grabber_disabled = ExtResource("7_tbp3k")
 max_value = 1.0
 scrollable = false
 
@@ -51,6 +72,9 @@ offset_top = 256.0
 offset_right = 427.2
 offset_bottom = 396.8
 scale = Vector2(5, 5)
+theme_override_icons/grabber = ExtResource("8_gxvee")
+theme_override_icons/grabber_highlight = ExtResource("9_w7yhs")
+theme_override_icons/grabber_disabled = ExtResource("10_mhygn")
 max_value = 1.0
 scrollable = false
 
@@ -62,6 +86,9 @@ offset_top = 256.0
 offset_right = 619.2
 offset_bottom = 396.8
 scale = Vector2(5, 5)
+theme_override_icons/grabber = ExtResource("11_6fg5l")
+theme_override_icons/grabber_highlight = ExtResource("12_crmsf")
+theme_override_icons/grabber_disabled = ExtResource("13_6fpf3")
 max_value = 1.0
 scrollable = false
 
@@ -73,6 +100,9 @@ offset_top = 256.0
 offset_right = 811.2
 offset_bottom = 396.8
 scale = Vector2(5, 5)
+theme_override_icons/grabber = ExtResource("14_p6idw")
+theme_override_icons/grabber_highlight = ExtResource("15_bb2ht")
+theme_override_icons/grabber_disabled = ExtResource("16_e8sc6")
 max_value = 1.0
 scrollable = false
 
