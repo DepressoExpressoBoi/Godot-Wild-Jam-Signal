@@ -27,6 +27,7 @@ mouse_filter = 2
 script = ExtResource("1_k6f0k")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=230570164]
+visible = false
 layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 1000.0
@@ -55,8 +56,9 @@ width = 15.0
 
 [node name="ShapeButtonLeft1" type="TextureButton" parent="." unique_id=2054700145]
 layout_mode = 0
+offset_left = 32.0
 offset_top = 72.0
-offset_right = 128.0
+offset_right = 160.0
 offset_bottom = 200.0
 mouse_filter = 1
 texture_normal = ExtResource("1_y2swr")
@@ -66,8 +68,9 @@ script = ExtResource("3_y35ln")
 
 [node name="ShapeButtonLeft2" type="TextureButton" parent="." unique_id=85301243]
 layout_mode = 0
+offset_left = 32.0
 offset_top = 328.0
-offset_right = 128.0
+offset_right = 160.0
 offset_bottom = 456.0
 mouse_filter = 1
 texture_normal = ExtResource("1_y2swr")
@@ -77,8 +80,9 @@ script = ExtResource("4_dk3uk")
 
 [node name="ShapeButtonLeft3" type="TextureButton" parent="." unique_id=1533555932]
 layout_mode = 0
+offset_left = 32.0
 offset_top = 592.0
-offset_right = 128.0
+offset_right = 160.0
 offset_bottom = 720.0
 mouse_filter = 1
 texture_normal = ExtResource("1_y2swr")
@@ -88,8 +92,9 @@ script = ExtResource("5_77l7s")
 
 [node name="ShapeButtonLeft4" type="TextureButton" parent="." unique_id=222264613]
 layout_mode = 0
+offset_left = 32.0
 offset_top = 824.0
-offset_right = 128.0
+offset_right = 160.0
 offset_bottom = 952.0
 mouse_filter = 1
 texture_normal = ExtResource("1_y2swr")
@@ -98,7 +103,7 @@ stretch_mode = 0
 script = ExtResource("6_frkqd")
 
 [node name="ShapeConnectorRight1" type="Area2D" parent="." unique_id=2046534735]
-position = Vector2(936, 136)
+position = Vector2(928, 136)
 script = ExtResource("11_241gc")
 
 [node name="Sprite2D" type="Sprite2D" parent="ShapeConnectorRight1" unique_id=760776953]
@@ -108,7 +113,7 @@ texture = ExtResource("1_y2swr")
 shape = SubResource("RectangleShape2D_mmtx1")
 
 [node name="ShapeConnectorRight2" type="Area2D" parent="." unique_id=1959044114]
-position = Vector2(936, 392)
+position = Vector2(928, 392)
 script = ExtResource("12_imr33")
 
 [node name="Sprite2D" type="Sprite2D" parent="ShapeConnectorRight2" unique_id=614491176]
@@ -118,7 +123,7 @@ texture = ExtResource("1_y2swr")
 shape = SubResource("RectangleShape2D_mmtx1")
 
 [node name="ShapeConnectorRight3" type="Area2D" parent="." unique_id=1642873004]
-position = Vector2(936, 656)
+position = Vector2(928, 656)
 script = ExtResource("13_mjobc")
 
 [node name="Sprite2D" type="Sprite2D" parent="ShapeConnectorRight3" unique_id=1993092046]
@@ -128,7 +133,7 @@ texture = ExtResource("1_y2swr")
 shape = SubResource("RectangleShape2D_mmtx1")
 
 [node name="ShapeConnectorRight4" type="Area2D" parent="." unique_id=1621081894]
-position = Vector2(936, 888)
+position = Vector2(928, 888)
 script = ExtResource("14_i68um")
 
 [node name="Sprite2D" type="Sprite2D" parent="ShapeConnectorRight4" unique_id=1567747921]

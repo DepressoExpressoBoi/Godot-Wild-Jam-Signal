@@ -1,6 +1,7 @@
 extends Sprite2D
-@onready var all_puzzles = [$WireMatch, $PowerSliders, $PuzzleA, $PuzzleA2, $PuzzleA3, $PuzzleA4]
+@onready var all_puzzles = [$WireMatch, $PowerSliders, $PowerSliders2, $WireMatch2, $WireMatch3, $PowerSliders3]
 var bomb_puzzles = []
+var colors = ['red', 'yellow', 'green', 'blue']
 
 # red, yellow, green, blue
 func _ready() -> void:
@@ -16,4 +17,16 @@ func _ready() -> void:
 	for puzzle in remaining_puzzles:
 		puzzle.queue_free()
 	
-	
+	for i in 4:
+		bomb_puzzles[i].color_designation = colors[i]
+		match colors[i]:
+			'red':
+				bomb_puzzles[i].position = Vector2(-460.0, -400.0)
+			'yellow':
+				bomb_puzzles[i].position = Vector2(36.0, -400.0)
+			'green':
+				bomb_puzzles[i].position = Vector2(-460.0, 32.0)
+			'blue':
+				bomb_puzzles[i].position = Vector2(36.0, 32.0)
+			'_':
+				print('You\'ve fucked up')

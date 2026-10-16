@@ -14,6 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_5ra1q")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1678242170]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 offset_right = 1000.0

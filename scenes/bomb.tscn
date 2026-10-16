@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bkyl2ft0vr0v6" path="res://scenes/puzzle_scenes/wire_match.tscn" id="2_84slv"]
 [ext_resource type="PackedScene" uid="uid://c8llpsare1wuv" path="res://scenes/puzzle_scenes/power_sliders.tscn" id="2_j15uc"]
 [ext_resource type="Script" uid="uid://ba70aqyd6uj38" path="res://scenes/bomb.gd" id="2_nxi8k"]
-[ext_resource type="PackedScene" uid="uid://ctlippocb5mar" path="res://scenes/puzzle_scenes/puzzle_a.tscn" id="5_1hf1o"]
 
 [node name="Bomb" type="Sprite2D" unique_id=258079969]
 scale = Vector2(0.25, 0.25)
@@ -14,29 +13,41 @@ script = ExtResource("2_nxi8k")
 [node name="WireMatch" parent="." unique_id=1920518845 instance=ExtResource("2_84slv")]
 offset_left = -460.0
 offset_top = 32.000004
-offset_right = -588.0
-offset_bottom = 384.0
+offset_right = -1128.0
+offset_bottom = -1356.0
 scale = Vector2(0.4, 0.4)
 
 [node name="PowerSliders" parent="." unique_id=124821330 instance=ExtResource("2_j15uc")]
-offset_left = 36.000008
-offset_top = 36.000004
-offset_right = -92.0
-offset_bottom = 388.0
+offset_left = 36.0
+offset_top = 40.0
+offset_right = -632.0
+offset_bottom = -1348.0
 scale = Vector2(0.4, 0.4)
 
-[node name="PuzzleA" parent="." unique_id=222436367 instance=ExtResource("5_1hf1o")]
-position = Vector2(-725, -97)
-rotation = -3.1415925
+[node name="PowerSliders2" parent="." unique_id=1328822591 instance=ExtResource("2_j15uc")]
+offset_left = 36.0
+offset_top = -400.0
+offset_right = -632.0
+offset_bottom = -1788.0
+scale = Vector2(0.4, 0.4)
 
-[node name="PuzzleA2" parent="." unique_id=1224516529 instance=ExtResource("5_1hf1o")]
-position = Vector2(-727, 36)
-rotation = -3.1415925
+[node name="WireMatch2" parent="." unique_id=1805075268 instance=ExtResource("2_84slv")]
+offset_left = -460.0
+offset_top = -400.0
+offset_right = -1128.0
+offset_bottom = -1788.0
+scale = Vector2(0.4, 0.4)
 
-[node name="PuzzleA3" parent="." unique_id=639904903 instance=ExtResource("5_1hf1o")]
-position = Vector2(256, -200)
-scale = Vector2(1.5, 1.5)
+[node name="WireMatch3" parent="." unique_id=978783659 instance=ExtResource("2_84slv")]
+offset_left = 35.99997
+offset_top = -400.0
+offset_right = -632.0
+offset_bottom = -1788.0
+scale = Vector2(0.4, 0.4)
 
-[node name="PuzzleA4" parent="." unique_id=1435355195 instance=ExtResource("5_1hf1o")]
-position = Vector2(-268, -200)
-scale = Vector2(1.5, 1.5)
+[node name="PowerSliders3" parent="." unique_id=447703538 instance=ExtResource("2_j15uc")]
+offset_left = 36.0
+offset_top = -400.0
+offset_right = -632.0
+offset_bottom = -1788.0
+scale = Vector2(0.4, 0.4)
