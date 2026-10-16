@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://bgijkv17ndprg"]
+
+[ext_resource type="Script" uid="uid://r48cnxe01108" path="res://scripts/puzzle_scripts/puzzle_slot_game.gd" id="1_mw0ea"]
+[ext_resource type="Texture2D" uid="uid://cb6vu75yduqq0" path="res://assets/base_jimmy.png" id="2_83wsu"]
+[ext_resource type="Texture2D" uid="uid://blw2bwepgm4f1" path="res://assets/circle_puzzle.png" id="3_g8ove"]
+[ext_resource type="Texture2D" uid="uid://b3okb2kou3jl4" path="res://assets/fork_puzzle.png" id="4_sm3ui"]
+[ext_resource type="Texture2D" uid="uid://ckoqa8mi2wskn" path="res://assets/moon_puzzle.png" id="5_cvwat"]
+[ext_resource type="Texture2D" uid="uid://e07y6rtoep31" path="res://assets/star_puzzle.png" id="6_ywkwj"]
+[ext_resource type="Texture2D" uid="uid://dqm8c6noy3qax" path="res://assets/triangle_puzzle.png" id="7_0ssu1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_33pvg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_83wsu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g8ove")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sm3ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cvwat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ywkwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0ssu1")
+}],
+"loop": true,
+"name": &"shape_lock",
+"speed": 1.0
+}]
+
+[node name="PuzzleSlotGame" type="Control" unique_id=1791977484]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1000.0
+offset_bottom = 1000.0
+script = ExtResource("1_mw0ea")
+
+[node name="upButton1" type="Button" parent="." unique_id=1962104374]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 105.0
+offset_right = 256.0
+offset_bottom = 185.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=94136638]
+position = Vector2(216.00002, 300)
+scale = Vector2(0.65625, 0.6875)
+sprite_frames = SubResource("SpriteFrames_33pvg")
+animation = &"shape_lock"
+
+[node name="downButton1" type="Button" parent="." unique_id=2120196875]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 410.0
+offset_right = 256.0
+offset_bottom = 490.0
+
+[node name="upButton2" type="Button" parent="." unique_id=198991376]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 105.0
+offset_right = 415.0
+offset_bottom = 185.0
+
+[node name="downButton2" type="Button" parent="." unique_id=427463694]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 412.0
+offset_right = 418.0
+offset_bottom = 492.0
+
+[node name="upButton3" type="Button" parent="." unique_id=1076392101]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 105.0
+offset_right = 582.0
+offset_bottom = 185.0
+
+[node name="downButton3" type="Button" parent="." unique_id=902146096]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 413.0
+offset_right = 591.0
+offset_bottom = 493.0
+
+[node name="upButton4" type="Button" parent="." unique_id=625455022]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 105.0
+offset_right = 750.0
+offset_bottom = 185.0
+
+[node name="downButton4" type="Button" parent="." unique_id=96832987]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 414.0
+offset_right = 750.0
+offset_bottom = 494.0
+
+[node name="upButton5" type="Button" parent="." unique_id=9969666]
+layout_mode = 0
+offset_left = 830.0
+offset_top = 105.0
+offset_right = 910.0
+offset_bottom = 185.0
+
+[node name="downButton5" type="Button" parent="." unique_id=1647045390]
+layout_mode = 0
+offset_left = 834.0
+offset_top = 412.0
+offset_right = 914.0
+offset_bottom = 492.0
+
+[connection signal="button_down" from="upButton1" to="." method="_on_up_button_1_button_down"]
+[connection signal="button_up" from="upButton1" to="." method="_on_up_button_1_button_up"]
+[connection signal="button_down" from="downButton1" to="." method="_on_down_button_1_button_down"]
+[connection signal="button_up" from="downButton1" to="." method="_on_down_button_1_button_up"]

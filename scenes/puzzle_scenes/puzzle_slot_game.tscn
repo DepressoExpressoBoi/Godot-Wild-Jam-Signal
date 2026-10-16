@@ -124,3 +124,5 @@ offset_bottom = 492.0
 
 [connection signal="button_down" from="upButton1" to="." method="_on_up_button_1_button_down"]
 [connection signal="button_up" from="upButton1" to="." method="_on_up_button_1_button_up"]
+[connection signal="button_down" from="downButton1" to="." method="_on_down_button_1_button_down"]
+[connection signal="button_up" from="downButton1" to="." method="_on_down_button_1_button_up"]
