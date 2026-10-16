@@ -58,8 +58,6 @@ position = Vector2(216.00002, 300)
 scale = Vector2(0.65625, 0.6875)
 sprite_frames = SubResource("SpriteFrames_33pvg")
 animation = &"shape_lock"
-frame = 2
-frame_progress = 0.25082636
 
 [node name="downButton1" type="Button" parent="." unique_id=2120196875]
 layout_mode = 0
@@ -123,3 +121,6 @@ offset_left = 834.0
 offset_top = 412.0
 offset_right = 914.0
 offset_bottom = 492.0
+
+[connection signal="button_down" from="upButton1" to="." method="_on_up_button_1_button_down"]
+[connection signal="button_up" from="upButton1" to="." method="_on_up_button_1_button_up"]
