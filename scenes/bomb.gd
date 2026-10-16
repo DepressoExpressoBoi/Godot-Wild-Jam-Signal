@@ -22,11 +22,31 @@ func _ready() -> void:
 		match colors[i]:
 			'red':
 				bomb_puzzles[i].position = Vector2(-460.0, -400.0)
+				if bomb_puzzles[i].puzzle_type == 'WireMatch':
+					bomb_puzzles[i].ShapeButtonLeft1DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft1').global_position
+					bomb_puzzles[i].ShapeButtonLeft2DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft2').global_position
+					bomb_puzzles[i].ShapeButtonLeft3DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft3').global_position
+					bomb_puzzles[i].ShapeButtonLeft4DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft4').global_position
 			'yellow':
 				bomb_puzzles[i].position = Vector2(36.0, -400.0)
+				if bomb_puzzles[i].puzzle_type == 'WireMatch':
+					bomb_puzzles[i].ShapeButtonLeft1DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft1').global_position
+					bomb_puzzles[i].ShapeButtonLeft2DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft2').global_position
+					bomb_puzzles[i].ShapeButtonLeft3DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft3').global_position
+					bomb_puzzles[i].ShapeButtonLeft4DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft4').global_position
 			'green':
 				bomb_puzzles[i].position = Vector2(-460.0, 32.0)
+				if bomb_puzzles[i].puzzle_type == 'WireMatch':
+					bomb_puzzles[i].ShapeButtonLeft1DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft1').global_position
+					bomb_puzzles[i].ShapeButtonLeft2DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft2').global_position
+					bomb_puzzles[i].ShapeButtonLeft3DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft3').global_position
+					bomb_puzzles[i].ShapeButtonLeft4DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft4').global_position
 			'blue':
 				bomb_puzzles[i].position = Vector2(36.0, 32.0)
+				if bomb_puzzles[i].puzzle_type == 'WireMatch':
+					bomb_puzzles[i].ShapeButtonLeft1DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft1').global_position
+					bomb_puzzles[i].ShapeButtonLeft2DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft2').global_position
+					bomb_puzzles[i].ShapeButtonLeft3DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft3').global_position
+					bomb_puzzles[i].ShapeButtonLeft4DefaultPos = bomb_puzzles[i].get_node('ShapeButtonLeft4').global_position
 			'_':
 				print('You\'ve fucked up')

@@ -41,10 +41,10 @@ var wire4_shape_connection = []
 @onready var Wire3 = $Wire3
 @onready var Wire4 = $Wire4
 
-@onready var ShapeButtonLeft1DefaultPos = ShapeButtonLeft1.global_position
-@onready var ShapeButtonLeft2DefaultPos = ShapeButtonLeft2.global_position
-@onready var ShapeButtonLeft3DefaultPos = ShapeButtonLeft3.global_position
-@onready var ShapeButtonLeft4DefaultPos = ShapeButtonLeft4.global_position
+@export var ShapeButtonLeft1DefaultPos : Vector2
+@export var ShapeButtonLeft2DefaultPos : Vector2
+@export var ShapeButtonLeft3DefaultPos : Vector2
+@export var ShapeButtonLeft4DefaultPos : Vector2
 
 
 func _ready() -> void:
