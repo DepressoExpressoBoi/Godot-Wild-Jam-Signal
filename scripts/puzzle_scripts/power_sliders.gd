@@ -6,6 +6,7 @@ var static_shape_solution
 @export var solved = false
 @export var shape_solution = []
 @export var color_designation = 'purple'
+@export var puzzle_type = 'PowerSliders'
 
 @onready var SliderMoon = $SliderMoon
 @onready var SliderCircle = $SliderCircle

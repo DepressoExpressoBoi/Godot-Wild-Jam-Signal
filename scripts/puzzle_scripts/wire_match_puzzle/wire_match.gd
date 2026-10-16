@@ -26,6 +26,7 @@ var wire4_shape_connection = []
 @export var solved = false
 @export var shape_solution = []
 @export var color_designation = 'yellow'
+@export var puzzle_type = 'WireMatch'
 
 @onready var ShapeButtonLeft1 = $ShapeButtonLeft1
 @onready var ShapeButtonLeft2 = $ShapeButtonLeft2
@@ -265,16 +266,16 @@ func _on_shape_button_left_2_button_up() -> void:
 		check_wire_connection(ShapeConnectorRight4)
 	elif not right_area1_entered:
 		ShapeButtonLeft2.global_position = ShapeButtonLeft2DefaultPos
-		Wire1.clear_points()
+		Wire2.clear_points()
 	elif not right_area2_entered:
 		ShapeButtonLeft2.global_position = ShapeButtonLeft2DefaultPos
-		Wire1.clear_points()
+		Wire2.clear_points()
 	elif not right_area3_entered:
 		ShapeButtonLeft2.global_position = ShapeButtonLeft2DefaultPos
-		Wire1.clear_points()
+		Wire2.clear_points()
 	elif not right_area4_entered:
 		ShapeButtonLeft2.global_position = ShapeButtonLeft2DefaultPos
-		Wire1.clear_points()
+		Wire2.clear_points()
 	
 	if not wire2connected:
 		ShapeButtonLeft2.global_position = ShapeButtonLeft2DefaultPos
@@ -296,16 +297,16 @@ func _on_shape_button_left_3_button_up() -> void:
 		check_wire_connection(ShapeConnectorRight4)
 	elif not right_area1_entered:
 		ShapeButtonLeft3.global_position = ShapeButtonLeft3DefaultPos
-		Wire1.clear_points()
+		Wire3.clear_points()
 	elif not right_area2_entered:
 		ShapeButtonLeft3.global_position = ShapeButtonLeft3DefaultPos
-		Wire1.clear_points()
+		Wire3.clear_points()
 	elif not right_area3_entered:
 		ShapeButtonLeft3.global_position = ShapeButtonLeft3DefaultPos
-		Wire1.clear_points()
+		Wire3.clear_points()
 	elif not right_area4_entered:
 		ShapeButtonLeft3.global_position = ShapeButtonLeft3DefaultPos
-		Wire1.clear_points()
+		Wire3.clear_points()
 	
 	if not wire3connected:
 		ShapeButtonLeft3.global_position = ShapeButtonLeft3DefaultPos
@@ -327,16 +328,16 @@ func _on_shape_button_left_4_button_up() -> void:
 		check_wire_connection(ShapeConnectorRight4)
 	elif not right_area1_entered:
 		ShapeButtonLeft4.global_position = ShapeButtonLeft4DefaultPos
-		Wire1.clear_points()
+		Wire4.clear_points()
 	elif not right_area2_entered:
 		ShapeButtonLeft4.global_position = ShapeButtonLeft4DefaultPos
-		Wire1.clear_points()
+		Wire4.clear_points()
 	elif not right_area3_entered:
 		ShapeButtonLeft4.global_position = ShapeButtonLeft4DefaultPos
-		Wire1.clear_points()
+		Wire4.clear_points()
 	elif not right_area4_entered:
 		ShapeButtonLeft4.global_position = ShapeButtonLeft4DefaultPos
-		Wire1.clear_points()
+		Wire4.clear_points()
 	
 	if not wire4connected:
 		ShapeButtonLeft4.global_position = ShapeButtonLeft4DefaultPos
