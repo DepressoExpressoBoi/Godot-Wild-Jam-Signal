@@ -54,6 +54,7 @@ func _on_jimmy_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 		
 		if len(puzzle_solutions[random_puzzle]) > 0:
 			Jimmy.animation.play(random_puzzle + '_' + random_puzzle_clue)
+			# using this for the shape slot game idea, t.c
 		else:
 			print('Can\'t animate clue')
 	
