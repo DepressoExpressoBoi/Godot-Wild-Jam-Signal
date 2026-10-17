@@ -25,4 +25,5 @@ vertical_alignment = 1
 [node name="Timer" type="Timer" parent="." unique_id=640028173]
 wait_time = 150.0
 
+[connection signal="input_event" from="Bomb" to="." method="_on_bomb_input_event"]
 [connection signal="input_event" from="Jimmy" to="." method="_on_jimmy_input_event"]

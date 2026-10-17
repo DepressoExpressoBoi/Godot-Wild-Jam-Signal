@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwknmt7kgc0qv"
-path="res://.godot/imported/jimmy_purple_fork4.png-80b06cdd93de3d053188b298f122ddae.ctex"
+uid="uid://dwgkoow5vor4s"
+path="res://.godot/imported/jimmy_blue_square.png-5e4197f740d24eebaa7f246cf4cbd3cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jimmy/jimmy_clues/jimmy_purple_fork4.png"
-dest_files=["res://.godot/imported/jimmy_purple_fork4.png-80b06cdd93de3d053188b298f122ddae.ctex"]
+source_file="res://assets/jimmy/jimmy_clues/blue_clues/jimmy_blue_square.png"
+dest_files=["res://.godot/imported/jimmy_blue_square.png-5e4197f740d24eebaa7f246cf4cbd3cc.ctex"]
 
 [params]
 

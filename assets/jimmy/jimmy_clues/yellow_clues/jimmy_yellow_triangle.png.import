@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4fnfvmlxq7j2"
-path="res://.godot/imported/jimmy_purple_star.png-6a317924cc9c9fa0c3449c651e2cc82e.ctex"
+uid="uid://d3ftyf4iuma5l"
+path="res://.godot/imported/jimmy_yellow_triangle.png-61e769a7034a0f7832a21f9f0954ae11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jimmy/jimmy_clues/jimmy_purple_star.png"
-dest_files=["res://.godot/imported/jimmy_purple_star.png-6a317924cc9c9fa0c3449c651e2cc82e.ctex"]
+source_file="res://assets/jimmy/jimmy_clues/yellow_clues/jimmy_yellow_triangle.png"
+dest_files=["res://.godot/imported/jimmy_yellow_triangle.png-61e769a7034a0f7832a21f9f0954ae11.ctex"]
 
 [params]
 

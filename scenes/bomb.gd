@@ -1,6 +1,6 @@
-extends Sprite2D
+extends Area2D
 #@onready var all_puzzles = [$WireMatch, $PowerSliders, $PowerSliders2, $WireMatch2, $WireMatch3, $PowerSliders3]
-@onready var all_puzzles = get_children()
+@onready var all_puzzles = get_children().filter(func(puzzle): return puzzle.name.begins_with("PUZZLE-"))
 var bomb_puzzles = []
 var colors = ['red', 'yellow', 'green', 'blue']
 
@@ -8,17 +8,20 @@ var colors = ['red', 'yellow', 'green', 'blue']
 func _ready() -> void:
 	var selected_puzzle
 	var remaining_puzzles
-	for i in 4:
+	for i in 2:
 		selected_puzzle = all_puzzles.pick_random()
 		all_puzzles.erase(selected_puzzle)
 		bomb_puzzles.append(selected_puzzle)
 		
 	remaining_puzzles = all_puzzles.filter(func(puzzle): return not bomb_puzzles.has(puzzle))
-	
+	print(remaining_puzzles)
 	for puzzle in remaining_puzzles:
 		puzzle.queue_free()
 	
-	for i in 4:
+	reposition_buttons()
+
+func reposition_buttons() -> void:
+	for i in 2:
 		bomb_puzzles[i].color_designation = colors[i]
 		match colors[i]:
 			'red':

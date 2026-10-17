@@ -1,5 +1,14 @@
 extends Control
 
+const MOON_TEXTURE = preload("res://assets/shape_icons/moon/moon_icon.png")
+const CIRCLE_TEXTURE = preload("res://assets/shape_icons/circle/circle_icon.png")
+const TRIANGLE_TEXTURE = preload("res://assets/shape_icons/triangle/triangle_icon.png")
+const FORK3_TEXTURE = preload("res://assets/shape_icons/fork3/fork3_icon.png")
+const FORK4_TEXTURE = preload("res://assets/shape_icons/fork4/fork4_icon.png")
+const STAR_TEXTURE = preload("res://assets/shape_icons/star/star_icon.png")
+const HEART_TEXTURE = preload("res://assets/shape_icons/heart/heart_icon.png")
+const SQUARE_TEXTURE = preload("res://assets/shape_icons/square/square_icon.png")
+
 var shape_options = ['moon', 'circle', 'triangle', 'fork3', 'fork4', 'star', 'heart', 'square']
 var static_shape_solution
 
@@ -93,6 +102,60 @@ func assign_shape_to_buttons() -> void:
 		left_shapes.erase(left_shape)
 		right_shape = right_shapes.pick_random()
 		right_shapes.erase(right_shape)
+		
+		match left_shape:
+			'moon':
+				left_shape_buttons[i].texture_normal = MOON_TEXTURE
+				left_shape_buttons[i].texture_pressed = MOON_TEXTURE
+			'circle':
+				left_shape_buttons[i].texture_normal = CIRCLE_TEXTURE
+				left_shape_buttons[i].texture_pressed = CIRCLE_TEXTURE
+			'triangle':
+				left_shape_buttons[i].texture_normal = TRIANGLE_TEXTURE
+				left_shape_buttons[i].texture_pressed = TRIANGLE_TEXTURE
+			'fork3':
+				left_shape_buttons[i].texture_normal = FORK3_TEXTURE
+				left_shape_buttons[i].texture_pressed = FORK3_TEXTURE
+			'fork4':
+				left_shape_buttons[i].texture_normal = FORK4_TEXTURE
+				left_shape_buttons[i].texture_pressed = FORK4_TEXTURE
+			'star':
+				left_shape_buttons[i].texture_normal = STAR_TEXTURE
+				left_shape_buttons[i].texture_pressed = STAR_TEXTURE
+			'heart':
+				left_shape_buttons[i].texture_normal = HEART_TEXTURE
+				left_shape_buttons[i].texture_pressed = HEART_TEXTURE
+			'square':
+				left_shape_buttons[i].texture_normal = SQUARE_TEXTURE
+				left_shape_buttons[i].texture_pressed = SQUARE_TEXTURE
+			_:
+				print('You fucked up in assign shape texture!')
+				
+		print('=========')
+		print($ShapeConnectorRight1.get_child(0))
+		print(right_shape_connectors[i])
+		print(right_shape_connectors[i].get_child(0))
+		print(right_shape_connectors[i].get_child(0).texture)
+				
+		match right_shape:
+			'moon':
+				right_shape_connectors[i].get_child(0).texture = MOON_TEXTURE
+			'circle':
+				right_shape_connectors[i].get_child(0).texture = CIRCLE_TEXTURE
+			'triangle':
+				right_shape_connectors[i].get_child(0).texture = TRIANGLE_TEXTURE
+			'fork3':
+				right_shape_connectors[i].get_child(0).texture = FORK3_TEXTURE
+			'fork4':
+				right_shape_connectors[i].get_child(0).texture = FORK4_TEXTURE
+			'star':
+				right_shape_connectors[i].get_child(0).texture = STAR_TEXTURE
+			'heart':
+				right_shape_connectors[i].get_child(0).texture = HEART_TEXTURE
+			'square':
+				right_shape_connectors[i].get_child(0).texture = SQUARE_TEXTURE
+			_:
+				print('You fucked up in assign shape texture!')
 		
 		left_shape_buttons[i].shape = left_shape
 		right_shape_connectors[i].shape = right_shape

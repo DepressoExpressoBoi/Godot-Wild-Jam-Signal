@@ -5,49 +5,32 @@
 [ext_resource type="PackedScene" uid="uid://c8llpsare1wuv" path="res://scenes/puzzle_scenes/power_sliders.tscn" id="2_j15uc"]
 [ext_resource type="Script" uid="uid://ba70aqyd6uj38" path="res://scenes/bomb.gd" id="2_nxi8k"]
 
-[node name="Bomb" type="Sprite2D" unique_id=258079969]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84slv"]
+size = Vector2(1380, 1368)
+
+[node name="Bomb" type="Area2D" unique_id=2016837189]
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_nxi8k")
 script = ExtResource("2_nxi8k")
 
-[node name="WireMatch" parent="." unique_id=1920518845 instance=ExtResource("2_84slv")]
-offset_left = -460.0
-offset_top = 32.000004
-offset_right = -1128.0
-offset_bottom = -1356.0
-scale = Vector2(0.4, 0.4)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1956161281]
+position = Vector2(42, -144)
+shape = SubResource("RectangleShape2D_84slv")
 
-[node name="PowerSliders" parent="." unique_id=124821330 instance=ExtResource("2_j15uc")]
-offset_left = 36.0
-offset_top = 40.0
-offset_right = -632.0
-offset_bottom = -1348.0
-scale = Vector2(0.4, 0.4)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=201329618]
+texture = ExtResource("1_nxi8k")
 
-[node name="PowerSliders2" parent="." unique_id=1328822591 instance=ExtResource("2_j15uc")]
-offset_left = 36.0
-offset_top = -400.0
-offset_right = -632.0
-offset_bottom = -1788.0
+[node name="PUZZLE-WireMatch" parent="." unique_id=1920518845 instance=ExtResource("2_84slv")]
+offset_left = -888.0
+offset_top = -636.0
+offset_right = -888.0
+offset_bottom = -636.0
 scale = Vector2(0.4, 0.4)
+metadata/_edit_use_anchors_ = true
 
-[node name="WireMatch2" parent="." unique_id=1805075268 instance=ExtResource("2_84slv")]
-offset_left = -460.0
-offset_top = -400.0
-offset_right = -1128.0
-offset_bottom = -1788.0
+[node name="PUZZLE-PowerSliders" parent="." unique_id=124821330 instance=ExtResource("2_j15uc")]
+offset_left = -298.0
+offset_top = -654.0
+offset_right = -298.0
+offset_bottom = -654.0
 scale = Vector2(0.4, 0.4)
-
-[node name="WireMatch3" parent="." unique_id=978783659 instance=ExtResource("2_84slv")]
-offset_left = 35.99997
-offset_top = -400.0
-offset_right = -632.0
-offset_bottom = -1788.0
-scale = Vector2(0.4, 0.4)
-
-[node name="PowerSliders3" parent="." unique_id=447703538 instance=ExtResource("2_j15uc")]
-offset_left = 36.0
-offset_top = -400.0
-offset_right = -632.0
-offset_bottom = -1788.0
-scale = Vector2(0.4, 0.4)
+metadata/_edit_use_anchors_ = true
