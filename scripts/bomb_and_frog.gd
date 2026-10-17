@@ -15,6 +15,8 @@ var jimmy_clues
 var wire_match_clue_selected = false
 var wire_match_clue
 
+var grown_bomb_default_pos
+
 # code to change jimmy animations, you're going to have to switch back to default afterwards
 # Jimmy.play("purple_circle")
 
@@ -82,16 +84,22 @@ func display_clue(random_puzzle_color, random_puzzle_shape):
 		Jimmy.animation.play('hurry_up')
 		
 func grow_bomb() -> Tween:
-	var tween = create_tween()
-	# Scales the sprite up to (3.0, 3.0) over a duration of 1.5 seconds
-	tween.tween_property(Bomb, "scale", Vector2(0.5, 0.5), 1.5)
+	var tween = create_tween().set_parallel(true)
+	
+	grown_bomb_default_pos = Bomb.position
+	
+	tween.tween_property(Bomb, "scale", Vector2(0.5, 0.5), 0.5)
+	tween.tween_property(Bomb, "position", grown_bomb_default_pos + Vector2(-100.0, 50.0), 0.5)
 	
 	return tween
 	
 func shrink_bomb() -> Tween:
-	var tween = create_tween()
-	# Scales the sprite up to (3.0, 3.0) over a duration of 1.5 seconds
-	tween.tween_property(Bomb, "scale", Vector2(0.25, 0.25), 1.5)
+	var tween = create_tween().set_parallel(true)
+	
+	tween.tween_property(Bomb, "scale", Vector2(0.25, 0.25), 0.5)
+	tween.tween_property(Bomb, "position", grown_bomb_default_pos, 0.5)
+	
+	grown_bomb_default_pos = Vector2(0.0, 0.0)
 	
 	return tween
 

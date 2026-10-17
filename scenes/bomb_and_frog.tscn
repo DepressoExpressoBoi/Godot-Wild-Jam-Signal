@@ -2,18 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://cecyb2swr8ihe" path="res://scenes/bomb.tscn" id="1_1vjqw"]
 [ext_resource type="Script" uid="uid://bkolraw76h5ge" path="res://scripts/bomb_and_frog.gd" id="1_q7c2y"]
+[ext_resource type="Texture2D" uid="uid://c5rhhhvh6eebq" path="res://assets/game_background.png" id="2_th3x1"]
 [ext_resource type="PackedScene" uid="uid://c0qs03ki7ooxu" path="res://scenes/jimmy.tscn" id="2_xegqa"]
 [ext_resource type="AudioStream" uid="uid://0v7bis3n44e0" path="res://assets/audio/game_track_bop.wav" id="4_5ad8w"]
 
 [node name="BombAndFrog" type="Node2D" unique_id=1950971119]
 script = ExtResource("1_q7c2y")
 
-[node name="Bomb" parent="." unique_id=258079969 instance=ExtResource("1_1vjqw")]
-position = Vector2(535, 402)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1782780935]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1151.0
+offset_bottom = 647.0
+mouse_filter = 2
+texture = ExtResource("2_th3x1")
 
 [node name="Jimmy" parent="." unique_id=599400028 instance=ExtResource("2_xegqa")]
-position = Vector2(980, 209)
+position = Vector2(875, 298)
 scale = Vector2(2.328125, 2.1640625)
+
+[node name="Bomb" parent="." unique_id=258079969 instance=ExtResource("1_1vjqw")]
+position = Vector2(493, 357)
 
 [node name="timerLabel" type="Label" parent="." unique_id=1744390657]
 offset_left = 442.0
@@ -31,6 +40,6 @@ one_shot = true
 stream = ExtResource("4_5ad8w")
 autoplay = true
 
-[connection signal="input_event" from="Bomb" to="." method="_on_bomb_input_event"]
 [connection signal="input_event" from="Jimmy" to="." method="_on_jimmy_input_event"]
+[connection signal="input_event" from="Bomb" to="." method="_on_bomb_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

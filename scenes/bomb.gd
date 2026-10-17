@@ -74,17 +74,16 @@ func grow_puzzle(puzzle) -> Tween:
 	elif puzzle.color_designation == 'blue':
 		puzzle.get_child(0).color = Color.from_rgba8(50.0, 1.0, 217.0)
 	
-	# Scales the sprite up to (3.0, 3.0) over a duration of 1.5 seconds
-	tween.tween_property(puzzle, "scale", Vector2(0.9, 0.9), 1.5)
-	tween.tween_property(puzzle, "position", Vector2(-460.0, -440.0), 1.0)
+	tween.tween_property(puzzle, "scale", Vector2(0.9, 0.9), 0.5)
+	tween.tween_property(puzzle, "position", Vector2(-460.0, -440.0), 0.5)
 	
 	return tween
 	
 func shrink_puzzle(puzzle) -> Tween:
 	var tween = create_tween().set_parallel(true)
-	# Scales the sprite up to (3.0, 3.0) over a duration of 1.5 seconds
-	tween.tween_property(puzzle, "scale", Vector2(0.4, 0.4), 1.5)
-	tween.tween_property(puzzle, "position", grown_puzzle_default_pos, 1.0)
+
+	tween.tween_property(puzzle, "scale", Vector2(0.4, 0.4), 0.5)
+	tween.tween_property(puzzle, "position", grown_puzzle_default_pos, 0.5)
 	
 	grown_puzzle_default_pos = Vector2(0.0, 0.0)
 	
