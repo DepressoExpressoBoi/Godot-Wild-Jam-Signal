@@ -50,10 +50,15 @@ var wire4_shape_connection = []
 @onready var Wire3 = $Wire3
 @onready var Wire4 = $Wire4
 
-@export var ShapeButtonLeft1DefaultPos : Vector2
-@export var ShapeButtonLeft2DefaultPos : Vector2
-@export var ShapeButtonLeft3DefaultPos : Vector2
-@export var ShapeButtonLeft4DefaultPos : Vector2
+@onready var ShapeButtonLeft1Default = $ShapeButtonLeft1Default
+@onready var ShapeButtonLeft2Default = $ShapeButtonLeft2Default
+@onready var ShapeButtonLeft3Default = $ShapeButtonLeft3Default
+@onready var ShapeButtonLeft4Default = $ShapeButtonLeft4Default
+
+@onready var ShapeButtonLeft1DefaultPos = $ShapeButtonLeft1Default.global_position
+@onready var ShapeButtonLeft2DefaultPos = $ShapeButtonLeft2Default.global_position
+@onready var ShapeButtonLeft3DefaultPos = $ShapeButtonLeft3Default.global_position
+@onready var ShapeButtonLeft4DefaultPos = $ShapeButtonLeft4Default.global_position
 
 
 func _ready() -> void:
@@ -131,11 +136,11 @@ func assign_shape_to_buttons() -> void:
 			_:
 				print('You fucked up in assign shape texture!')
 				
-		print('=========')
-		print($ShapeConnectorRight1.get_child(0))
-		print(right_shape_connectors[i])
-		print(right_shape_connectors[i].get_child(0))
-		print(right_shape_connectors[i].get_child(0).texture)
+		#print('=========')
+		#print($ShapeConnectorRight1.get_child(0))
+		#print(right_shape_connectors[i])
+		#print(right_shape_connectors[i].get_child(0))
+		#print(right_shape_connectors[i].get_child(0).texture)
 				
 		match right_shape:
 			'moon':

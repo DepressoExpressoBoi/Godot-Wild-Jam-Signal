@@ -5,5 +5,9 @@
 [node name="temp_space" type="Node2D" unique_id=1610243606]
 
 [node name="Bomb" parent="." unique_id=2016837189 instance=ExtResource("3_8g6qr")]
+visible = false
 position = Vector2(602, 337)
+
+[node name="Bomb2" parent="." unique_id=2131422402 instance=ExtResource("3_8g6qr")]
+position = Vector2(526, 384)
 scale = Vector2(0.5, 0.5)

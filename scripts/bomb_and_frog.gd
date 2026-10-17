@@ -22,6 +22,11 @@ func _ready() -> void:
 	# adding timer to the ready func, t.c.
 	timer.start()
 	
+	puzzles = Bomb.get_children().filter(func(puzzle): return puzzle.name.begins_with("PUZZLE-"))
+		
+	for puzzle in puzzles:
+		puzzle_solutions.set(puzzle.color_designation, [puzzle, puzzle.puzzle_type, puzzle.shape_solution])
+	
 func time_left_to_live():
 	var time_left = timer.time_left
 	var minute = floor(time_left / 60)
@@ -76,13 +81,19 @@ func display_clue(random_puzzle_color, random_puzzle_shape):
 		Jimmy.monitoring = false
 		Jimmy.animation.play('hurry_up')
 		
-func grow_bomb():
+func grow_bomb() -> Tween:
 	var tween = create_tween()
 	# Scales the sprite up to (3.0, 3.0) over a duration of 1.5 seconds
 	tween.tween_property(Bomb, "scale", Vector2(0.5, 0.5), 1.5)
 	
-	#print('{}: {}', random_puzzle_color, puzzle)
-	#print(puzzle.solved)
+	return tween
+	
+func shrink_bomb() -> Tween:
+	var tween = create_tween()
+	# Scales the sprite up to (3.0, 3.0) over a duration of 1.5 seconds
+	tween.tween_property(Bomb, "scale", Vector2(0.25, 0.25), 1.5)
+	
+	return tween
 
 # This function will play the animation for one the random clues for all the puzzles. Currently it only does the purple
 # puzzle clues. It checks the puzzles individual copy of their shape_solution array for the clue to give. The PowerSLide
@@ -131,39 +142,27 @@ func _on_jimmy_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 
 func _on_bomb_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-		grow_bomb()
+		var bomb_tween
+		
+		Bomb.bomb_tweening = true
+		
+		if Bomb.bomb_grown:
+			Bomb.bomb_grown = false
+			bomb_tween = shrink_bomb()
+			
+			await bomb_tween.finished
+		else:
+			Bomb.bomb_grown = true
+			bomb_tween = grow_bomb()
+			
+			await bomb_tween.finished
+			
+		Bomb.bomb_tweening = false
+			
 		for puzzle in puzzles:
 			if puzzle.puzzle_type == 'WireMatch':
-				match puzzle.color_designation:
-					'red':
-						puzzle.position = Vector2(-460.0, -400.0)
-						if puzzle.puzzle_type == 'WireMatch':
-							puzzle.ShapeButtonLeft1DefaultPos = puzzle.get_node('ShapeButtonLeft1').global_position
-							puzzle.ShapeButtonLeft2DefaultPos = puzzle.get_node('ShapeButtonLeft2').global_position
-							puzzle.ShapeButtonLeft3DefaultPos = puzzle.get_node('ShapeButtonLeft3').global_position
-							puzzle.ShapeButtonLeft4DefaultPos = puzzle.get_node('ShapeButtonLeft4').global_position
-					'yellow':
-						puzzle.position = Vector2(36.0, -400.0)
-						if puzzle.puzzle_type == 'WireMatch':
-							puzzle.ShapeButtonLeft1DefaultPos = puzzle.get_node('ShapeButtonLeft1').global_position
-							puzzle.ShapeButtonLeft2DefaultPos = puzzle.get_node('ShapeButtonLeft2').global_position
-							puzzle.ShapeButtonLeft3DefaultPos = puzzle.get_node('ShapeButtonLeft3').global_position
-							puzzle.ShapeButtonLeft4DefaultPos = puzzle.get_node('ShapeButtonLeft4').global_position
-					'green':
-						puzzle.position = Vector2(-460.0, 32.0)
-						if puzzle.puzzle_type == 'WireMatch':
-							puzzle.ShapeButtonLeft1DefaultPos = puzzle.get_node('ShapeButtonLeft1').global_position
-							puzzle.ShapeButtonLeft2DefaultPos = puzzle.get_node('ShapeButtonLeft2').global_position
-							puzzle.ShapeButtonLeft3DefaultPos = puzzle.get_node('ShapeButtonLeft3').global_position
-							puzzle.ShapeButtonLeft4DefaultPos = puzzle.get_node('ShapeButtonLeft4').global_position
-					'blue':
-						puzzle.position = Vector2(36.0, 32.0)
-						if puzzle.puzzle_type == 'WireMatch':
-							puzzle.ShapeButtonLeft1DefaultPos = puzzle.get_node('ShapeButtonLeft1').global_position
-							puzzle.ShapeButtonLeft2DefaultPos = puzzle.get_node('ShapeButtonLeft2').global_position
-							puzzle.ShapeButtonLeft3DefaultPos = puzzle.get_node('ShapeButtonLeft3').global_position
-							puzzle.ShapeButtonLeft4DefaultPos = puzzle.get_node('ShapeButtonLeft4').global_position
-					'_':
-						print('You\'ve fucked up')
-			#puzzle_solutions.set(puzzle.color_designation, [puzzle, puzzle.puzzle_type, puzzle.shape_solution])
+				puzzle.ShapeButtonLeft1DefaultPos = puzzle.get_node('ShapeButtonLeft1Default').global_position
+				puzzle.ShapeButtonLeft2DefaultPos = puzzle.get_node('ShapeButtonLeft2Default').global_position
+				puzzle.ShapeButtonLeft3DefaultPos = puzzle.get_node('ShapeButtonLeft3Default').global_position
+				puzzle.ShapeButtonLeft4DefaultPos = puzzle.get_node('ShapeButtonLeft4Default').global_position
 		
