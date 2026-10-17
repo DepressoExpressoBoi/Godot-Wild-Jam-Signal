@@ -49,11 +49,17 @@
 [ext_resource type="Texture2D" uid="uid://b7jw8onf45bqv" path="res://assets/jimmy/jimmy_clues/red_clues/jimmy_red_triangle.png" id="46_4v4ia"]
 [ext_resource type="Texture2D" uid="uid://dlaj74peq35nr" path="res://assets/jimmy/jimmy_clues/yellow_clues/jimmy_yellow_bun.png" id="47_bsx3k"]
 [ext_resource type="Texture2D" uid="uid://crp41x5e1n3dm" path="res://assets/jimmy/jimmy_clues/yellow_clues/jimmy_yellow_circle.png" id="48_pf8t5"]
+[ext_resource type="Texture2D" uid="uid://dl11ht06v60ea" path="res://assets/jimmy/jimmy_animation/jimmy_tongue_bomb_1.png" id="48_teikv"]
 [ext_resource type="Texture2D" uid="uid://rqm611227eau" path="res://assets/jimmy/jimmy_clues/yellow_clues/jimmy_yellow_fork3.png" id="49_o7ps4"]
+[ext_resource type="Texture2D" uid="uid://8cvx430hoolt" path="res://assets/jimmy/jimmy_animation/jimmy_tongue_bomb_2.png" id="49_tew26"]
+[ext_resource type="Texture2D" uid="uid://cpqrnudppsam2" path="res://assets/jimmy/jimmy_animation/jimmy_tongue_bomb_3.png" id="50_k4qcf"]
 [ext_resource type="Texture2D" uid="uid://nbimv3bv4wr0" path="res://assets/jimmy/jimmy_clues/yellow_clues/jimmy_yellow_fork4.png" id="50_rolvm"]
+[ext_resource type="Texture2D" uid="uid://wadbhr7d41ig" path="res://assets/jimmy/jimmy_animation/jimmy_tongue_bomb_4.png" id="51_4v4ia"]
 [ext_resource type="Texture2D" uid="uid://bemg2y4bn578i" path="res://assets/jimmy/jimmy_clues/yellow_clues/jimmy_yellow_hamburber.png" id="51_naibt"]
 [ext_resource type="Texture2D" uid="uid://y8duravte6eg" path="res://assets/jimmy/jimmy_clues/yellow_clues/jimmy_yellow_heart.png" id="52_0bgk7"]
+[ext_resource type="Texture2D" uid="uid://dt0po2mxihiku" path="res://assets/jimmy/jimmy_animation/jimmy_tongue_bomb_5.png" id="52_bsx3k"]
 [ext_resource type="Texture2D" uid="uid://m81x8oec1ria" path="res://assets/jimmy/jimmy_clues/yellow_clues/jimmy_yellow_moon.png" id="53_gx5h7"]
+[ext_resource type="Texture2D" uid="uid://fq2alc66c6k5" path="res://assets/jimmy/jimmy_animation/jimmy_tongue_bomb_6.png" id="53_pf8t5"]
 [ext_resource type="Texture2D" uid="uid://ciyutfbvn1tb1" path="res://assets/jimmy/jimmy_clues/yellow_clues/jimmy_yellow_pentagon.png" id="54_m62b3"]
 [ext_resource type="Texture2D" uid="uid://w3d2kkrtc32r" path="res://assets/jimmy/jimmy_clues/yellow_clues/jimmy_yellow_square.png" id="55_33gj0"]
 [ext_resource type="Texture2D" uid="uid://m0myyp1mpe3v" path="res://assets/jimmy/jimmy_clues/yellow_clues/jimmy_yellow_star.png" id="56_gilu3"]
@@ -361,6 +367,50 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.1,
+"texture": ExtResource("52_bsx3k")
+}, {
+"duration": 0.1,
+"texture": ExtResource("53_pf8t5")
+}, {
+"duration": 0.1,
+"texture": ExtResource("52_bsx3k")
+}, {
+"duration": 0.1,
+"texture": ExtResource("51_4v4ia")
+}, {
+"duration": 0.1,
+"texture": ExtResource("50_k4qcf")
+}, {
+"duration": 0.1,
+"texture": ExtResource("49_tew26")
+}, {
+"duration": 0.1,
+"texture": ExtResource("48_teikv")
+}, {
+"duration": 0.1,
+"texture": ExtResource("6_3fccu")
+}, {
+"duration": 0.1,
+"texture": ExtResource("5_yd47l")
+}, {
+"duration": 0.1,
+"texture": ExtResource("4_ngpqu")
+}, {
+"duration": 0.1,
+"texture": ExtResource("3_3qlgw")
+}, {
+"duration": 0.1,
+"texture": ExtResource("2_oke34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_htl5q")
+}],
+"loop": false,
+"name": &"eat_out_bomb",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1134,6 +1184,47 @@ animations = [{
 "duration": 0.1,
 "texture": ExtResource("6_3fccu")
 }, {
+"duration": 0.1,
+"texture": ExtResource("48_teikv")
+}, {
+"duration": 0.1,
+"texture": ExtResource("49_tew26")
+}, {
+"duration": 0.1,
+"texture": ExtResource("50_k4qcf")
+}, {
+"duration": 0.1,
+"texture": ExtResource("51_4v4ia")
+}, {
+"duration": 0.1,
+"texture": ExtResource("52_bsx3k")
+}, {
+"duration": 0.1,
+"texture": ExtResource("53_pf8t5")
+}],
+"loop": false,
+"name": &"spit_out_bomb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_htl5q")
+}, {
+"duration": 0.1,
+"texture": ExtResource("2_oke34")
+}, {
+"duration": 0.1,
+"texture": ExtResource("3_3qlgw")
+}, {
+"duration": 0.1,
+"texture": ExtResource("4_ngpqu")
+}, {
+"duration": 0.1,
+"texture": ExtResource("5_yd47l")
+}, {
+"duration": 0.1,
+"texture": ExtResource("6_3fccu")
+}, {
 "duration": 5.0,
 "texture": ExtResource("47_bsx3k")
 }],
@@ -1418,10 +1509,10 @@ script = ExtResource("1_k82eu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1719427387]
 sprite_frames = SubResource("SpriteFrames_3fccu")
-animation = &"hurry_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1537868090]
 position = Vector2(16, 23)
 shape = SubResource("CircleShape2D_k82eu")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

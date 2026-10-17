@@ -22,7 +22,6 @@ Global="*uid://cdgkv007grgrs"
 [display]
 
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [physics]
 

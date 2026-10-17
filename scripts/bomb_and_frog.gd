@@ -7,9 +7,13 @@ extends Node2D
 @onready var label = $timerLabel
 @onready var timer = $Timer
 
+@onready var audio_player = $AudioStreamPlayer2D
+
 var puzzles
 var puzzle_solutions = {}
 var jimmy_clues
+
+var game_done = false
 
 # Variables needed for specific puzzles (i.e. the wire match any future puzzle)
 var wire_match_clue_selected = false
@@ -21,6 +25,24 @@ var grown_bomb_default_pos
 # Jimmy.play("purple_circle")
 
 func _ready() -> void:
+	# Start jimmy animation, tween bomb from jimmy to default position, start timer, start audio
+	Bomb.visible = false
+	
+	Jimmy.animation.play('spit_out_bomb')
+	
+	var tween = create_tween().set_parallel(true)
+	
+	grown_bomb_default_pos = Vector2(493.0, 357.0)
+	
+	tween.tween_property(Bomb, "scale", Vector2(0.25, 0.25), 0.6)
+	tween.tween_property(Bomb, "position", grown_bomb_default_pos, 0.6)
+	
+	tween.tween_callback(func(): Bomb.visible = true).set_delay(0.25)
+	
+	await tween
+	
+	audio_player.play()
+	
 	# adding timer to the ready func, t.c.
 	timer.start()
 	
@@ -36,6 +58,8 @@ func time_left_to_live():
 	return [minute, second]
 	
 func _process(delta):
+	if not game_done:
+		all_puzzles_solved()
 	label.text = "%02d : %02d" % time_left_to_live()
 	
 func choose_puzzle_clue(random_puzzle_color) -> String:
@@ -71,6 +95,19 @@ func choose_puzzle_clue(random_puzzle_color) -> String:
 			print('You fucked up in choose_puzzle_clue!')
 			return 'failure'
 			
+func all_puzzles_solved():
+	var puzzles_solved = 0
+	
+	for puzzle in puzzles:
+		if puzzle.solved:
+			puzzles_solved = puzzles_solved + 1
+			
+	if len(puzzles) == puzzles_solved:
+		print('game_over good')
+		game_done = true
+		audio_player.stop()
+		jimmy_eat_bomb()
+			
 func display_clue(random_puzzle_color, random_puzzle_shape):
 	var puzzle = puzzle_solutions[random_puzzle_color][0]
 	
@@ -100,6 +137,21 @@ func shrink_bomb() -> Tween:
 	tween.tween_property(Bomb, "position", grown_bomb_default_pos, 0.5)
 	
 	grown_bomb_default_pos = Vector2(0.0, 0.0)
+	
+	return tween
+	
+func jimmy_eat_bomb() -> Tween:
+	Bomb.visible = true
+	
+	Jimmy.animation.play('spit_out_bomb')
+	Jimmy.animation.play('eat_out_bomb')
+	
+	var tween = create_tween().set_parallel(true)
+	
+	tween.tween_property(Bomb, "scale", Vector2(0.065, 0.065), 0.6)
+	tween.tween_property(Bomb, "position", Vector2(897.0, 328.0), 0.6)
+	
+	tween.tween_callback(func(): Bomb.visible = false).set_delay(0.35)
 	
 	return tween
 
@@ -142,11 +194,8 @@ func _on_jimmy_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 				
 		print(random_puzzle_color + '_' + random_puzzle_shape)
 		display_clue(random_puzzle_color, random_puzzle_shape)
-		#
-		#if len(puzzle_solutions[random_puzzle]) > 0:
-			#Jimmy.animation.play(random_puzzle + '_' + random_puzzle_clue)
-		#else:
-			#print('Can\'t animate clue')
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+		jimmy_eat_bomb()
 
 func _on_bomb_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
@@ -176,3 +225,5 @@ func _on_bomb_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 
 func _on_timer_timeout() -> void:
 	print('game_over')
+	audio_player.stop()
+	jimmy_eat_bomb()
