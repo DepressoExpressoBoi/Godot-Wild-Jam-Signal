@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bvlsiffhlq2gd"]
+
+[ext_resource type="Script" uid="uid://2vrxo81uugor" path="res://scenes/puzzle_scenes/puzzle_number_game.gd" id="1_xm4jx"]
+[ext_resource type="Texture2D" uid="uid://daqp00uvmnev3" path="res://assets/number1.png" id="2_2jepg"]
+[ext_resource type="Texture2D" uid="uid://dasugp2w8qofj" path="res://assets/number0.png" id="2_sl06x"]
+[ext_resource type="Texture2D" uid="uid://bplxcqw1n7he" path="res://assets/number2.png" id="3_17p3q"]
+[ext_resource type="Texture2D" uid="uid://nkthe0b4br5u" path="res://assets/number3.png" id="4_17p3q"]
+[ext_resource type="Texture2D" uid="uid://bbavju1weogvv" path="res://assets/number4.png" id="6_h6dlb"]
+[ext_resource type="Texture2D" uid="uid://4ag5okygpu0s" path="res://assets/number5.png" id="7_om86b"]
+[ext_resource type="Texture2D" uid="uid://ci4ke6f7fkfjy" path="res://assets/number6.png" id="8_om86b"]
+[ext_resource type="Texture2D" uid="uid://ch7cbyqf5b02f" path="res://assets/number7.png" id="9_a3rtp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xm4jx"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sl06x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2jepg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_17p3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_17p3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h6dlb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_om86b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_om86b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a3rtp")
+}],
+"loop": true,
+"name": &"number_lock",
+"speed": 1.0
+}]
+
+[node name="PuzzleNumberGame" type="Control" unique_id=21758190]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -152.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xm4jx")
+
+[node name="buttonUp1" type="Button" parent="." unique_id=1966665081]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 79.0
+offset_right = 160.0
+offset_bottom = 159.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1582365811]
+position = Vector2(122, 220)
+scale = Vector2(0.640625, 0.6328125)
+sprite_frames = SubResource("SpriteFrames_xm4jx")
+animation = &"number_lock"
+
+[node name="buttonDown1" type="Button" parent="." unique_id=1128834142]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 282.0
+offset_right = 163.0
+offset_bottom = 362.0
+
+[connection signal="button_down" from="buttonUp1" to="." method="_on_button_up_1_button_down"]
+[connection signal="button_up" from="buttonUp1" to="." method="_on_button_up_1_button_up"]
+[connection signal="button_down" from="buttonDown1" to="." method="_on_button_down_1_button_down"]
+[connection signal="button_up" from="buttonDown1" to="." method="_on_button_down_1_button_up"]
