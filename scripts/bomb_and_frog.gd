@@ -46,8 +46,8 @@ func choose_puzzle_clue(random_puzzle_color) -> String:
 				if wire_match_clue_selected:
 					if not puzzle.solved:
 						wire_match_clue_selected = false
-						clue_shape = wire_match_clue.pop_back()
-						wire_match_clue.push_front(clue_shape)
+						clue_shape = wire_match_clue.pop_front()
+						wire_match_clue.push_back(clue_shape)
 						
 						wire_match_clue.clear()
 					print('wire_match_clue_selected: ', clue_shape)
@@ -57,8 +57,8 @@ func choose_puzzle_clue(random_puzzle_color) -> String:
 						wire_match_clue_selected = true
 						wire_match_clue = puzzle_solutions[random_puzzle_color][2].duplicate().pick_random().duplicate()
 						
-						clue_shape = wire_match_clue.pop_back()
-						wire_match_clue.push_front(clue_shape)
+						clue_shape = wire_match_clue.pop_front()
+						wire_match_clue.push_back(clue_shape)
 					print('not wire_match_clue_selected: ', clue_shape)
 					return clue_shape
 		'PowerSliders':
@@ -165,4 +165,6 @@ func _on_bomb_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 				puzzle.ShapeButtonLeft2DefaultPos = puzzle.get_node('ShapeButtonLeft2Default').global_position
 				puzzle.ShapeButtonLeft3DefaultPos = puzzle.get_node('ShapeButtonLeft3Default').global_position
 				puzzle.ShapeButtonLeft4DefaultPos = puzzle.get_node('ShapeButtonLeft4Default').global_position
-		
+
+func _on_timer_timeout() -> void:
+	print('game_over')

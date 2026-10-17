@@ -125,6 +125,7 @@ func _on_puzzle_wire_match_gui_input(event: InputEvent) -> void:
 					await bomb_tween.finished
 
 func _on_puzzle_power_sliders_gui_input(event: InputEvent) -> void:
+	#print('power_sliders event: ', event)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 		var bomb_tween
 		
@@ -158,3 +159,5 @@ func _on_puzzle_power_sliders_gui_input(event: InputEvent) -> void:
 			for puzzle in bomb_puzzles:
 				if puzzle.puzzle_type == 'PowerSliders':
 					bomb_tween = grow_puzzle(puzzle)
+					
+		print('powersliders puzzle_grown: ', puzzle_grown)
