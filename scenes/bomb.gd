@@ -90,7 +90,7 @@ func shrink_puzzle(puzzle) -> Tween:
 	return tween
 
 func _on_puzzle_wire_match_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		var bomb_tween
 		
 		if puzzle_grown:
