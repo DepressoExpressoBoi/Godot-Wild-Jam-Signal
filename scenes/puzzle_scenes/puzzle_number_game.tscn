@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bvlsiffhlq2gd"]
+[gd_scene format=3 uid="uid://0joyig55n15w"]
 
 [ext_resource type="Script" uid="uid://2vrxo81uugor" path="res://scripts/puzzle_scripts/puzzle_number_game.gd" id="1_xm4jx"]
 [ext_resource type="Texture2D" uid="uid://daqp00uvmnev3" path="res://assets/number1.png" id="2_2jepg"]
@@ -168,9 +168,11 @@ offset_bottom = 500.0
 
 [connection signal="button_down" from="buttonUp1" to="." method="_on_button_up_1_button_down"]
 [connection signal="button_up" from="buttonUp1" to="." method="_on_button_up_1_button_up"]
+[connection signal="pressed" from="buttonUp1" to="." method="_on_button_up_1_pressed"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="button_down" from="buttonDown1" to="." method="_on_button_down_1_button_down"]
 [connection signal="button_up" from="buttonDown1" to="." method="_on_button_down_1_button_up"]
+[connection signal="pressed" from="buttonDown1" to="." method="_on_button_down_1_pressed"]
 [connection signal="button_down" from="buttonUp2" to="." method="_on_button_up_2_button_down"]
 [connection signal="button_up" from="buttonUp2" to="." method="_on_button_up_2_button_up"]
 [connection signal="frame_changed" from="AnimatedSprite2D2" to="." method="_on_animated_sprite_2d_2_frame_changed"]

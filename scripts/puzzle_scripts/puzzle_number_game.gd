@@ -1,14 +1,25 @@
 extends Control
 
+var numbers = []
+
 # for manually changing the puzzle answers
-@onready var slot_1_answer: int = $AnimatedSprite2D.frame
+var slot_1_answer = 5
 var slot_2_answer = 4
 var slot_3_answer = 2
 var slot_4_answer = 9
 var slot_5_answer = 6
 
 func _ready():
-	
+	numbers.append("res://assets/number0.png")
+	numbers.append("res://assets/number1.png")
+	numbers.append("res://assets/number2.png")
+	numbers.append("res://assets/number3.png")
+	numbers.append("res://assets/number4.png")
+	numbers.append("res://assets/number5.png")
+	numbers.append("res://assets/number6.png")
+	numbers.append("res://assets/number7.png")
+	numbers.append("res://assets/number8.png")
+	numbers.append("res://assets/number9.png")
 	#--------------------------[button 1 slot 1]---------------------------------------
 	
 	# making button 1 up, t.c.
@@ -258,3 +269,21 @@ func _on_animated_sprite_2d_5_frame_changed() -> void:
 			$buttonUp5.disabled = true
 			$buttonDown5.disabled = true
 	print("slot 5 on frame ", $AnimatedSprite2D5.frame)
+
+var changeNumber = 0
+var currentNumber
+
+func _on_button_up_1_pressed() -> void:
+	if changeNumber <= 9:
+		changeNumber += 1
+	else:
+		changeNumber = 0
+	$AnimatedSprite2D.frame = changeNumber
+
+
+func _on_button_down_1_pressed() -> void:
+	if changeNumber >= 0:
+		changeNumber -= 1
+	else:
+		changeNumber = 9
+	$AnimatedSprite2D.frame = changeNumber
