@@ -96,10 +96,6 @@ func _ready():
 
 
 
-
-
-
-
 #--------------------------[button 1 up]---------------------------------------
 
 # when button is lifted it will stop the animtions
@@ -111,7 +107,7 @@ func _on_up_button_1_button_up() -> void:
 	
 # when button is clicked it will move the animation
 func _on_up_button_1_button_down() -> void:
-	$AnimatedSprite2D.play("shape_lock")
+	$AnimatedSprite2D.play("final_shape_lock")
 	
 	print("pressed_up_button_1_button_down") #delete me
 	
@@ -124,7 +120,7 @@ func _on_down_button_1_button_up() -> void:
 	
 	
 func _on_down_button_1_button_down() -> void:
-	$AnimatedSprite2D.play_backwards("shape_lock")
+	$AnimatedSprite2D.play_backwards("final_shape_lock")
 	
 	print("pressed_down_button_1_button_down") #delete me
 	
@@ -137,7 +133,7 @@ func _on_up_button_2_button_up() -> void:
 
 
 func _on_up_button_2_button_down() -> void:
-	$AnimatedSprite2D2.play("shape_lock")
+	$AnimatedSprite2D2.play("final_shape_lock")
 	
 	print("pressed_Down_2") #delete me
 	
@@ -149,7 +145,7 @@ func _on_down_button_2_button_up() -> void:
 	print("paused_Up_2") # delete me
 
 func _on_down_button_2_button_down() -> void:
-	$AnimatedSprite2D2.play_backwards("shape_lock")
+	$AnimatedSprite2D2.play_backwards("final_shape_lock")
 	
 	print("pressed_Down_2") #delete me
 	
@@ -162,7 +158,7 @@ func _on_up_button_3_button_up() -> void:
 
 
 func _on_up_button_3_button_down() -> void:
-	$AnimatedSprite2D3.play("shape_lock")
+	$AnimatedSprite2D3.play("final_shape_lock")
 	
 	print("pressed_Down_3") #delete me
 	
@@ -175,7 +171,7 @@ func _on_down_button_3_button_up() -> void:
 	
 
 func _on_down_button_3_button_down() -> void:
-	$AnimatedSprite2D3.play_backwards("shape_lock")
+	$AnimatedSprite2D3.play_backwards("final_shape_lock")
 	
 	print("pressed_Down_3") #delete me
 	
@@ -188,7 +184,7 @@ func _on_up_button_4_button_up() -> void:
 
 
 func _on_up_button_4_button_down() -> void:
-	$AnimatedSprite2D4.play("shape_lock")
+	$AnimatedSprite2D4.play("final_shape_lock")
 	
 	print("pressed_up_button_4_button_down") #delete me
 	
@@ -201,7 +197,7 @@ func _on_down_button_4_button_up() -> void:
 
 
 func _on_down_button_4_button_down() -> void:
-	$AnimatedSprite2D4.play_backwards("shape_lock")
+	$AnimatedSprite2D4.play_backwards("final_shape_lock")
 	
 	print("pressed_down_button_4_button_down") #delete me
 	
@@ -213,7 +209,7 @@ func _on_up_button_5_button_up() -> void:
 	print("paused_Up_5") # delete me
 
 func _on_up_button_5_button_down() -> void:
-	$AnimatedSprite2D5.play("shape_lock")
+	$AnimatedSprite2D5.play("final_shape_lock")
 	
 	print("pressed_up_button_5_button_down") #delete me
 	
@@ -225,6 +221,6 @@ func _on_down_button_5_button_up() -> void:
 	print("paused_down_button_5_button_up") # delete me
 	
 func _on_down_button_5_button_down() -> void:
-	$AnimatedSprite2D5.play_backwards("shape_lock")
+	$AnimatedSprite2D5.play_backwards("final_shape_lock")
 	
 	print("pressed_down_button_5_button_down") #delete me

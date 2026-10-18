@@ -1,12 +1,23 @@
 [gd_scene format=3 uid="uid://bgijkv17ndprg"]
 
 [ext_resource type="Script" uid="uid://r48cnxe01108" path="res://scripts/puzzle_scripts/puzzle_slot_game.gd" id="1_mw0ea"]
-[ext_resource type="Texture2D" uid="uid://cb6vu75yduqq0" path="res://assets/base_jimmy.png" id="2_83wsu"]
+[ext_resource type="Texture2D" uid="uid://cb6vu75yduqq0" path="res://assets/jimmy/base_jimmy.png" id="2_83wsu"]
 [ext_resource type="Texture2D" uid="uid://blw2bwepgm4f1" path="res://assets/circle_puzzle.png" id="3_g8ove"]
+[ext_resource type="Texture2D" uid="uid://da14ypqqck5ws" path="res://assets/shape_icons/bun/bun_icon.png" id="3_u1hhu"]
+[ext_resource type="Texture2D" uid="uid://2bhjpgxeyl81" path="res://assets/shape_icons/circle/circle_icon.png" id="4_cjsj6"]
 [ext_resource type="Texture2D" uid="uid://b3okb2kou3jl4" path="res://assets/fork_puzzle.png" id="4_sm3ui"]
 [ext_resource type="Texture2D" uid="uid://ckoqa8mi2wskn" path="res://assets/moon_puzzle.png" id="5_cvwat"]
+[ext_resource type="Texture2D" uid="uid://c1j5n6i6006mv" path="res://assets/shape_icons/fork3/fork3_icon.png" id="5_e7xap"]
+[ext_resource type="Texture2D" uid="uid://occo1p42edwy" path="res://assets/shape_icons/fork4/fork4_icon.png" id="6_qk86w"]
 [ext_resource type="Texture2D" uid="uid://e07y6rtoep31" path="res://assets/star_puzzle.png" id="6_ywkwj"]
 [ext_resource type="Texture2D" uid="uid://dqm8c6noy3qax" path="res://assets/triangle_puzzle.png" id="7_0ssu1"]
+[ext_resource type="Texture2D" uid="uid://by615jshcqyjh" path="res://assets/shape_icons/hamburber/hamburber_icon.png" id="7_glut4"]
+[ext_resource type="Texture2D" uid="uid://ccc622t0vnh1c" path="res://assets/shape_icons/heart/heart_icon.png" id="8_t00s2"]
+[ext_resource type="Texture2D" uid="uid://dy8hau1ttchuv" path="res://assets/shape_icons/moon/moon_icon.png" id="9_yghue"]
+[ext_resource type="Texture2D" uid="uid://bq1fulr42abo3" path="res://assets/shape_icons/pentagon/pentagon_icon.png" id="10_h0j0g"]
+[ext_resource type="Texture2D" uid="uid://d1rwpletj8amn" path="res://assets/shape_icons/square/square_icon.png" id="11_dnx04"]
+[ext_resource type="Texture2D" uid="uid://dh2cyj0aahfxs" path="res://assets/shape_icons/star/star_icon.png" id="12_gmwul"]
+[ext_resource type="Texture2D" uid="uid://dn58gra42p6uc" path="res://assets/shape_icons/triangle/triangle_icon.png" id="13_ajn6c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_33pvg"]
 animations = [{
@@ -16,6 +27,44 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_u1hhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cjsj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e7xap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qk86w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_glut4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t00s2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yghue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h0j0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dnx04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gmwul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ajn6c")
+}],
+"loop": true,
+"name": &"final_shape_lock",
 "speed": 5.0
 }, {
 "frames": [{
@@ -57,7 +106,7 @@ offset_bottom = 185.0
 position = Vector2(216.00002, 300)
 scale = Vector2(0.65625, 0.6875)
 sprite_frames = SubResource("SpriteFrames_33pvg")
-animation = &"shape_lock"
+animation = &"final_shape_lock"
 
 [node name="downButton1" type="Button" parent="." unique_id=2120196875]
 layout_mode = 0
@@ -77,7 +126,7 @@ offset_bottom = 185.0
 position = Vector2(376, 300)
 scale = Vector2(0.65625, 0.6875)
 sprite_frames = SubResource("SpriteFrames_33pvg")
-animation = &"shape_lock"
+animation = &"final_shape_lock"
 
 [node name="downButton2" type="Button" parent="." unique_id=427463694]
 layout_mode = 0
@@ -97,7 +146,7 @@ offset_bottom = 185.0
 position = Vector2(547, 300)
 scale = Vector2(0.65625, 0.6875)
 sprite_frames = SubResource("SpriteFrames_33pvg")
-animation = &"shape_lock"
+animation = &"final_shape_lock"
 
 [node name="downButton3" type="Button" parent="." unique_id=902146096]
 layout_mode = 0
@@ -117,7 +166,7 @@ offset_bottom = 185.0
 position = Vector2(712, 300)
 scale = Vector2(0.65625, 0.6875)
 sprite_frames = SubResource("SpriteFrames_33pvg")
-animation = &"shape_lock"
+animation = &"final_shape_lock"
 
 [node name="downButton4" type="Button" parent="." unique_id=96832987]
 layout_mode = 0
@@ -137,7 +186,7 @@ offset_bottom = 185.0
 position = Vector2(873.00006, 300)
 scale = Vector2(0.65625, 0.6875)
 sprite_frames = SubResource("SpriteFrames_33pvg")
-animation = &"shape_lock"
+animation = &"final_shape_lock"
 
 [node name="downButton5" type="Button" parent="." unique_id=1647045390]
 layout_mode = 0
