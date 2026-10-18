@@ -249,3 +249,88 @@ func _on_animated_sprite_2d_5_frame_changed() -> void:
 			$upButton5.disabled = true
 			$downButton5.disabled = true
 	print(" slot 5 on frame ", $AnimatedSprite2D5.frame)
+	
+	
+	
+var changeNumber1 = 0
+var changeNumber2 = 0
+var changeNumber3 = 0
+var changeNumber4 = 0
+var changeNumber5 = 0
+
+func _on_up_button_1_pressed() -> void:
+	if changeNumber1 <= 9:
+		changeNumber1 += 1
+	else:
+		changeNumber1 = 0
+	$AnimatedSprite2D.frame = changeNumber1
+
+
+func _on_down_button_1_pressed() -> void:
+	if changeNumber1 >= 0:
+		changeNumber1 -= 1
+	else:
+		changeNumber1 = 9
+	$AnimatedSprite2D.frame = changeNumber1
+
+func _on_up_button_2_pressed() -> void:
+	if changeNumber2 <= 9:
+		changeNumber2 += 1
+	else:
+		changeNumber2 = 0
+	$AnimatedSprite2D2.frame = changeNumber2
+
+
+func _on_down_button_2_pressed() -> void:
+	if changeNumber2 >= 0:
+		changeNumber2 -= 1
+	else:
+		changeNumber2 = 9
+	$AnimatedSprite2D2.frame = changeNumber2
+
+
+func _on_up_button_3_pressed() -> void:
+	if changeNumber3 <= 9:
+		changeNumber3 += 1
+	else:
+		changeNumber3 = 0
+	$AnimatedSprite2D3.frame = changeNumber3
+
+
+func _on_down_button_3_pressed() -> void:
+	if changeNumber3 >= 0:
+		changeNumber3 -= 1
+	else:
+		changeNumber3 = 9
+	$AnimatedSprite2D3.frame = changeNumber3
+
+
+func _on_up_button_4_pressed() -> void:
+	if changeNumber4 <= 9:
+		changeNumber4 += 1
+	else:
+		changeNumber4 = 0
+	$AnimatedSprite2D4.frame = changeNumber4
+
+
+func _on_down_button_4_pressed() -> void:
+	if changeNumber4 >= 0:
+		changeNumber4 -= 1
+	else:
+		changeNumber4 = 9
+	$AnimatedSprite2D4.frame = changeNumber4
+
+
+func _on_up_button_5_pressed() -> void:
+	if changeNumber5 <= 9:
+		changeNumber5 += 1
+	else:
+		changeNumber5 = 0
+	$AnimatedSprite2D5.frame = changeNumber5
+
+func _on_down_button_5_pressed() -> void:
+	if changeNumber5 >= 0:
+		changeNumber5 -= 1
+	else:
+		changeNumber5 = 9
+	$AnimatedSprite2D5.frame = changeNumber5
