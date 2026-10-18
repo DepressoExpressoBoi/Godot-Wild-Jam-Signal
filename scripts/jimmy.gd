@@ -36,4 +36,4 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 			animation.offset = Vector2(0.0, 0.0) 
 
 func _on_restart_button_pressed() -> void:
-	pass # Replace with function body.
+	Global.game_controller.change_to_main_menu_scene()
