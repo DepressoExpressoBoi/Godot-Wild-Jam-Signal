@@ -52,7 +52,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"number_lock",
-"speed": 1.0
+"speed": 2.0
 }]
 
 [node name="PuzzleNumberGame" type="Control" unique_id=21758190]
