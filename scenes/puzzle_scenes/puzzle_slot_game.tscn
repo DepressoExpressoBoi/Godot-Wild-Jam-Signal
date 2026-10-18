@@ -97,103 +97,103 @@ script = ExtResource("1_mw0ea")
 
 [node name="upButton1" type="Button" parent="." unique_id=1962104374]
 layout_mode = 0
-offset_left = 176.0
-offset_top = 105.0
-offset_right = 256.0
-offset_bottom = 185.0
+offset_left = 205.0
+offset_top = 100.0
+offset_right = 285.0
+offset_bottom = 180.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=94136638]
-position = Vector2(216.00002, 300)
+position = Vector2(246, 300)
 scale = Vector2(0.65625, 0.6875)
 sprite_frames = SubResource("SpriteFrames_33pvg")
 animation = &"final_shape_lock"
 
 [node name="downButton1" type="Button" parent="." unique_id=2120196875]
 layout_mode = 0
-offset_left = 176.0
-offset_top = 410.0
-offset_right = 256.0
-offset_bottom = 490.0
+offset_left = 205.0
+offset_top = 420.0
+offset_right = 285.0
+offset_bottom = 500.0
 
 [node name="upButton2" type="Button" parent="." unique_id=198991376]
 layout_mode = 0
-offset_left = 335.0
-offset_top = 105.0
-offset_right = 415.0
-offset_bottom = 185.0
+offset_left = 365.0
+offset_top = 100.0
+offset_right = 445.0
+offset_bottom = 180.0
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1413018500]
-position = Vector2(376, 300)
+position = Vector2(406, 300)
 scale = Vector2(0.65625, 0.6875)
 sprite_frames = SubResource("SpriteFrames_33pvg")
 animation = &"final_shape_lock"
 
 [node name="downButton2" type="Button" parent="." unique_id=427463694]
 layout_mode = 0
-offset_left = 338.0
-offset_top = 412.0
-offset_right = 418.0
-offset_bottom = 492.0
+offset_left = 365.0
+offset_top = 420.0
+offset_right = 445.0
+offset_bottom = 500.0
 
 [node name="upButton3" type="Button" parent="." unique_id=1076392101]
 layout_mode = 0
-offset_left = 502.0
-offset_top = 105.0
-offset_right = 582.0
-offset_bottom = 185.0
+offset_left = 525.0
+offset_top = 100.0
+offset_right = 605.0
+offset_bottom = 180.0
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=537041740]
-position = Vector2(547, 300)
+position = Vector2(566, 300)
 scale = Vector2(0.65625, 0.6875)
 sprite_frames = SubResource("SpriteFrames_33pvg")
 animation = &"final_shape_lock"
 
 [node name="downButton3" type="Button" parent="." unique_id=902146096]
 layout_mode = 0
-offset_left = 511.0
-offset_top = 413.0
-offset_right = 591.0
-offset_bottom = 493.0
+offset_left = 525.0
+offset_top = 420.0
+offset_right = 605.0
+offset_bottom = 500.0
 
 [node name="upButton4" type="Button" parent="." unique_id=625455022]
 layout_mode = 0
-offset_left = 670.0
-offset_top = 105.0
-offset_right = 750.0
-offset_bottom = 185.0
+offset_left = 685.0
+offset_top = 100.0
+offset_right = 765.0
+offset_bottom = 180.0
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=824101654]
-position = Vector2(712, 300)
+position = Vector2(726, 300)
 scale = Vector2(0.65625, 0.6875)
 sprite_frames = SubResource("SpriteFrames_33pvg")
 animation = &"final_shape_lock"
 
 [node name="downButton4" type="Button" parent="." unique_id=96832987]
 layout_mode = 0
-offset_left = 670.0
-offset_top = 414.0
-offset_right = 750.0
-offset_bottom = 494.0
+offset_left = 685.0
+offset_top = 420.0
+offset_right = 765.0
+offset_bottom = 500.0
 
 [node name="upButton5" type="Button" parent="." unique_id=9969666]
 layout_mode = 0
-offset_left = 830.0
-offset_top = 105.0
-offset_right = 910.0
-offset_bottom = 185.0
+offset_left = 845.0
+offset_top = 100.0
+offset_right = 925.0
+offset_bottom = 180.0
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="." unique_id=1836628654]
-position = Vector2(873.00006, 300)
+position = Vector2(886, 300)
 scale = Vector2(0.65625, 0.6875)
 sprite_frames = SubResource("SpriteFrames_33pvg")
 animation = &"final_shape_lock"
 
 [node name="downButton5" type="Button" parent="." unique_id=1647045390]
 layout_mode = 0
-offset_left = 834.0
-offset_top = 412.0
-offset_right = 914.0
-offset_bottom = 492.0
+offset_left = 854.0
+offset_top = 420.0
+offset_right = 934.0
+offset_bottom = 500.0
 
 [connection signal="button_down" from="upButton1" to="." method="_on_up_button_1_button_down"]
 [connection signal="button_up" from="upButton1" to="." method="_on_up_button_1_button_up"]
