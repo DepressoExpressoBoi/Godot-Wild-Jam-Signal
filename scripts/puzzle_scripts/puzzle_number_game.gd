@@ -2,6 +2,16 @@ extends Control
 
 var numbers = []
 
+@export var solved = false
+@export var number_solution = []
+@export var color_designation = 'red'
+@export var puzzle_type = "NumberGame"
+
+
+func create_number_solution() -> void:
+	for x in 5:
+		number_solution.append(randi_range(0, 9))
+
 # for manually changing the puzzle answers
 var slot_1_answer = 5
 var slot_2_answer = 4
@@ -10,16 +20,8 @@ var slot_4_answer = 9
 var slot_5_answer = 6
 
 func _ready():
-	numbers.append("res://assets/number0.png")
-	numbers.append("res://assets/number1.png")
-	numbers.append("res://assets/number2.png")
-	numbers.append("res://assets/number3.png")
-	numbers.append("res://assets/number4.png")
-	numbers.append("res://assets/number5.png")
-	numbers.append("res://assets/number6.png")
-	numbers.append("res://assets/number7.png")
-	numbers.append("res://assets/number8.png")
-	numbers.append("res://assets/number9.png")
+	create_number_solution()
+	print(number_solution)
 	#--------------------------[button 1 slot 1]---------------------------------------
 	
 	# making button 1 up, t.c.
