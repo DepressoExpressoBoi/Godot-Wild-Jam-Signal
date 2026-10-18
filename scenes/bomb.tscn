@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://chhj4fib5rmmr" path="res://assets/bombita_clear_and_real.png" id="2_1hf1o"]
 [ext_resource type="PackedScene" uid="uid://bkyl2ft0vr0v6" path="res://scenes/puzzle_scenes/wire_match.tscn" id="2_84slv"]
 [ext_resource type="PackedScene" uid="uid://c8llpsare1wuv" path="res://scenes/puzzle_scenes/power_sliders.tscn" id="2_j15uc"]
-[ext_resource type="Script" uid="uid://ba70aqyd6uj38" path="res://scenes/bomb.gd" id="2_nxi8k"]
+[ext_resource type="Script" uid="uid://ba70aqyd6uj38" path="res://scripts/bomb.gd" id="2_nxi8k"]
 [ext_resource type="PackedScene" uid="uid://brildpp86bumd" path="res://scenes/puzzle_scenes/simon_says.tscn" id="5_nxi8k"]
+[ext_resource type="PackedScene" uid="uid://dvoqx5vgtnx0m" path="res://scenes/puzzle_scenes/code_solver.tscn" id="6_1hf1o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84slv"]
 size = Vector2(1380, 1368)
@@ -41,6 +42,10 @@ metadata/_edit_use_anchors_ = true
 [node name="PUZZLE-SimonSays" parent="." unique_id=1235837024 instance=ExtResource("5_nxi8k")]
 scale = Vector2(0.4, 0.4)
 
+[node name="PUZZLE-CodeSolver" parent="." unique_id=653885062 instance=ExtResource("6_1hf1o")]
+scale = Vector2(0.4, 0.4)
+
 [connection signal="gui_input" from="PUZZLE-WireMatch" to="." method="_on_puzzle_wire_match_gui_input"]
 [connection signal="gui_input" from="PUZZLE-PowerSliders" to="." method="_on_puzzle_power_sliders_gui_input"]
 [connection signal="gui_input" from="PUZZLE-SimonSays" to="." method="_on_puzzle_simon_says_gui_input"]
+[connection signal="gui_input" from="PUZZLE-CodeSolver" to="." method="_on_puzzle_code_solver_gui_input"]

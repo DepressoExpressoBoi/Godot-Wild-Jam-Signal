@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bdyk8m3m8yo4x"
+path="res://.godot/imported/fork4_icon_bitmap.png-8dd281208c02846f348f000954c14110.res"
+
+[deps]
+
+source_file="res://assets/shape_icons/fork4/fork4_icon_bitmap.png"
+dest_files=["res://.godot/imported/fork4_icon_bitmap.png-8dd281208c02846f348f000954c14110.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

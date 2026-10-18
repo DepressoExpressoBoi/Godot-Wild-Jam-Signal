@@ -15,7 +15,7 @@ var grown_puzzle_default_pos
 func _ready() -> void:
 	var selected_puzzle
 	var remaining_puzzles
-	for i in 3:
+	for i in 4:
 		selected_puzzle = all_puzzles.pick_random()
 		all_puzzles.erase(selected_puzzle)
 		bomb_puzzles.append(selected_puzzle)
@@ -199,3 +199,42 @@ func _on_puzzle_simon_says_gui_input(event: InputEvent) -> void:
 					bomb_tween = grow_puzzle(puzzle)
 					
 		print('SimonSays puzzle_grown: ', puzzle_grown)
+
+
+func _on_puzzle_code_solver_gui_input(event: InputEvent) -> void:
+	#print('power_sliders event: ', event)
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		var bomb_tween
+		
+		print('CodeSolver puzzle_grown: ', puzzle_grown)
+		
+		if puzzle_grown:
+			puzzle_grown = false
+			for puzzle in bomb_puzzles:
+				if puzzle.puzzle_type == 'CodeSolver':
+					print('in puzzle_grown CodeSolver')
+					bomb_tween = shrink_puzzle(puzzle)
+			
+					await bomb_tween.finished
+					
+					puzzle.get_child(0).visible = false
+					
+			for puzzle in bomb_puzzles:
+				if puzzle.puzzle_type != 'CodeSolver':
+					puzzle.visible = true
+					
+					
+		else:
+			if bomb_grown or bomb_tweening:
+				return
+				
+			puzzle_grown = true
+			for puzzle in bomb_puzzles:
+				if puzzle.puzzle_type != 'CodeSolver':
+					print('puzzle_visibility: ', puzzle, puzzle.visible)
+					puzzle.visible = false
+			for puzzle in bomb_puzzles:
+				if puzzle.puzzle_type == 'CodeSolver':
+					bomb_tween = grow_puzzle(puzzle)
+					
+		print('CodeSolver puzzle_grown: ', puzzle_grown)

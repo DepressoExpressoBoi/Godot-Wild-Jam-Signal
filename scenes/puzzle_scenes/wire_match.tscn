@@ -6,10 +6,10 @@
 [ext_resource type="Script" uid="uid://bqwu66g1uyg5w" path="res://scripts/puzzle_scripts/wire_match_puzzle/shape_button_left_2.gd" id="4_dk3uk"]
 [ext_resource type="Script" uid="uid://bxf3asc1f1e8k" path="res://scripts/puzzle_scripts/wire_match_puzzle/shape_button_left_3.gd" id="5_77l7s"]
 [ext_resource type="Script" uid="uid://c6p3kti4wsp62" path="res://scripts/puzzle_scripts/wire_match_puzzle/shape_button_left_4.gd" id="6_frkqd"]
-[ext_resource type="Script" uid="uid://bf71w6au6hggq" path="res://scenes/puzzle_scenes/shape_connector_right_1.gd" id="11_241gc"]
-[ext_resource type="Script" uid="uid://bsosyh4yhtikt" path="res://scenes/puzzle_scenes/shape_connector_right_2.gd" id="12_imr33"]
-[ext_resource type="Script" uid="uid://deof0yvgx7yjw" path="res://scenes/puzzle_scenes/shape_connector_right_3.gd" id="13_mjobc"]
-[ext_resource type="Script" uid="uid://cbd3v2kfsjsle" path="res://scenes/puzzle_scenes/shape_connector_right_4.gd" id="14_i68um"]
+[ext_resource type="Script" uid="uid://bf71w6au6hggq" path="res://scripts/puzzle_scripts/NotSureCode/shape_connector_right_1.gd" id="11_241gc"]
+[ext_resource type="Script" uid="uid://bsosyh4yhtikt" path="res://scripts/puzzle_scripts/NotSureCode/shape_connector_right_2.gd" id="12_imr33"]
+[ext_resource type="Script" uid="uid://deof0yvgx7yjw" path="res://scripts/puzzle_scripts/NotSureCode/shape_connector_right_3.gd" id="13_mjobc"]
+[ext_resource type="Script" uid="uid://cbd3v2kfsjsle" path="res://scripts/puzzle_scripts/NotSureCode/shape_connector_right_4.gd" id="14_i68um"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmtx1"]
 size = Vector2(149, 152)
