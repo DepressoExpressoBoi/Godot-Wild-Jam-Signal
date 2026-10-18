@@ -1,23 +1,41 @@
 [gd_scene format=3 uid="uid://cecyb2swr8ihe"]
 
-[ext_resource type="Texture2D" uid="uid://d00iwtmqsre37" path="res://assets/la_bomba.png" id="1_j15uc"]
+[ext_resource type="Texture2D" uid="uid://chhj4fib5rmmr" path="res://assets/bombita_clear_and_real.png" id="2_1hf1o"]
 [ext_resource type="PackedScene" uid="uid://bkyl2ft0vr0v6" path="res://scenes/puzzle_scenes/wire_match.tscn" id="2_84slv"]
 [ext_resource type="PackedScene" uid="uid://c8llpsare1wuv" path="res://scenes/puzzle_scenes/power_sliders.tscn" id="2_j15uc"]
+[ext_resource type="Script" uid="uid://ba70aqyd6uj38" path="res://scenes/bomb.gd" id="2_nxi8k"]
 
-[node name="Bomb" type="Sprite2D" unique_id=258079969]
-scale = Vector2(2, 2)
-texture = ExtResource("1_j15uc")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84slv"]
+size = Vector2(1380, 1368)
 
-[node name="WireMatch" parent="." unique_id=1920518845 instance=ExtResource("2_84slv")]
-offset_left = -175.0
-offset_top = 19.0
-offset_right = -303.0
-offset_bottom = 371.0
-scale = Vector2(0.075, 0.075)
+[node name="Bomb" type="Area2D" unique_id=2016837189]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("2_nxi8k")
 
-[node name="PowerSliders" parent="." unique_id=124821330 instance=ExtResource("2_j15uc")]
-offset_left = 107.0
-offset_top = 23.0
-offset_right = -21.0
-offset_bottom = 375.0
-scale = Vector2(0.075, 0.075)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1956161281]
+position = Vector2(42, -144)
+shape = SubResource("RectangleShape2D_84slv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=201329618]
+texture = ExtResource("2_1hf1o")
+
+[node name="PUZZLE-WireMatch" parent="." unique_id=1920518845 instance=ExtResource("2_84slv")]
+offset_left = -888.0
+offset_top = -636.0
+offset_right = 112.0
+offset_bottom = 364.0
+scale = Vector2(0.4, 0.4)
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PUZZLE-PowerSliders" parent="." unique_id=124821330 instance=ExtResource("2_j15uc")]
+offset_left = -298.0
+offset_top = -654.0
+offset_right = 702.0
+offset_bottom = 346.0
+scale = Vector2(0.4, 0.4)
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="gui_input" from="PUZZLE-WireMatch" to="." method="_on_puzzle_wire_match_gui_input"]
+[connection signal="gui_input" from="PUZZLE-PowerSliders" to="." method="_on_puzzle_power_sliders_gui_input"]

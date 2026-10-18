@@ -6,10 +6,13 @@
 [ext_resource type="Script" uid="uid://bqwu66g1uyg5w" path="res://scripts/puzzle_scripts/wire_match_puzzle/shape_button_left_2.gd" id="4_dk3uk"]
 [ext_resource type="Script" uid="uid://bxf3asc1f1e8k" path="res://scripts/puzzle_scripts/wire_match_puzzle/shape_button_left_3.gd" id="5_77l7s"]
 [ext_resource type="Script" uid="uid://c6p3kti4wsp62" path="res://scripts/puzzle_scripts/wire_match_puzzle/shape_button_left_4.gd" id="6_frkqd"]
-[ext_resource type="Script" uid="uid://biicxfhu876jb" path="res://scripts/puzzle_scripts/wire_match_puzzle/shape_button_right_1.gd" id="7_o7du6"]
-[ext_resource type="Script" uid="uid://bct0e5puseynj" path="res://scripts/puzzle_scripts/wire_match_puzzle/shape_button_right_2.gd" id="8_fg1y8"]
-[ext_resource type="Script" uid="uid://5mu55sae208p" path="res://scripts/puzzle_scripts/wire_match_puzzle/shape_button_right_3.gd" id="9_33m6o"]
-[ext_resource type="Script" uid="uid://dr5t03okqxfom" path="res://scripts/puzzle_scripts/wire_match_puzzle/shape_button_right_4.gd" id="10_mmtx1"]
+[ext_resource type="Script" uid="uid://bf71w6au6hggq" path="res://scenes/puzzle_scenes/shape_connector_right_1.gd" id="11_241gc"]
+[ext_resource type="Script" uid="uid://bsosyh4yhtikt" path="res://scenes/puzzle_scenes/shape_connector_right_2.gd" id="12_imr33"]
+[ext_resource type="Script" uid="uid://deof0yvgx7yjw" path="res://scenes/puzzle_scenes/shape_connector_right_3.gd" id="13_mjobc"]
+[ext_resource type="Script" uid="uid://cbd3v2kfsjsle" path="res://scenes/puzzle_scenes/shape_connector_right_4.gd" id="14_i68um"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmtx1"]
+size = Vector2(149, 152)
 
 [node name="WireMatch" type="Control" unique_id=1920518845]
 layout_mode = 3
@@ -23,7 +26,8 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_k6f0k")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=230570164]
+[node name="Background" type="ColorRect" parent="." unique_id=230570164]
+visible = false
 layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 1000.0
@@ -32,24 +36,106 @@ color = Color(1, 1, 0, 1)
 
 [node name="Wire1" type="Line2D" parent="." unique_id=864101852]
 scale = Vector2(5, 5)
-points = PackedVector2Array(0, 27.199999)
+points = PackedVector2Array(0, 23.999998)
+width = 15.0
 
 [node name="Wire2" type="Line2D" parent="." unique_id=1817408896]
 scale = Vector2(5, 5)
 points = PackedVector2Array(0, 76.799995)
+width = 15.0
 
 [node name="Wire3" type="Line2D" parent="." unique_id=624273319]
 scale = Vector2(5, 5)
 points = PackedVector2Array(0, 131.2)
+width = 15.0
 
 [node name="Wire4" type="Line2D" parent="." unique_id=374226713]
 scale = Vector2(5, 5)
 points = PackedVector2Array(0, 179.19998)
+width = 15.0
+
+[node name="ShapeConnectorRight1" type="Area2D" parent="." unique_id=2046534735]
+position = Vector2(928, 136)
+script = ExtResource("11_241gc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShapeConnectorRight1" unique_id=760776953]
+texture = ExtResource("1_y2swr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapeConnectorRight1" unique_id=1958127719]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_mmtx1")
+
+[node name="ShapeConnectorRight2" type="Area2D" parent="." unique_id=1959044114]
+position = Vector2(928, 392)
+script = ExtResource("12_imr33")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShapeConnectorRight2" unique_id=614491176]
+texture = ExtResource("1_y2swr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapeConnectorRight2" unique_id=634573430]
+shape = SubResource("RectangleShape2D_mmtx1")
+
+[node name="ShapeConnectorRight3" type="Area2D" parent="." unique_id=1642873004]
+position = Vector2(928, 656)
+script = ExtResource("13_mjobc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShapeConnectorRight3" unique_id=1993092046]
+texture = ExtResource("1_y2swr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapeConnectorRight3" unique_id=2055592025]
+shape = SubResource("RectangleShape2D_mmtx1")
+
+[node name="ShapeConnectorRight4" type="Area2D" parent="." unique_id=1621081894]
+position = Vector2(928, 888)
+script = ExtResource("14_i68um")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShapeConnectorRight4" unique_id=1567747921]
+texture = ExtResource("1_y2swr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapeConnectorRight4" unique_id=2030809263]
+shape = SubResource("RectangleShape2D_mmtx1")
+
+[node name="ShapeButtonLeft1Default" type="TextureButton" parent="." unique_id=1680406865]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 160.0
+offset_bottom = 200.0
+button_mask = 0
+
+[node name="ShapeButtonLeft2Default" type="TextureButton" parent="." unique_id=460859572]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 328.0
+offset_right = 160.0
+offset_bottom = 456.0
+button_mask = 0
+
+[node name="ShapeButtonLeft3Default" type="TextureButton" parent="." unique_id=1432612728]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 592.0
+offset_right = 160.0
+offset_bottom = 720.0
+button_mask = 0
+
+[node name="ShapeButtonLeft4Default" type="TextureButton" parent="." unique_id=457646330]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 824.0
+offset_right = 160.0
+offset_bottom = 952.0
+button_mask = 0
 
 [node name="ShapeButtonLeft1" type="TextureButton" parent="." unique_id=2054700145]
 layout_mode = 0
+offset_left = 32.0
 offset_top = 72.0
-offset_right = 128.0
+offset_right = 160.0
 offset_bottom = 200.0
 texture_normal = ExtResource("1_y2swr")
 texture_pressed = ExtResource("1_y2swr")
@@ -58,8 +144,9 @@ script = ExtResource("3_y35ln")
 
 [node name="ShapeButtonLeft2" type="TextureButton" parent="." unique_id=85301243]
 layout_mode = 0
+offset_left = 32.0
 offset_top = 328.0
-offset_right = 128.0
+offset_right = 160.0
 offset_bottom = 456.0
 texture_normal = ExtResource("1_y2swr")
 texture_pressed = ExtResource("1_y2swr")
@@ -68,8 +155,9 @@ script = ExtResource("4_dk3uk")
 
 [node name="ShapeButtonLeft3" type="TextureButton" parent="." unique_id=1533555932]
 layout_mode = 0
+offset_left = 32.0
 offset_top = 592.0
-offset_right = 128.0
+offset_right = 160.0
 offset_bottom = 720.0
 texture_normal = ExtResource("1_y2swr")
 texture_pressed = ExtResource("1_y2swr")
@@ -78,63 +166,28 @@ script = ExtResource("5_77l7s")
 
 [node name="ShapeButtonLeft4" type="TextureButton" parent="." unique_id=222264613]
 layout_mode = 0
+offset_left = 32.0
 offset_top = 824.0
-offset_right = 128.0
+offset_right = 160.0
 offset_bottom = 952.0
 texture_normal = ExtResource("1_y2swr")
 texture_pressed = ExtResource("1_y2swr")
 stretch_mode = 0
 script = ExtResource("6_frkqd")
 
-[node name="ShapeButtonRight1" type="TextureButton" parent="." unique_id=1713326000]
-layout_mode = 0
-offset_left = 872.0
-offset_top = 72.0
-offset_right = 1000.0
-offset_bottom = 200.0
-texture_normal = ExtResource("1_y2swr")
-texture_pressed = ExtResource("1_y2swr")
-stretch_mode = 0
-script = ExtResource("7_o7du6")
-
-[node name="ShapeButtonRight2" type="TextureButton" parent="." unique_id=1703845669]
-layout_mode = 0
-offset_left = 872.0
-offset_top = 328.0
-offset_right = 1000.0
-offset_bottom = 456.0
-texture_normal = ExtResource("1_y2swr")
-texture_pressed = ExtResource("1_y2swr")
-stretch_mode = 0
-script = ExtResource("8_fg1y8")
-
-[node name="ShapeButtonRight3" type="TextureButton" parent="." unique_id=908840173]
-layout_mode = 0
-offset_left = 872.0
-offset_top = 592.0
-offset_right = 1000.0
-offset_bottom = 720.0
-texture_normal = ExtResource("1_y2swr")
-texture_pressed = ExtResource("1_y2swr")
-stretch_mode = 0
-script = ExtResource("9_33m6o")
-
-[node name="ShapeButtonRight4" type="TextureButton" parent="." unique_id=572126189]
-layout_mode = 0
-offset_left = 872.0
-offset_top = 824.0
-offset_right = 1000.0
-offset_bottom = 952.0
-texture_normal = ExtResource("1_y2swr")
-texture_pressed = ExtResource("1_y2swr")
-stretch_mode = 0
-script = ExtResource("10_mmtx1")
-
-[connection signal="pressed" from="ShapeButtonLeft1" to="." method="_on_shape_button_left_1_pressed"]
-[connection signal="pressed" from="ShapeButtonLeft2" to="." method="_on_shape_button_left_2_pressed"]
-[connection signal="pressed" from="ShapeButtonLeft3" to="." method="_on_shape_button_left_3_pressed"]
-[connection signal="pressed" from="ShapeButtonLeft4" to="." method="_on_shape_button_left_4_pressed"]
-[connection signal="pressed" from="ShapeButtonRight1" to="." method="_on_shape_button_right_1_pressed"]
-[connection signal="pressed" from="ShapeButtonRight2" to="." method="_on_shape_button_right_2_pressed"]
-[connection signal="pressed" from="ShapeButtonRight3" to="." method="_on_shape_button_right_3_pressed"]
-[connection signal="pressed" from="ShapeButtonRight4" to="." method="_on_shape_button_right_4_pressed"]
+[connection signal="mouse_entered" from="ShapeConnectorRight1" to="." method="_on_shape_connector_right_1_mouse_entered"]
+[connection signal="mouse_exited" from="ShapeConnectorRight1" to="." method="_on_shape_connector_right_1_mouse_exited"]
+[connection signal="mouse_entered" from="ShapeConnectorRight2" to="." method="_on_shape_connector_right_2_mouse_entered"]
+[connection signal="mouse_exited" from="ShapeConnectorRight2" to="." method="_on_shape_connector_right_2_mouse_exited"]
+[connection signal="mouse_entered" from="ShapeConnectorRight3" to="." method="_on_shape_connector_right_3_mouse_entered"]
+[connection signal="mouse_exited" from="ShapeConnectorRight3" to="." method="_on_shape_connector_right_3_mouse_exited"]
+[connection signal="mouse_entered" from="ShapeConnectorRight4" to="." method="_on_shape_connector_right_4_mouse_entered"]
+[connection signal="mouse_exited" from="ShapeConnectorRight4" to="." method="_on_shape_connector_right_4_mouse_exited"]
+[connection signal="button_down" from="ShapeButtonLeft1" to="." method="_on_shape_button_left_1_button_down"]
+[connection signal="button_up" from="ShapeButtonLeft1" to="." method="_on_shape_button_left_1_button_up"]
+[connection signal="button_down" from="ShapeButtonLeft2" to="." method="_on_shape_button_left_2_button_down"]
+[connection signal="button_up" from="ShapeButtonLeft2" to="." method="_on_shape_button_left_2_button_up"]
+[connection signal="button_down" from="ShapeButtonLeft3" to="." method="_on_shape_button_left_3_button_down"]
+[connection signal="button_up" from="ShapeButtonLeft3" to="." method="_on_shape_button_left_3_button_up"]
+[connection signal="button_down" from="ShapeButtonLeft4" to="." method="_on_shape_button_left_4_button_down"]
+[connection signal="button_up" from="ShapeButtonLeft4" to="." method="_on_shape_button_left_4_button_up"]

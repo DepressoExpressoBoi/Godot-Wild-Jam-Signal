@@ -6,6 +6,7 @@ var static_shape_solution
 @export var solved = false
 @export var shape_solution = []
 @export var color_designation = 'purple'
+@export var puzzle_type = 'PowerSliders'
 
 @onready var SliderMoon = $SliderMoon
 @onready var SliderCircle = $SliderCircle
@@ -24,7 +25,6 @@ var static_shape_solution
 func _ready() -> void:
 	create_shape_solution()
 	static_shape_solution = shape_solution.duplicate()
-	print(shape_solution)
 
 func create_shape_solution() -> void:
 	var shapes_to_pick = randi_range(1,5)
