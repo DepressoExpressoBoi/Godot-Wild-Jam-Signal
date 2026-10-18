@@ -160,3 +160,42 @@ func _on_puzzle_power_sliders_gui_input(event: InputEvent) -> void:
 					bomb_tween = grow_puzzle(puzzle)
 					
 		print('powersliders puzzle_grown: ', puzzle_grown)
+
+
+func _on_puzzle_simon_says_gui_input(event: InputEvent) -> void:
+	#print('power_sliders event: ', event)
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		var bomb_tween
+		
+		print('SimonSays puzzle_grown: ', puzzle_grown)
+		
+		if puzzle_grown:
+			puzzle_grown = false
+			for puzzle in bomb_puzzles:
+				if puzzle.puzzle_type == 'SimonSays':
+					print('in puzzle_grown SimonSays')
+					bomb_tween = shrink_puzzle(puzzle)
+			
+					await bomb_tween.finished
+					
+					puzzle.get_child(0).visible = false
+					
+			for puzzle in bomb_puzzles:
+				if puzzle.puzzle_type != 'SimonSays':
+					puzzle.visible = true
+					
+					
+		else:
+			if bomb_grown or bomb_tweening:
+				return
+				
+			puzzle_grown = true
+			for puzzle in bomb_puzzles:
+				if puzzle.puzzle_type != 'SimonSays':
+					print('puzzle_visibility: ', puzzle, puzzle.visible)
+					puzzle.visible = false
+			for puzzle in bomb_puzzles:
+				if puzzle.puzzle_type == 'SimonSays':
+					bomb_tween = grow_puzzle(puzzle)
+					
+		print('SimonSays puzzle_grown: ', puzzle_grown)

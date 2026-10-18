@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cdmglkgv8owly"
+path="res://.godot/imported/heart_icon_bitmap.png-f3cf590424b374374a1d7064aa36c6c5.res"
+
+[deps]
+
+source_file="res://assets/shape_icons/heart/heart_icon_bitmap.png"
+dest_files=["res://.godot/imported/heart_icon_bitmap.png-f3cf590424b374374a1d7064aa36c6c5.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

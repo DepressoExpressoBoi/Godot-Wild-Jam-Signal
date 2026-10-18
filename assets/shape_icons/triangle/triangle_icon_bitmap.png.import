@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dawdtfay6hwuc"
+path="res://.godot/imported/triangle_icon_bitmap.png-538b322ceeacd5dc956867d99bddd880.res"
+
+[deps]
+
+source_file="res://assets/shape_icons/triangle/triangle_icon_bitmap.png"
+dest_files=["res://.godot/imported/triangle_icon_bitmap.png-538b322ceeacd5dc956867d99bddd880.res"]
+
+[params]
+
+create_from=1
+threshold=0.5
