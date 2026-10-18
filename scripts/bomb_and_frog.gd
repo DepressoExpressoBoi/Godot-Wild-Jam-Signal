@@ -131,10 +131,14 @@ func display_clue(random_puzzle_color, random_puzzle_shape):
 		if random_puzzle_shape != 'powerslide' or random_puzzle_shape != 'fake-shape':
 			print('not puzzle.solved: ', random_puzzle_shape)
 			Jimmy.monitoring = false
+			Jimmy.tongue_tracks.pick_random().play()
 			Jimmy.animation.play(random_puzzle_color + '_' + random_puzzle_shape)
+			#Jimmy.tongue_tracks.pick_random().stop()
 	elif puzzle.solved:
 		Jimmy.monitoring = false
+		Jimmy.hurry_up_track.play()
 		Jimmy.animation.play('hurry_up')
+		#Jimmy.hurry_up_track.stop()
 		
 func grow_bomb() -> Tween:
 	var tween = create_tween().set_parallel(true)
@@ -159,8 +163,11 @@ func shrink_bomb() -> Tween:
 func jimmy_eat_bomb() -> Tween:
 	Bomb.visible = true
 	
+	Jimmy.tongue_tracks.pick_random().play()
 	Jimmy.animation.play('spit_out_bomb')
+	Jimmy.tongue_tracks.pick_random().play()
 	Jimmy.animation.play('eat_out_bomb')
+	Jimmy.gulp_track.play()
 	
 	var tween = create_tween().set_parallel(true)
 	
@@ -211,7 +218,10 @@ func _on_jimmy_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 		print(random_puzzle_color + '_' + random_puzzle_shape)
 		display_clue(random_puzzle_color, random_puzzle_shape)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+		audio_player.stop()
 		jimmy_eat_bomb()
+		
+		Jimmy.animation.play('blow_up')
 
 func _on_bomb_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -243,3 +253,6 @@ func _on_timer_timeout() -> void:
 	print('game_over')
 	audio_player.stop()
 	jimmy_eat_bomb()
+	
+	Jimmy.animation.play('blow_up')
+	

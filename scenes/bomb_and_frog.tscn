@@ -22,6 +22,7 @@ position = Vector2(875, 298)
 scale = Vector2(2.328125, 2.1640625)
 
 [node name="Bomb" parent="." unique_id=258079969 instance=ExtResource("1_1vjqw")]
+visible = false
 position = Vector2(897, 328)
 scale = Vector2(0.065, 0.065)
 
@@ -40,6 +41,7 @@ one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1196809095]
 stream = ExtResource("4_5ad8w")
+volume_db = -6.913
 
 [connection signal="input_event" from="Jimmy" to="." method="_on_jimmy_input_event"]
 [connection signal="input_event" from="Bomb" to="." method="_on_bomb_input_event"]

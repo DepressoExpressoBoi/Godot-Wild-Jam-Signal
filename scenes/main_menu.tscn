@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://cbdw44aifl3mp"]
 
 [ext_resource type="Script" uid="uid://d0dh58jpncel1" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://bgfarc1ngqshe" path="res://assets/icon.svg" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://d0clkf5w6p2fk" path="res://assets/play_button.png" id="2_ekxnf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
+font_size = 48
+font_color = Color(0.70980394, 0.9019608, 0.11372549, 1)
+outline_size = 5
+outline_color = Color(0.13725491, 0.68235296, 0.2901961, 1)
+shadow_size = 57
+shadow_color = Color(0.019607844, 0.019607844, 0.019607844, 0)
 
 [node name="MainMenu" type="Control" unique_id=207003901]
 layout_mode = 3
@@ -12,22 +20,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2079767529]
+layout_mode = 0
+offset_right = 1162.0
+offset_bottom = 670.0
+color = Color(0.65199715, 0.651983, 1, 1)
+
 [node name="Title" type="Label" parent="." unique_id=1945699890]
 layout_mode = 0
-offset_left = 427.0
-offset_top = 129.0
-offset_right = 674.0
-offset_bottom = 209.0
-text = "Hellooooo Young Pups	"
+offset_left = 176.0
+offset_top = 112.0
+offset_right = 978.0
+offset_bottom = 192.0
+text = "Keep Ribbiting and Nobody Croaks"
+label_settings = SubResource("LabelSettings_bqqt6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=1091325008]
 layout_mode = 0
-offset_left = 481.0
-offset_top = 187.0
-offset_right = 617.0
-offset_bottom = 323.0
+offset_left = 472.0
+offset_top = 224.00002
+offset_right = 736.0
+offset_bottom = 360.0
+scale = Vector2(0.69, 0.69)
 icon = ExtResource("2_ekxnf")
+flat = true
+icon_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
