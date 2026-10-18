@@ -157,7 +157,9 @@ func _on_button_up_4_button_up() -> void:
 	
 	
 func _on_button_up_4_button_down() -> void:
-	$AnimatedSprite2D4.play("number_lock")
+	if $AnimatedSprite2D4.is_playing("number_lock"):
+		if $buttonUp4.disabled != true:
+			$AnimatedSprite2D4.play("number_lock")
 	
 	
 #--------------------------[button 4 down slot 4]---------------------------------------
@@ -236,6 +238,13 @@ func _on_animated_sprite_2d_4_frame_changed() -> void:
 			print("disabling since correct answer was ", slot_4_answer)
 			$buttonUp4.disabled = true
 			$buttonDown4.disabled = true
+			
+			if $AnimatedSprite2D4.frame == 9:
+				$buttonDown4.disabled = true
+				$buttonUp4.disabled = true
+			
+			# seems that when you hold down the button as it disables it still loops
+		
 	print("slot 4 on frame ", $AnimatedSprite2D4.frame)
 
 #-----------------------[animation logic slot 5]-----------------------------------
