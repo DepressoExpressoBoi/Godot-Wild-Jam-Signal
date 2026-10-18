@@ -21,7 +21,7 @@ func _ready() -> void:
 		bomb_puzzles.append(selected_puzzle)
 		
 	remaining_puzzles = all_puzzles.filter(func(puzzle): return not bomb_puzzles.has(puzzle))
-	print(remaining_puzzles)
+	print(selected_puzzle)
 	for puzzle in remaining_puzzles:
 		puzzle.queue_free()
 	

@@ -132,6 +132,8 @@ func all_puzzles_solved():
 		game_done = true
 		audio_player.stop()
 		jimmy_eat_bomb()
+		
+		Global.game_controller.change_to_main_menu_scene()
 			
 func display_clue(random_puzzle_color, random_puzzle_shape):
 	var puzzle = puzzle_solutions[random_puzzle_color][0]

@@ -12,14 +12,14 @@ func _ready() -> void:
 	Global.game_controller = self
 	
 func change_to_bomb_and_frog_scene():
-	Global.game_controller.get_child(0).queue_free()
+	Global.game_controller.remove_child(main_menu)
 	var bomb_and_frog = preload("res://scenes/bomb_and_frog.tscn").instantiate()
 	Global.game_controller.add_child(bomb_and_frog)
 	
 func change_to_main_menu_scene():
 	var bomb_and_frog = Global.game_controller.get_child(0)
 	Global.game_controller.get_child(0).queue_free()
-	var main_menu = preload("res://scenes/main_menu.tscn").instantiate()
+	#var main_menu = preload("res://scenes/main_menu.tscn").instantiate()
 	Global.game_controller.add_child(main_menu)
 	
 # Here we would add the functions that we call from the game to change to different scenes.

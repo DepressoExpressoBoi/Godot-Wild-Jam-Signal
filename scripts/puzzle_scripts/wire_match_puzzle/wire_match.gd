@@ -71,7 +71,7 @@ func _ready() -> void:
 	Wire3.default_color = Color(randf(), randf(), randf())
 	Wire4.default_color = Color(randf(), randf(), randf())
 		
-func _process(delta):
+func _process(_delta):
 	follow_mouse()
 		
 func create_shape_solution() -> void:

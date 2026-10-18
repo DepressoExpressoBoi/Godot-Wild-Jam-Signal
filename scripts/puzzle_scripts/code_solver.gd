@@ -5,7 +5,7 @@ var shape_options = ['moon', 'circle', 'triangle', 'fork3', 'heart', 'pentagon',
 @export var solved = false
 @export var shape_solution = []
 @export var color_designation = 'red'
-@export var puzzle_type = "SimonSays"
+@export var puzzle_type = "CodeSolver"
 
 @onready var ButtonMoon = $Moon
 @onready var ButtonCircle = $Circle

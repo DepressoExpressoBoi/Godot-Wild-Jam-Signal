@@ -22,7 +22,6 @@ position = Vector2(875, 298)
 scale = Vector2(2.328125, 2.1640625)
 
 [node name="Bomb" parent="." unique_id=258079969 instance=ExtResource("1_1vjqw")]
-visible = false
 position = Vector2(897, 328)
 scale = Vector2(0.065, 0.065)
 
