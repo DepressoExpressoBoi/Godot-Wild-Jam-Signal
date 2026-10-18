@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cnc6267bdemjh"
+path="res://.godot/imported/moon_icon_bitmap.png-a8f24ab0896a771d7c19bed1e8838b95.res"
+
+[deps]
+
+source_file="res://assets/shape_icons/moon/moon_icon_bitmap.png"
+dest_files=["res://.godot/imported/moon_icon_bitmap.png-a8f24ab0896a771d7c19bed1e8838b95.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

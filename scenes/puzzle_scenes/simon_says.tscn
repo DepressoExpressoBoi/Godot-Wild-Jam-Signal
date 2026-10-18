@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brildpp86bumd"]
 
-[ext_resource type="Script" uid="uid://dja7flbeuuyxg" path="res://scenes/puzzle_scenes/simon_says.gd" id="1_u6qvf"]
+[ext_resource type="Script" uid="uid://dja7flbeuuyxg" path="res://scripts/puzzle_scripts/simon_says.gd" id="1_u6qvf"]
 [ext_resource type="Texture2D" uid="uid://d1rwpletj8amn" path="res://assets/shape_icons/square/square_icon.png" id="2_eeejr"]
 [ext_resource type="Texture2D" uid="uid://bgb8vc01kxjfm" path="res://assets/shape_icons/square/square_icon_hover.png" id="3_7inhd"]
 [ext_resource type="Texture2D" uid="uid://dn58gra42p6uc" path="res://assets/shape_icons/triangle/triangle_icon.png" id="3_ytpmi"]

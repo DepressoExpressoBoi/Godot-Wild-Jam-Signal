@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://d078yyobf1d6l"
+path="res://.godot/imported/pentagon_icon_bitmap.png-dabb05bfdb513a8fa0c5fbefba857546.res"
+
+[deps]
+
+source_file="res://assets/shape_icons/pentagon/pentagon_icon_bitmap.png"
+dest_files=["res://.godot/imported/pentagon_icon_bitmap.png-dabb05bfdb513a8fa0c5fbefba857546.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

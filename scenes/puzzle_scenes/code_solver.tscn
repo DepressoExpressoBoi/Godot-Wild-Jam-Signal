@@ -1,6 +1,33 @@
 [gd_scene format=3 uid="uid://dvoqx5vgtnx0m"]
 
-[ext_resource type="Script" uid="uid://ddpp3teu5xab2" path="res://scenes/puzzle_scenes/code_solver.gd" id="1_pxk7w"]
+[ext_resource type="Script" uid="uid://ddpp3teu5xab2" path="res://scripts/puzzle_scripts/code_solver.gd" id="1_pxk7w"]
+[ext_resource type="Texture2D" uid="uid://dy8hau1ttchuv" path="res://assets/shape_icons/moon/moon_icon.png" id="2_brl6v"]
+[ext_resource type="Texture2D" uid="uid://2bhjpgxeyl81" path="res://assets/shape_icons/circle/circle_icon.png" id="3_g5cqx"]
+[ext_resource type="Texture2D" uid="uid://2nmjqknwwve2" path="res://assets/shape_icons/moon/moon_icon_hover.png" id="3_iiybg"]
+[ext_resource type="BitMap" uid="uid://cnc6267bdemjh" path="res://assets/shape_icons/moon/moon_icon_bitmap.png" id="4_as032"]
+[ext_resource type="Texture2D" uid="uid://dn58gra42p6uc" path="res://assets/shape_icons/triangle/triangle_icon.png" id="4_xscal"]
+[ext_resource type="Texture2D" uid="uid://c1j5n6i6006mv" path="res://assets/shape_icons/fork3/fork3_icon.png" id="5_wtn51"]
+[ext_resource type="Texture2D" uid="uid://ch3xef1afxo2x" path="res://assets/shape_icons/circle/circle_icon_hover.png" id="6_tnf6s"]
+[ext_resource type="Texture2D" uid="uid://ccc622t0vnh1c" path="res://assets/shape_icons/heart/heart_icon.png" id="6_x10pd"]
+[ext_resource type="Texture2D" uid="uid://bq1fulr42abo3" path="res://assets/shape_icons/pentagon/pentagon_icon.png" id="7_8cr2g"]
+[ext_resource type="BitMap" uid="uid://b7agqgbrlswlv" path="res://assets/shape_icons/circle/circle_icon_bitmap.png" id="7_tlj25"]
+[ext_resource type="Texture2D" uid="uid://d1rwpletj8amn" path="res://assets/shape_icons/square/square_icon.png" id="8_2k8ym"]
+[ext_resource type="Texture2D" uid="uid://dh2cyj0aahfxs" path="res://assets/shape_icons/star/star_icon.png" id="9_abj6j"]
+[ext_resource type="Texture2D" uid="uid://bo8bsd6uvcruy" path="res://assets/shape_icons/triangle/triangle_icon_hover.png" id="9_ta7mm"]
+[ext_resource type="BitMap" uid="uid://dawdtfay6hwuc" path="res://assets/shape_icons/triangle/triangle_icon_bitmap.png" id="10_sh7bs"]
+[ext_resource type="Texture2D" uid="uid://occo1p42edwy" path="res://assets/shape_icons/fork4/fork4_icon.png" id="10_unvyb"]
+[ext_resource type="Texture2D" uid="uid://bly1q1bo76rwi" path="res://assets/shape_icons/fork3/fork3_icon_hover.png" id="12_dpls3"]
+[ext_resource type="BitMap" uid="uid://cqtp4hlslixra" path="res://assets/shape_icons/fork3/fork3_icon_bitmap.png" id="13_r6j01"]
+[ext_resource type="Texture2D" uid="uid://dg3qxlgwp1d5m" path="res://assets/shape_icons/heart/heart_icon_hover.png" id="15_wdct4"]
+[ext_resource type="BitMap" uid="uid://cdmglkgv8owly" path="res://assets/shape_icons/heart/heart_icon_bitmap.png" id="16_2dxya"]
+[ext_resource type="Texture2D" uid="uid://cwvcs3agv52ej" path="res://assets/shape_icons/pentagon/pentagon_icon_hover.png" id="18_ci312"]
+[ext_resource type="BitMap" uid="uid://d078yyobf1d6l" path="res://assets/shape_icons/pentagon/pentagon_icon_bitmap.png" id="19_htn1d"]
+[ext_resource type="Texture2D" uid="uid://bgb8vc01kxjfm" path="res://assets/shape_icons/square/square_icon_hover.png" id="21_esqcn"]
+[ext_resource type="BitMap" uid="uid://0iecwhdxwi4p" path="res://assets/shape_icons/square/square_icon_bitmap.png" id="22_uoehw"]
+[ext_resource type="Texture2D" uid="uid://cm3vd7lk21mws" path="res://assets/shape_icons/star/star_icon_hover.png" id="24_ynmt4"]
+[ext_resource type="BitMap" uid="uid://cs7ekvua1wnld" path="res://assets/shape_icons/star/star_icon_bitmap.png" id="25_e2ygn"]
+[ext_resource type="Texture2D" uid="uid://c2gpjvn8pfegb" path="res://assets/shape_icons/fork4/fork4_icon_hover.png" id="27_mlfhi"]
+[ext_resource type="BitMap" uid="uid://bdyk8m3m8yo4x" path="res://assets/shape_icons/fork4/fork4_icon_bitmap.png" id="28_da3ri"]
 
 [node name="CodeSolver" type="Control" unique_id=653885062]
 layout_mode = 3
@@ -10,3 +37,118 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pxk7w")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1260126395]
+visible = false
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 1000.0
+
+[node name="Moon" type="TextureButton" parent="." unique_id=836367731]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 309.0
+offset_bottom = 309.0
+texture_normal = ExtResource("2_brl6v")
+texture_hover = ExtResource("3_iiybg")
+texture_click_mask = ExtResource("4_as032")
+stretch_mode = 0
+
+[node name="Circle" type="TextureButton" parent="." unique_id=1715440090]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 25.0
+offset_right = 643.0
+offset_bottom = 309.0
+texture_normal = ExtResource("3_g5cqx")
+texture_hover = ExtResource("6_tnf6s")
+texture_click_mask = ExtResource("7_tlj25")
+stretch_mode = 0
+
+[node name="Triangle" type="TextureButton" parent="." unique_id=1781192704]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 25.0
+offset_right = 977.0
+offset_bottom = 309.0
+texture_normal = ExtResource("4_xscal")
+texture_hover = ExtResource("9_ta7mm")
+texture_click_mask = ExtResource("10_sh7bs")
+stretch_mode = 0
+
+[node name="Fork3" type="TextureButton" parent="." unique_id=459850006]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 359.0
+offset_right = 309.0
+offset_bottom = 643.0
+texture_normal = ExtResource("5_wtn51")
+texture_hover = ExtResource("12_dpls3")
+texture_click_mask = ExtResource("13_r6j01")
+stretch_mode = 0
+
+[node name="Heart" type="TextureButton" parent="." unique_id=688614161]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 359.0
+offset_right = 643.0
+offset_bottom = 643.0
+texture_normal = ExtResource("6_x10pd")
+texture_hover = ExtResource("15_wdct4")
+texture_click_mask = ExtResource("16_2dxya")
+stretch_mode = 0
+
+[node name="Pentagon" type="TextureButton" parent="." unique_id=633018793]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 359.0
+offset_right = 977.0
+offset_bottom = 643.0
+texture_normal = ExtResource("7_8cr2g")
+texture_hover = ExtResource("18_ci312")
+texture_click_mask = ExtResource("19_htn1d")
+stretch_mode = 0
+
+[node name="Square" type="TextureButton" parent="." unique_id=1682920925]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 693.0
+offset_right = 309.0
+offset_bottom = 977.0
+texture_normal = ExtResource("8_2k8ym")
+texture_hover = ExtResource("21_esqcn")
+texture_click_mask = ExtResource("22_uoehw")
+stretch_mode = 0
+
+[node name="Star" type="TextureButton" parent="." unique_id=1347064695]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 693.0
+offset_right = 643.0
+offset_bottom = 977.0
+texture_normal = ExtResource("9_abj6j")
+texture_hover = ExtResource("24_ynmt4")
+texture_click_mask = ExtResource("25_e2ygn")
+stretch_mode = 0
+
+[node name="Fork4" type="TextureButton" parent="." unique_id=1586790961]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 693.0
+offset_right = 977.0
+offset_bottom = 977.0
+texture_normal = ExtResource("10_unvyb")
+texture_hover = ExtResource("27_mlfhi")
+texture_click_mask = ExtResource("28_da3ri")
+stretch_mode = 0
+
+[connection signal="pressed" from="Moon" to="." method="_on_moon_pressed"]
+[connection signal="pressed" from="Circle" to="." method="_on_circle_pressed"]
+[connection signal="pressed" from="Triangle" to="." method="_on_triangle_pressed"]
+[connection signal="pressed" from="Fork3" to="." method="_on_fork_3_pressed"]
+[connection signal="pressed" from="Heart" to="." method="_on_heart_pressed"]
+[connection signal="pressed" from="Pentagon" to="." method="_on_pentagon_pressed"]
+[connection signal="pressed" from="Square" to="." method="_on_square_pressed"]
+[connection signal="pressed" from="Star" to="." method="_on_star_pressed"]
+[connection signal="pressed" from="Fork4" to="." method="_on_fork_4_pressed"]
