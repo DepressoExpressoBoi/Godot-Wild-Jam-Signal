@@ -1,6 +1,6 @@
 extends Control
 
-# for manually changinf the puzzle answers
+# for manually changing the puzzle answers
 @onready var slot_1_answer: int = $AnimatedSprite2D.frame
 var slot_2_answer = 4
 var slot_3_answer = 2

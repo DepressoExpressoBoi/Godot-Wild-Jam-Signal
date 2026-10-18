@@ -1,5 +1,12 @@
 extends Control
 
+# for manually changing the puzzle answers
+@onready var slot_1_answer: int = $AnimatedSprite2D.frame
+var slot_2_answer = 4
+var slot_3_answer = 2
+var slot_4_answer = 9
+var slot_5_answer = 6
+
 func _ready():
 	
 	#--------------------------[button 1 slot 1]---------------------------------------
@@ -87,128 +94,158 @@ func _ready():
 
 func _on_button_up_1_button_up() -> void:
 	$AnimatedSprite2D.pause()
-	
-	print("paused_button_up_1_button_up") # delete me
 
 
 func _on_button_up_1_button_down() -> void:
 	$AnimatedSprite2D.play("number_lock")
-	
-	print("pressed_button_up_1_button_down") #delete me
+
 
 #--------------------------[button 1 down slot 1]---------------------------------------
 
 func _on_button_down_1_button_up() -> void:
 	$AnimatedSprite2D.pause()
-	
-	print("paused_button_down_1_button_up") # delete me
 
 
 func _on_button_down_1_button_down() -> void:
 	$AnimatedSprite2D.play_backwards("number_lock")
 	
-	print("pressed_button_down_1_button_down") #delete me
 	
 #--------------------------[button 2 up slot 2]---------------------------------------
 
 func _on_button_up_2_button_up() -> void:
 	$AnimatedSprite2D2.pause()
-	
-	print("paused_button_up_2_button_up") # delete me
 
 
 func _on_button_up_2_button_down() -> void:
 	$AnimatedSprite2D2.play("number_lock")
 	
-	print("pressed_button_up_2_button_down") #delete me
 
 #--------------------------[button 2 down slot 2]---------------------------------------
 
 func _on_button_down_2_button_up() -> void:
 	$AnimatedSprite2D2.pause()
-	
-	print("paused_button_down_2_button_up") # delete me
 
 
 func _on_button_down_2_button_down() -> void:
 	$AnimatedSprite2D2.play_backwards("number_lock")
 	
-	print("pressed_button_down_2_button_down") #delete me
 
 #--------------------------[button 3 up slot 3]---------------------------------------
 
 func _on_button_up_3_button_up() -> void:
 	$AnimatedSprite2D3.pause()
-	
-	print("paused_button_up_3_button_up") # delete me
 
 
 func _on_button_up_3_button_down() -> void:
 	$AnimatedSprite2D3.play("number_lock")
 	
-	print("pressed_button_up_3_button_down") #delete me
 
 #--------------------------[button 3 down slot 3]---------------------------------------
 
 func _on_button_down_3_button_up() -> void:
 	$AnimatedSprite2D3.pause()
-	
-	print("paused_button_down_3_button_up") # delete me
 
 
 func _on_button_down_3_button_down() -> void:
 	$AnimatedSprite2D3.play_backwards("number_lock")
 	
-	print("pressed_button_down_3_button_down") #delete me
 
 #--------------------------[button 4 up slot 4]---------------------------------------
 
 func _on_button_up_4_button_up() -> void:
 	$AnimatedSprite2D4.pause()
 	
-	print("paused_button_up_4_button_up") # delete me
-	
 	
 func _on_button_up_4_button_down() -> void:
 	$AnimatedSprite2D4.play("number_lock")
 	
-	print("pressed_button_up_4_button_down") #delete me
 	
 #--------------------------[button 4 down slot 4]---------------------------------------
 
 func _on_button_down_4_button_up() -> void:
 	$AnimatedSprite2D4.pause()
 	
-	print("paused_button_down_4_button_up") # delete me
-	
 	
 func _on_button_down_4_button_down() -> void:
 	$AnimatedSprite2D4.play_backwards("number_lock")
 	
-	print("pressed_button_down_4_button_down") #delete me
 
 #--------------------------[button 5 up slot 5]---------------------------------------
 
 func _on_button_up_5_button_up() -> void:
 	$AnimatedSprite2D5.pause()
 	
-	print("paused_button_up_5_button_up") # delete me
-	
 
 func _on_button_up_5_button_down() -> void:
 	$AnimatedSprite2D5.play("number_lock")
 	
-	print("pressed_button_up_5_button_down") #delete me
 
 #--------------------------[button 5 down slot 5]---------------------------------------
 
 func _on_button_down_5_button_up() -> void:
 	$AnimatedSprite2D5.pause()
 	
-	print("paused_button_down_5_button_up") # delete me
-
 
 func _on_button_down_5_button_down() -> void:
 	$AnimatedSprite2D5.play_backwards("number_lock")
 	
-	print("pressed_button_down_5_button_down") #delete me
+
+#-----------------------[animation logic slot 1]-----------------------------------
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	print("correct answer for slot 1 is ", slot_1_answer)
+	
+	if $AnimatedSprite2D.animation == 'number_lock':
+		if $AnimatedSprite2D.frame == slot_1_answer:
+			print("disabling since correct answer was ", slot_1_answer)
+			$buttonUp1.disabled = true
+			$buttonDown1.disabled = true
+	print("slot 1 on frame ", $AnimatedSprite2D.frame)
+
+#-----------------------[animation logic slot 2]-----------------------------------
+
+func _on_animated_sprite_2d_2_frame_changed() -> void:
+	print("correct answer for slot 2 is ", slot_2_answer)
+	
+	if $AnimatedSprite2D2.animation == 'number_lock':
+		if $AnimatedSprite2D2.frame == slot_2_answer:
+			print("disabling since correct answer was ", slot_2_answer)
+			$buttonUp2.disabled = true
+			$buttonDown2.disabled = true
+	print("slot 2 on frame ", $AnimatedSprite2D2.frame)
+
+#-----------------------[animation logic slot 3]-----------------------------------
+
+func _on_animated_sprite_2d_3_frame_changed() -> void:
+	print("correct answer for slot 3 is ", slot_3_answer)
+	
+	if $AnimatedSprite2D3.animation == 'number_lock':
+		if $AnimatedSprite2D3.frame == slot_3_answer:
+			print("disabling since correct answer was ", slot_3_answer)
+			$buttonUp3.disabled = true
+			$buttonDown3.disabled = true
+	print("slot 3 on frame ", $AnimatedSprite2D3.frame)
+
+#-----------------------[animation logic slot 4]-----------------------------------
+
+func _on_animated_sprite_2d_4_frame_changed() -> void:
+	print("correct answer for slot 4 is ", slot_4_answer)
+	
+	if $AnimatedSprite2D4.animation == 'number_lock':
+		if $AnimatedSprite2D4.frame == slot_4_answer:
+			print("disabling since correct answer was ", slot_4_answer)
+			$buttonUp4.disabled = true
+			$buttonDown4.disabled = true
+	print("slot 4 on frame ", $AnimatedSprite2D4.frame)
+
+#-----------------------[animation logic slot 5]-----------------------------------
+
+func _on_animated_sprite_2d_5_frame_changed() -> void:
+	print("correct answer for slot 5 is ", slot_5_answer)
+	
+	if $AnimatedSprite2D5.animation == 'number_lock':
+		if $AnimatedSprite2D5.frame == slot_5_answer:
+			print("disabling since correct answer was ", slot_5_answer)
+			$buttonUp5.disabled = true
+			$buttonDown5.disabled = true
+	print("slot 5 on frame ", $AnimatedSprite2D5.frame)
