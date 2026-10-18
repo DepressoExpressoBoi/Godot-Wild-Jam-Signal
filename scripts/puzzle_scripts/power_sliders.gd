@@ -1,10 +1,12 @@
 extends Control
 
 var shape_options = ['moon', 'circle', 'triangle', 'fork4', 'star']
+var static_shape_solution
 
 @export var solved = false
 @export var shape_solution = []
 @export var color_designation = 'purple'
+@export var puzzle_type = 'PowerSliders'
 
 @onready var SliderMoon = $SliderMoon
 @onready var SliderCircle = $SliderCircle
@@ -22,7 +24,7 @@ var shape_options = ['moon', 'circle', 'triangle', 'fork4', 'star']
 
 func _ready() -> void:
 	create_shape_solution()
-	print(shape_solution)
+	static_shape_solution = shape_solution.duplicate()
 
 func create_shape_solution() -> void:
 	var shapes_to_pick = randi_range(1,5)
@@ -35,11 +37,11 @@ func create_shape_solution() -> void:
 		
 func check_solution() -> void:
 	for shape in shape_options:
-		if shape in shape_solution and shape_sliders[shape].value == 0:
+		if shape in static_shape_solution and shape_sliders[shape].value == 0:
 			return
-		elif shape not in shape_solution and shape_sliders[shape].value == 1:
+		elif shape not in static_shape_solution and shape_sliders[shape].value == 1:
 			return
-	
+
 	solved = true
 	
 func solved_puzzle_conditions() -> void:
@@ -51,22 +53,52 @@ func solved_puzzle_conditions() -> void:
 		SliderFork4.set_editable(false) 
 		SliderStar.set_editable(false)
 
-func _on_slider_moon_value_changed(value: float) -> void:
-	check_solution()
-	solved_puzzle_conditions()
+func _on_slider_moon_drag_ended(value_changed: bool) -> void:
+	if value_changed:
+		if 'moon' in static_shape_solution and shape_sliders['moon'].value == 1:
+			shape_solution.erase('moon')
+		elif 'moon' in static_shape_solution and shape_sliders['moon'].value == 0:
+			shape_solution.append('moon')
+			
+		check_solution()
+		solved_puzzle_conditions()
 
-func _on_slider_circle_value_changed(value: float) -> void:
-	check_solution()
-	solved_puzzle_conditions()
+func _on_slider_circle_drag_ended(value_changed: bool) -> void:
+	if value_changed:
+		if 'circle' in static_shape_solution and shape_sliders['circle'].value == 1:
+			shape_solution.erase('circle')
+		elif 'circle' in static_shape_solution and shape_sliders['circle'].value == 0:
+			shape_solution.append('circle')
+			
+		check_solution()
+		solved_puzzle_conditions()
 
-func _on_slider_triangle_value_changed(value: float) -> void:
-	check_solution()
-	solved_puzzle_conditions()
+func _on_slider_triangle_drag_ended(value_changed: bool) -> void:
+	if value_changed:
+		if 'triangle' in static_shape_solution and shape_sliders['triangle'].value == 1:
+			shape_solution.erase('triangle')
+		elif 'triangle' in static_shape_solution and shape_sliders['triangle'].value == 0:
+			shape_solution.append('triangle')
+			
+		check_solution()
+		solved_puzzle_conditions()
 
-func _on_slider_fork_4_value_changed(value: float) -> void:
-	check_solution()
-	solved_puzzle_conditions()
-	
-func _on_slider_star_value_changed(value: float) -> void:
-	check_solution()
-	solved_puzzle_conditions()
+func _on_slider_fork_4_drag_ended(value_changed: bool) -> void:
+	if value_changed:
+		if 'fork4' in static_shape_solution and shape_sliders['fork4'].value == 1:
+			shape_solution.erase('fork4')
+		elif 'fork4' in static_shape_solution and shape_sliders['fork4'].value == 0:
+			shape_solution.append('fork4')
+			
+		check_solution()
+		solved_puzzle_conditions()
+
+func _on_slider_star_drag_ended(value_changed: bool) -> void:
+	if value_changed:
+		if 'star' in static_shape_solution and shape_sliders['star'].value == 1:
+			shape_solution.erase('star')
+		elif 'star' in static_shape_solution and shape_sliders['star'].value == 0:
+			shape_solution.append('star')
+			
+		check_solution()
+		solved_puzzle_conditions()

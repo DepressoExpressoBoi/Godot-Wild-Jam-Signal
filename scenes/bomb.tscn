@@ -1,19 +1,45 @@
 [gd_scene format=3 uid="uid://cecyb2swr8ihe"]
 
-[ext_resource type="Texture2D" uid="uid://bgfarc1ngqshe" path="res://assets/icon.svg" id="1_4kkau"]
+[ext_resource type="Texture2D" uid="uid://cx7xt3ttodkjl" path="res://assets/la_bomba_real.png" id="1_nxi8k"]
+[ext_resource type="PackedScene" uid="uid://bkyl2ft0vr0v6" path="res://scenes/puzzle_scenes/wire_match.tscn" id="2_84slv"]
 [ext_resource type="PackedScene" uid="uid://c8llpsare1wuv" path="res://scenes/puzzle_scenes/power_sliders.tscn" id="2_j15uc"]
-[ext_resource type="PackedScene" uid="uid://ctlippocb5mar" path="res://scenes/puzzle_scenes/puzzle_a.tscn" id="2_vpdcx"]
+[ext_resource type="Script" uid="uid://ba70aqyd6uj38" path="res://scenes/bomb.gd" id="2_nxi8k"]
+[ext_resource type="PackedScene" uid="uid://brildpp86bumd" path="res://scenes/puzzle_scenes/simon_says.tscn" id="5_nxi8k"]
 
-[node name="Bomb" type="Sprite2D" unique_id=258079969]
-scale = Vector2(2, 2)
-texture = ExtResource("1_4kkau")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84slv"]
+size = Vector2(1380, 1368)
 
-[node name="PowerSliders" parent="." unique_id=124821330 instance=ExtResource("2_j15uc")]
-offset_left = 5.0
-offset_top = 4.5
-offset_right = -73.5
-offset_bottom = -71.0
+[node name="Bomb" type="Area2D" unique_id=2016837189]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("2_nxi8k")
 
-[node name="PuzzleA" parent="." unique_id=222436367 instance=ExtResource("2_vpdcx")]
-position = Vector2(-30.5, -27.999989)
-scale = Vector2(0.3230725, 0.349532)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1956161281]
+position = Vector2(42, -144)
+shape = SubResource("RectangleShape2D_84slv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=201329618]
+texture = ExtResource("1_nxi8k")
+
+[node name="PUZZLE-WireMatch" parent="." unique_id=1920518845 instance=ExtResource("2_84slv")]
+offset_left = -888.0
+offset_top = -636.0
+offset_right = 112.0
+offset_bottom = 364.0
+scale = Vector2(0.4, 0.4)
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PUZZLE-PowerSliders" parent="." unique_id=124821330 instance=ExtResource("2_j15uc")]
+offset_left = -298.0
+offset_top = -654.0
+offset_right = 702.0
+offset_bottom = 346.0
+scale = Vector2(0.4, 0.4)
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PUZZLE-SimonSays" parent="." unique_id=1235837024 instance=ExtResource("5_nxi8k")]
+scale = Vector2(0.4, 0.4)
+
+[connection signal="gui_input" from="PUZZLE-WireMatch" to="." method="_on_puzzle_wire_match_gui_input"]
+[connection signal="gui_input" from="PUZZLE-PowerSliders" to="." method="_on_puzzle_power_sliders_gui_input"]
