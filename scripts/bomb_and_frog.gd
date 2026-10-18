@@ -19,6 +19,7 @@ var game_done = false
 var wire_match_clue_selected = false
 var wire_match_clue
 var simon_says_clue
+var code_solver_clue
 
 var grown_bomb_default_pos
 
@@ -106,6 +107,14 @@ func choose_puzzle_clue(random_puzzle_color) -> String:
 				simon_says_clue.push_back(clue_shape)
 				
 			print('Simon says clue: ', clue_shape)
+			return clue_shape	
+		'CodeSolver':
+			if not puzzle.solved:
+				code_solver_clue = puzzle_solutions[random_puzzle_color][2]
+				clue_shape = code_solver_clue.pop_front()
+				code_solver_clue.push_back(clue_shape)
+				
+			print('Code Solver clue: ', clue_shape)
 			return clue_shape	
 		_:
 			print('You fucked up in choose_puzzle_clue!')
