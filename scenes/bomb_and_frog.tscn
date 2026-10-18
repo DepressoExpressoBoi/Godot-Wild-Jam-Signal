@@ -22,14 +22,14 @@ position = Vector2(875, 298)
 scale = Vector2(2.328125, 2.1640625)
 
 [node name="Bomb" parent="." unique_id=258079969 instance=ExtResource("1_1vjqw")]
-visible = false
 position = Vector2(897, 328)
 scale = Vector2(0.065, 0.065)
 
-[node name="timerLabel" type="Label" parent="." unique_id=1744390657]
-offset_left = 442.0
-offset_right = 596.0
-offset_bottom = 69.0
+[node name="timerLabel" type="Label" parent="Bomb" unique_id=1744390657]
+offset_left = -76.92285
+offset_top = -507.69223
+offset_right = 77.07715
+offset_bottom = -438.69223
 theme_override_font_sizes/font_size = 50
 text = "00 : 00"
 vertical_alignment = 1

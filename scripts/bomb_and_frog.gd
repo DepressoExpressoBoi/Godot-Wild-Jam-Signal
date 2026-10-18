@@ -4,7 +4,7 @@ extends Node2D
 @onready var Jimmy = $Jimmy
 
 # adding timer funcionality, t.c.
-@onready var label = $timerLabel
+@onready var label = $Bomb/timerLabel
 @onready var timer = $Timer
 
 @onready var audio_player = $AudioStreamPlayer2D
@@ -60,6 +60,13 @@ func time_left_to_live():
 func _process(delta):
 	if not game_done:
 		all_puzzles_solved()
+		
+	for puzzle in puzzles:
+		if puzzle.puzzle_type == 'WireMatch':
+			puzzle.ShapeButtonLeft1DefaultPos = puzzle.get_node('ShapeButtonLeft1Default').global_position
+			puzzle.ShapeButtonLeft2DefaultPos = puzzle.get_node('ShapeButtonLeft2Default').global_position
+			puzzle.ShapeButtonLeft3DefaultPos = puzzle.get_node('ShapeButtonLeft3Default').global_position
+			puzzle.ShapeButtonLeft4DefaultPos = puzzle.get_node('ShapeButtonLeft4Default').global_position
 	label.text = "%02d : %02d" % time_left_to_live()
 	
 func choose_puzzle_clue(random_puzzle_color) -> String:
@@ -198,7 +205,7 @@ func _on_jimmy_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 		jimmy_eat_bomb()
 
 func _on_bomb_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		var bomb_tween
 		
 		Bomb.bomb_tweening = true

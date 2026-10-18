@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cecyb2swr8ihe"]
 
-[ext_resource type="Texture2D" uid="uid://cx7xt3ttodkjl" path="res://assets/la_bomba_real.png" id="1_nxi8k"]
+[ext_resource type="Texture2D" uid="uid://chhj4fib5rmmr" path="res://assets/bombita_clear_and_real.png" id="2_1hf1o"]
 [ext_resource type="PackedScene" uid="uid://bkyl2ft0vr0v6" path="res://scenes/puzzle_scenes/wire_match.tscn" id="2_84slv"]
 [ext_resource type="PackedScene" uid="uid://c8llpsare1wuv" path="res://scenes/puzzle_scenes/power_sliders.tscn" id="2_j15uc"]
 [ext_resource type="Script" uid="uid://ba70aqyd6uj38" path="res://scenes/bomb.gd" id="2_nxi8k"]
@@ -17,7 +17,7 @@ position = Vector2(42, -144)
 shape = SubResource("RectangleShape2D_84slv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=201329618]
-texture = ExtResource("1_nxi8k")
+texture = ExtResource("2_1hf1o")
 
 [node name="PUZZLE-WireMatch" parent="." unique_id=1920518845 instance=ExtResource("2_84slv")]
 offset_left = -888.0
