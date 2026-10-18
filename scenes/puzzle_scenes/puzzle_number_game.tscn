@@ -166,12 +166,8 @@ offset_top = 420.0
 offset_right = 934.0
 offset_bottom = 500.0
 
-[connection signal="button_down" from="buttonUp1" to="." method="_on_button_up_1_button_down"]
-[connection signal="button_up" from="buttonUp1" to="." method="_on_button_up_1_button_up"]
 [connection signal="pressed" from="buttonUp1" to="." method="_on_button_up_1_pressed"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
-[connection signal="button_down" from="buttonDown1" to="." method="_on_button_down_1_button_down"]
-[connection signal="button_up" from="buttonDown1" to="." method="_on_button_down_1_button_up"]
 [connection signal="pressed" from="buttonDown1" to="." method="_on_button_down_1_pressed"]
 [connection signal="button_down" from="buttonUp2" to="." method="_on_button_up_2_button_down"]
 [connection signal="button_up" from="buttonUp2" to="." method="_on_button_up_2_button_up"]
