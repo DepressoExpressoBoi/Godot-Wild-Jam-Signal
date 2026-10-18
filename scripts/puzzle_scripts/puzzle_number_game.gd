@@ -1,11 +1,5 @@
 extends Control
 
-@onready var slot_1_answer: int = $AnimatedSprite2D.frame
-var slot_2_answer = 4
-var slot_3_answer = 2
-var slot_4_answer = 9
-var slot_5_answer = 6
-
 var numbers = []
 
 var changeNumber1 = 0 
@@ -93,7 +87,7 @@ func _on_button_up_2_pressed() -> void:
 		changeNumber2 += 1
 	else:
 		changeNumber2 = 0
-	$AnimatedSprite2D.frame = changeNumber2
+	$AnimatedSprite2D2.frame = changeNumber2
 
 #--------------------------[button 2 down slot 2]---------------------------------------
 
@@ -102,7 +96,7 @@ func _on_button_down_2_pressed() -> void:
 		changeNumber2 -= 1
 	else:
 		changeNumber2 = 9
-	$AnimatedSprite2D.frame = changeNumber2
+	$AnimatedSprite2D2.frame = changeNumber2
 	
 
 #--------------------------[button 3 up slot 3]---------------------------------------
@@ -112,7 +106,7 @@ func _on_button_up_3_pressed() -> void:
 		changeNumber3 += 1
 	else:
 		changeNumber3 = 0
-	$AnimatedSprite2D.frame = changeNumber3
+	$AnimatedSprite2D3.frame = changeNumber3
 	
 
 #--------------------------[button 3 down slot 3]---------------------------------------
@@ -122,7 +116,7 @@ func _on_button_down_3_pressed() -> void:
 		changeNumber3 -= 1
 	else:
 		changeNumber3 = 9
-	$AnimatedSprite2D.frame = changeNumber3
+	$AnimatedSprite2D3.frame = changeNumber3
 	
 
 #--------------------------[button 4 up slot 4]---------------------------------------
@@ -132,7 +126,7 @@ func _on_button_up_4_pressed() -> void:
 		changeNumber4 += 1
 	else:
 		changeNumber4 = 0
-	$AnimatedSprite2D.frame = changeNumber4
+	$AnimatedSprite2D4.frame = changeNumber4
 	
 #--------------------------[button 4 down slot 4]---------------------------------------
 
@@ -141,7 +135,7 @@ func _on_button_down_4_pressed() -> void:
 		changeNumber4 -= 1
 	else:
 		changeNumber4 = 9
-	$AnimatedSprite2D.frame = changeNumber4
+	$AnimatedSprite2D4.frame = changeNumber4
 
 #--------------------------[button 5 up slot 5]---------------------------------------
 
@@ -150,7 +144,7 @@ func _on_button_up_5_pressed() -> void:
 		changeNumber5 += 1
 	else:
 		changeNumber5 = 0
-	$AnimatedSprite2D.frame = changeNumber5
+	$AnimatedSprite2D5.frame = changeNumber5
 	
 
 #--------------------------[button 5 down slot 5]---------------------------------------
@@ -160,18 +154,18 @@ func _on_button_down_5_pressed() -> void:
 		changeNumber5 -= 1
 	else:
 		changeNumber5 = 9
-	$AnimatedSprite2D.frame = changeNumber5
+	$AnimatedSprite2D5.frame = changeNumber5
 
 
 
 #-----------------------[animation logic slot 1]-----------------------------------
 
 func _on_animated_sprite_2d_frame_changed() -> void:
-	print("correct answer for slot 1 is ", slot_1_answer)
+	print("correct answer for slot 1 is ", changeNumber1)
 	
 	if $AnimatedSprite2D.animation == 'number_lock':
-		if $AnimatedSprite2D.frame == slot_1_answer:
-			print("disabling since correct answer was ", slot_1_answer)
+		if $AnimatedSprite2D.frame == changeNumber1:
+			print("disabling since correct answer was ", changeNumber1)
 			$buttonUp1.disabled = true
 			$buttonDown1.disabled = true
 	print("slot 1 on frame ", $AnimatedSprite2D.frame)
@@ -179,11 +173,11 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 #-----------------------[animation logic slot 2]-----------------------------------
 
 func _on_animated_sprite_2d_2_frame_changed() -> void:
-	print("correct answer for slot 2 is ", slot_2_answer)
+	print("correct answer for slot 2 is ", changeNumber2)
 	
 	if $AnimatedSprite2D2.animation == 'number_lock':
-		if $AnimatedSprite2D2.frame == slot_2_answer:
-			print("disabling since correct answer was ", slot_2_answer)
+		if $AnimatedSprite2D2.frame == changeNumber2:
+			print("disabling since correct answer was ", changeNumber2)
 			$buttonUp2.disabled = true
 			$buttonDown2.disabled = true
 	print("slot 2 on frame ", $AnimatedSprite2D2.frame)
@@ -191,11 +185,11 @@ func _on_animated_sprite_2d_2_frame_changed() -> void:
 #-----------------------[animation logic slot 3]-----------------------------------
 
 func _on_animated_sprite_2d_3_frame_changed() -> void:
-	print("correct answer for slot 3 is ", slot_3_answer)
+	print("correct answer for slot 3 is ", changeNumber3)
 	
 	if $AnimatedSprite2D3.animation == 'number_lock':
-		if $AnimatedSprite2D3.frame == slot_3_answer:
-			print("disabling since correct answer was ", slot_3_answer)
+		if $AnimatedSprite2D3.frame == changeNumber3:
+			print("disabling since correct answer was ", changeNumber3)
 			$buttonUp3.disabled = true
 			$buttonDown3.disabled = true
 	print("slot 3 on frame ", $AnimatedSprite2D3.frame)
@@ -203,11 +197,11 @@ func _on_animated_sprite_2d_3_frame_changed() -> void:
 #-----------------------[animation logic slot 4]-----------------------------------
 
 func _on_animated_sprite_2d_4_frame_changed() -> void:
-	print("correct answer for slot 4 is ", slot_4_answer)
+	print("correct answer for slot 4 is ", changeNumber4)
 	
 	if $AnimatedSprite2D4.animation == 'number_lock':
-		if $AnimatedSprite2D4.frame == slot_4_answer:
-			print("disabling since correct answer was ", slot_4_answer)
+		if $AnimatedSprite2D4.frame == changeNumber4:
+			print("disabling since correct answer was ", changeNumber4)
 			$buttonUp4.disabled = true
 			$buttonDown4.disabled = true
 			
@@ -222,11 +216,11 @@ func _on_animated_sprite_2d_4_frame_changed() -> void:
 #-----------------------[animation logic slot 5]-----------------------------------
 
 func _on_animated_sprite_2d_5_frame_changed() -> void:
-	print("correct answer for slot 5 is ", slot_5_answer)
+	print("correct answer for slot 5 is ", changeNumber5)
 	
 	if $AnimatedSprite2D5.animation == 'number_lock':
-		if $AnimatedSprite2D5.frame == slot_5_answer:
-			print("disabling since correct answer was ", slot_5_answer)
+		if $AnimatedSprite2D5.frame == changeNumber5:
+			print("disabling since correct answer was ", changeNumber5)
 			$buttonUp5.disabled = true
 			$buttonDown5.disabled = true
 	print("slot 5 on frame ", $AnimatedSprite2D5.frame)
