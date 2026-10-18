@@ -126,6 +126,46 @@ offset_top = 281.0
 offset_right = 506.0
 offset_bottom = 361.0
 
+[node name="buttonUp4" type="Button" parent="." unique_id=1005789146]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 81.0
+offset_right = 661.0
+offset_bottom = 161.0
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=649534104]
+position = Vector2(620.99994, 220)
+scale = Vector2(0.640625, 0.6328125)
+sprite_frames = SubResource("SpriteFrames_xm4jx")
+animation = &"number_lock"
+
+[node name="buttonDown4" type="Button" parent="." unique_id=1474491484]
+layout_mode = 0
+offset_left = 582.0
+offset_top = 282.0
+offset_right = 662.0
+offset_bottom = 362.0
+
+[node name="buttonUp5" type="Button" parent="." unique_id=858628018]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 80.0
+offset_right = 832.0
+offset_bottom = 160.0
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="." unique_id=1157570560]
+position = Vector2(792.9999, 220.00002)
+scale = Vector2(0.640625, 0.6328125)
+sprite_frames = SubResource("SpriteFrames_xm4jx")
+animation = &"number_lock"
+
+[node name="buttonDown5" type="Button" parent="." unique_id=1539710899]
+layout_mode = 0
+offset_left = 755.0
+offset_top = 282.0
+offset_right = 835.0
+offset_bottom = 362.0
+
 [connection signal="button_down" from="buttonUp1" to="." method="_on_button_up_1_button_down"]
 [connection signal="button_up" from="buttonUp1" to="." method="_on_button_up_1_button_up"]
 [connection signal="button_down" from="buttonDown1" to="." method="_on_button_down_1_button_down"]
@@ -138,3 +178,11 @@ offset_bottom = 361.0
 [connection signal="button_up" from="buttonUp3" to="." method="_on_button_up_3_button_up"]
 [connection signal="button_down" from="buttonDown3" to="." method="_on_button_down_3_button_down"]
 [connection signal="button_up" from="buttonDown3" to="." method="_on_button_down_3_button_up"]
+[connection signal="button_down" from="buttonUp4" to="." method="_on_button_up_4_button_down"]
+[connection signal="button_up" from="buttonUp4" to="." method="_on_button_up_4_button_up"]
+[connection signal="button_down" from="buttonDown4" to="." method="_on_button_down_4_button_down"]
+[connection signal="button_up" from="buttonDown4" to="." method="_on_button_down_4_button_up"]
+[connection signal="button_down" from="buttonUp5" to="." method="_on_button_up_5_button_down"]
+[connection signal="button_up" from="buttonUp5" to="." method="_on_button_up_5_button_up"]
+[connection signal="button_down" from="buttonDown5" to="." method="_on_button_down_5_button_down"]
+[connection signal="button_up" from="buttonDown5" to="." method="_on_button_down_5_button_up"]
