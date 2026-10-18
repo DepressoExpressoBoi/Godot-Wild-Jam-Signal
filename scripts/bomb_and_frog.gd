@@ -18,6 +18,7 @@ var game_done = false
 # Variables needed for specific puzzles (i.e. the wire match any future puzzle)
 var wire_match_clue_selected = false
 var wire_match_clue
+var simon_says_clue
 
 var grown_bomb_default_pos
 
@@ -91,6 +92,14 @@ func choose_puzzle_clue(random_puzzle_color) -> String:
 			if not puzzle.solved:
 				clue_shape = puzzle_solutions[random_puzzle_color][2].pick_random()
 			return clue_shape
+		'SimonSays':
+			if not puzzle.solved:
+				simon_says_clue = puzzle_solutions[random_puzzle_color][2]
+				clue_shape = simon_says_clue.pop_front()
+				simon_says_clue.push_back(clue_shape)
+				
+			print('Simon says clue: ', clue_shape)
+			return clue_shape	
 		_:
 			print('You fucked up in choose_puzzle_clue!')
 			return 'failure'

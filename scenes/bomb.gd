@@ -15,7 +15,7 @@ var grown_puzzle_default_pos
 func _ready() -> void:
 	var selected_puzzle
 	var remaining_puzzles
-	for i in 2:
+	for i in 3:
 		selected_puzzle = all_puzzles.pick_random()
 		all_puzzles.erase(selected_puzzle)
 		bomb_puzzles.append(selected_puzzle)

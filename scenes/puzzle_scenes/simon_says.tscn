@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://brildpp86bumd"]
+
+[ext_resource type="Script" uid="uid://dja7flbeuuyxg" path="res://scenes/puzzle_scenes/simon_says.gd" id="1_u6qvf"]
+[ext_resource type="Texture2D" uid="uid://d1rwpletj8amn" path="res://assets/shape_icons/square/square_icon.png" id="2_eeejr"]
+[ext_resource type="Texture2D" uid="uid://dn58gra42p6uc" path="res://assets/shape_icons/triangle/triangle_icon.png" id="3_ytpmi"]
+[ext_resource type="Texture2D" uid="uid://2bhjpgxeyl81" path="res://assets/shape_icons/circle/circle_icon.png" id="4_kk1mn"]
+[ext_resource type="Texture2D" uid="uid://ccc622t0vnh1c" path="res://assets/shape_icons/heart/heart_icon.png" id="5_xlx3t"]
+
+[node name="Control" type="Control" unique_id=1235837024]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -152.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u6qvf")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1011900623]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Square" type="Button" parent="." unique_id=403667685]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 475.0
+offset_bottom = 475.0
+icon = ExtResource("2_eeejr")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Triangle" type="Button" parent="." unique_id=1537084090]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 25.0
+offset_right = 975.0
+offset_bottom = 475.0
+icon = ExtResource("3_ytpmi")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Circle" type="Button" parent="." unique_id=1326815101]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 525.0
+offset_right = 475.0
+offset_bottom = 975.0
+icon = ExtResource("4_kk1mn")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Heart" type="Button" parent="." unique_id=1787892727]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 525.0
+offset_right = 975.0
+offset_bottom = 975.0
+icon = ExtResource("5_xlx3t")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Square" to="." method="_on_square_pressed"]
+[connection signal="pressed" from="Triangle" to="." method="_on_triangle_pressed"]
+[connection signal="pressed" from="Circle" to="." method="_on_circle_pressed"]
+[connection signal="pressed" from="Heart" to="." method="_on_heart_pressed"]
