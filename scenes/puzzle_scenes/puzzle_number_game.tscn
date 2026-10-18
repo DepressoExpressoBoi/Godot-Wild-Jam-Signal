@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://4ag5okygpu0s" path="res://assets/number5.png" id="7_om86b"]
 [ext_resource type="Texture2D" uid="uid://ci4ke6f7fkfjy" path="res://assets/number6.png" id="8_om86b"]
 [ext_resource type="Texture2D" uid="uid://ch7cbyqf5b02f" path="res://assets/number7.png" id="9_a3rtp"]
+[ext_resource type="Texture2D" uid="uid://okkt42c0eera" path="res://assets/number8.png" id="10_v4y0k"]
+[ext_resource type="Texture2D" uid="uid://bnw8ase6lfsw0" path="res://assets/number9.png" id="11_cooni"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xm4jx"]
 animations = [{
@@ -41,6 +43,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_a3rtp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v4y0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cooni")
 }],
 "loop": true,
 "name": &"number_lock",
