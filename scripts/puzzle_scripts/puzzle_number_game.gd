@@ -7,17 +7,15 @@ var numbers = []
 @export var color_designation = 'red'
 @export var puzzle_type = "NumberGame"
 
+var changeNumber1 = 0
+var changeNumber2 = 0
+var changeNumber3 = 0
+var changeNumber4 = 0
+var changeNumber5 = 0
 
 func create_number_solution() -> void:
 	for x in 5:
 		number_solution.append(randi_range(0, 9))
-
-# for manually changing the puzzle answers
-var slot_1_answer = 5
-var slot_2_answer = 4
-var slot_3_answer = 2
-var slot_4_answer = 9
-var slot_5_answer = 6
 
 func _ready():
 	create_number_solution()
@@ -174,11 +172,11 @@ func _on_button_down_5_pressed() -> void:
 #-----------------------[animation logic slot 1]-----------------------------------
 
 func _on_animated_sprite_2d_frame_changed() -> void:
-	print("correct answer for slot 1 is ", changeNumber1)
+	print("correct answer for slot 1 is ", number_solution[0])
 	
 	if $AnimatedSprite2D.animation == 'number_lock':
-		if $AnimatedSprite2D.frame == changeNumber1:
-			print("disabling since correct answer was ", changeNumber1)
+		if $AnimatedSprite2D.frame == number_solution[0]:
+			print("disabling since correct answer was ", number_solution[0])
 			$buttonUp1.disabled = true
 			$buttonDown1.disabled = true
 	print("slot 1 on frame ", $AnimatedSprite2D.frame)
@@ -186,11 +184,11 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 #-----------------------[animation logic slot 2]-----------------------------------
 
 func _on_animated_sprite_2d_2_frame_changed() -> void:
-	print("correct answer for slot 2 is ", changeNumber2)
+	print("correct answer for slot 2 is ", number_solution[1])
 	
 	if $AnimatedSprite2D2.animation == 'number_lock':
-		if $AnimatedSprite2D2.frame == changeNumber2:
-			print("disabling since correct answer was ", changeNumber2)
+		if $AnimatedSprite2D2.frame == number_solution[1]:
+			print("disabling since correct answer was ", number_solution[1])
 			$buttonUp2.disabled = true
 			$buttonDown2.disabled = true
 	print("slot 2 on frame ", $AnimatedSprite2D2.frame)
@@ -198,11 +196,11 @@ func _on_animated_sprite_2d_2_frame_changed() -> void:
 #-----------------------[animation logic slot 3]-----------------------------------
 
 func _on_animated_sprite_2d_3_frame_changed() -> void:
-	print("correct answer for slot 3 is ", changeNumber3)
+	print("correct answer for slot 3 is ", number_solution[2])
 	
 	if $AnimatedSprite2D3.animation == 'number_lock':
-		if $AnimatedSprite2D3.frame == changeNumber3:
-			print("disabling since correct answer was ", changeNumber3)
+		if $AnimatedSprite2D3.frame == number_solution[2]:
+			print("disabling since correct answer was ", number_solution[2])
 			$buttonUp3.disabled = true
 			$buttonDown3.disabled = true
 	print("slot 3 on frame ", $AnimatedSprite2D3.frame)
@@ -210,11 +208,11 @@ func _on_animated_sprite_2d_3_frame_changed() -> void:
 #-----------------------[animation logic slot 4]-----------------------------------
 
 func _on_animated_sprite_2d_4_frame_changed() -> void:
-	print("correct answer for slot 4 is ", changeNumber4)
+	print("correct answer for slot 4 is ", number_solution[3])
 	
 	if $AnimatedSprite2D4.animation == 'number_lock':
-		if $AnimatedSprite2D4.frame == changeNumber4:
-			print("disabling since correct answer was ", changeNumber4)
+		if $AnimatedSprite2D4.frame == number_solution[3]:
+			print("disabling since correct answer was ", number_solution[3])
 			$buttonUp4.disabled = true
 			$buttonDown4.disabled = true
 			
@@ -229,11 +227,11 @@ func _on_animated_sprite_2d_4_frame_changed() -> void:
 #-----------------------[animation logic slot 5]-----------------------------------
 
 func _on_animated_sprite_2d_5_frame_changed() -> void:
-	print("correct answer for slot 5 is ", changeNumber5)
+	print("correct answer for slot 5 is ", number_solution[4])
 	
 	if $AnimatedSprite2D5.animation == 'number_lock':
-		if $AnimatedSprite2D5.frame == changeNumber5:
-			print("disabling since correct answer was ", changeNumber5)
+		if $AnimatedSprite2D5.frame == number_solution[4]:
+			print("disabling since correct answer was ", number_solution[4])
 			$buttonUp5.disabled = true
 			$buttonDown5.disabled = true
 	print("slot 5 on frame ", $AnimatedSprite2D5.frame)
